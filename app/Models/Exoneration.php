@@ -18,6 +18,7 @@ class Exoneration extends Model
         'transport',
         'facture',
         'affectation',
+        'commentaire',
         'user_id',
        ];
 }
