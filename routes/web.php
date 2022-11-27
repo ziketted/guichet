@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ImportationController;
 use App\Http\Controllers\NotificationController;
+use App\Http\Controllers\RoleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -63,9 +64,18 @@ Route::middleware([
         Route::get('/notification/index', [NotificationController::class, 'index'])->name('index');
         Route::post('/notification/store', [NotificationController::class, 'store'])->name('store');
         Route::post('/notification/create', [NotificationController::class, 'create'])->name('create');
-        Route::delete('/importation/{importation}',[DocumentController::class, 'destroy'])->name('destroy');
+        Route::delete('/notification/{notifi}',[DocumentController::class, 'destroy'])->name('destroy');
         Route::post('/notification/show/{notification}', [NotificationController::class, 'show'])->name('show');
         });
+
+    Route::name('role.')->group(function () {
+        Route::get('/role/index', [RoleController::class, 'index'])->name('index');
+        Route::post('/role/store', [RoleController::class, 'store'])->name('store');
+        Route::post('/role/create', [RoleController::class, 'create'])->name('create');
+        Route::delete('/role/{role}',[RoleController::class, 'destroy'])->name('destroy');
+        Route::post('/role/show/{role}', [RoleController::class, 'show'])->name('show');
+        });
+
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
