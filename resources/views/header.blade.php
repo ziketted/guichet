@@ -200,7 +200,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="index.html">
+      <a class="nav-link " href="{{ route('enrolement.index') }}">
         <i class="bi bi-grid"></i>
         <span>Tableau de bord</span>
       </a>
@@ -212,7 +212,7 @@
       </a>
       <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="{{ route('enrolement.store') }}">
+          <a href="{{ route('enrolement.index') }}">
             <i class="bi bi-circle"></i><span>Enrolements</span>
           </a>
         </li>

@@ -10,15 +10,15 @@
                 <!-- General Form Elements -->
                 <form action="{{ route('exoneration.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-3 col-form-label">Lettre à la Direction du FNPSS</label>
+                            <label for="inputNumber" class="col-sm-10 col-form-label">Lettre à la Direction du FNPSS</label>
                             <div class="col-sm-10">
                               <input class="form-control" name="lettre" type="file" id="formFile">
                             </div>
                           </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Attestation des biens à exonerer</label>
                             <div class="col-sm-10">
@@ -26,7 +26,7 @@
                             </div>
                           </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Avis favorable du Ministère</label>
                             <div class="col-sm-10">
@@ -34,7 +34,7 @@
                             </div>
                           </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Liste de colisage</label>
                             <div class="col-sm-10">
@@ -42,7 +42,7 @@
                             </div>
                           </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Copie du projet d'utilisation des biens</label>
                             <div class="col-sm-10">
@@ -50,7 +50,7 @@
                             </div>
                           </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Lettre de transport</label>
                             <div class="col-sm-10">
@@ -59,7 +59,7 @@
                           </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Facture d'achat</label>
                             <div class="col-sm-10">
@@ -68,7 +68,7 @@
                           </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Rapport d'affectation des biens exonérés</label>
                             <div class="col-sm-10">
@@ -77,7 +77,7 @@
                           </div>
                     </div>
 
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="form-floating mb-3">
                             <select name="type_exoneration" class="form-select" id="floatingSelect" aria-label="State">
                                 <label for="floatingSelect">Selectionner le type d'exonération</label>
@@ -87,7 +87,7 @@
                         </div>
                     </div>
     
-                    <div class="col-md-8">
+                    <div class="col-md-10">
                         <div class="form-floating">
                             <Textarea type="text" rows="50" cols="30" class="form-control" id="floatingEmail" name="commentaires"></Textarea>
                             <label for="floatingEmail">Commentaires</label>
