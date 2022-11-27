@@ -76,6 +76,16 @@
                             </div>
                           </div>
                     </div>
+
+                    <div class="col-md-8">
+                        <div class="form-floating mb-3">
+                            <select name="type_exoneration" class="form-select" id="floatingSelect" aria-label="State">
+                                <label for="floatingSelect">Selectionner le type d'exonération</label>
+                                <option value="Importation">Importation</option>
+                                <option value="Interieur">Interieur de la RDC</option>
+                            </select>
+                        </div>
+                    </div>
     
                     <div class="col-md-8">
                         <div class="form-floating">
@@ -86,7 +96,7 @@
                 
                 
                     <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">S'enroler maintenant</button>
+                      <button type="submit" class="btn btn-primary">Demander le certificat d'exonération</button>
                     </div>
                   
     
