@@ -76,7 +76,5 @@ Route::middleware([
         Route::post('/role/show/{role}', [RoleController::class, 'show'])->name('show');
         });
 
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+        Route::get('/dashboard', [EnrolementController::class, 'index'])->name('dashbaord');
 });

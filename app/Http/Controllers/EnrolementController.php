@@ -19,9 +19,9 @@ class EnrolementController extends Controller
     public function index()
     {
         //
-
-        $enrolement= Enrolement::where('user_id',  auth()->user()->id)->get();
-        return view('enrolement.index', ['enrolements'=>$enrolement]);
+        
+        $enrolements= Enrolement::where('user_id',  auth()->user()->id)->get();
+        return view('enrolement.index', ['enrolements'=>$enrolements]);
     }
 
     /**

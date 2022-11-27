@@ -61,6 +61,7 @@
                     <div class="col-12">
                      
                       <a href="{{ url('auth/google') }}" class="btn btn-danger w-100">
+                        <i class="bi bi-google"></i>
                           Google
                       </a>
                     </div>
