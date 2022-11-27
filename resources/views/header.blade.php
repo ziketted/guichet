@@ -50,12 +50,12 @@
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
 
-  
+
 
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">
 
-      
+
 
       <li class="nav-item dropdown">
 
@@ -67,7 +67,7 @@
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
           <li class="dropdown-header">
             You have 4 new notifications
-            <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            <a href="#"><span class="p-2 badge rounded-pill bg-primary ms-2">View all</span></a>
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -137,15 +137,15 @@
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
-          
+
         </a><!-- End Profile Iamge Icon -->
 
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
           <li class="dropdown-header">
             <h6>
-              
+
             </h6>
-            
+
           </li>
           <li>
             <hr class="dropdown-divider">
@@ -161,7 +161,7 @@
             <hr class="dropdown-divider">
           </li>
 
-         
+
           <li>
             <hr class="dropdown-divider">
           </li>
@@ -182,7 +182,7 @@
               <span>Deconnexion</span>
             </a>
             <form action="{{ route('logout') }}" id="logout" method="POST" class="d-none">
-                  @csrf  
+                  @csrf
             </form>
           </li>
 

@@ -36,7 +36,7 @@ Route::middleware([
 
     Route::name('exoneration.')->group(function () {
         Route::get('/exoneration/index', [ExonerationController::class, 'index'])->name('index');
-        Route::post('/exoneration/store', [ExonerationController::class, 'store'])->name('store');
+        Route::get('/exoneration/store', [ExonerationController::class, 'store'])->name('store');
         Route::post('/exoneration/create', [ExonerationController::class, 'create'])->name('create');
         Route::get('/exoneration/show/{exoneration}', [ExonerationController::class, 'show'])->name('show');
         Route::delete('/exoneration/{exoneration}',[ExonerationController::class, 'destroy'])->name('destroy');
@@ -45,7 +45,7 @@ Route::middleware([
 
     Route::name('document.')->group(function () {
         Route::get('/document/index', [DocumentController::class, 'index'])->name('index');
-        Route::post('/document/store', [DocumentController::class, 'store'])->name('store');
+        Route::get('/document/store', [DocumentController::class, 'store'])->name('store');
         Route::post('/document/create', [DocumentController::class, 'create'])->name('create');
         Route::post('/document/show/{document}', [DocumentController::class, 'show'])->name('show');
         Route::delete('/document/{docuemnt}',[DocumentController::class, 'destroy'])->name('destroy');
