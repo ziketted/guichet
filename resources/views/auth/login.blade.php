@@ -57,6 +57,13 @@
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Connectez-vous</button>
                     </div><br>
+
+                    <div class="col-12">
+                     
+                      <a href="{{ url('auth/google') }}" class="btn btn-danger w-100">
+                          Google
+                      </a>
+                    </div>
                    
                     <div class="col-12">
                       <p class="small mb-0">Vous n'avez pas de compte ? <a href="{{ route('register') }}">Creer un compte</a></p>
