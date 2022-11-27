@@ -217,7 +217,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ route('exoneration.store') }}">
             <i class="bi bi-circle"></i><span>Exonerations</span>
           </a>
         </li>
