@@ -11,11 +11,9 @@ class Notification extends Model
 
     protected $fillable = [
         'user_id',
-        'lettre',
-        'validite',
-        'autre_document',
+        'titre',
         'commentaires',
-        'statut', //Statut de l'enrolement : soumis, activé, annulé, expiré
+        'statut',
 
        ];
 

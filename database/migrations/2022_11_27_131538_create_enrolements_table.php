@@ -13,6 +13,7 @@ class CreateEnrolementsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('enrolements', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');

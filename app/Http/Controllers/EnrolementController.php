@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use auth;
 use App\Models\Enrolement;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreEnrolementRequest;
 use App\Http\Requests\UpdateEnrolementRequest;
 
@@ -16,6 +18,9 @@ class EnrolementController extends Controller
     public function index()
     {
         //
+
+        $enrolement= Enrolement::where('user_id',  auth()->user()->id)->get();
+        return view('enrolement.index', ['enrolements'=>$enrolement]);
     }
 
     /**
@@ -23,9 +28,36 @@ class EnrolementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(StoreEnrolementRequest $request, Enrolement $enrolement)
     {
         //
+        if ($request->hasFile('lettre')) {
+
+            $file = $request->file('lettre');
+            $filename = uniqid() . '_lettre_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+
+
+        }
+        if ($request->hasFile('autre_document')) {
+
+            $file = $request->file('autre_document');
+            $filename = uniqid() . '_bordereau_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+
+
+        }
+
+        $enrolement = auth()->user()->enrolementUser()->create($request->all());
+        $enrolement->save();
+        return redirect()->route('enrolement.index')->with('save', 'Opération effectuée avec succès.');;
+
+
+
     }
 
     /**
@@ -48,6 +80,7 @@ class EnrolementController extends Controller
     public function show(Enrolement $enrolement)
     {
         //
+
     }
 
     /**

@@ -13,7 +13,7 @@ class StoreEnrolementRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,20 @@ class StoreEnrolementRequest extends FormRequest
      */
     public function rules()
     {
+        return  [
+            'lettre'=>'required|mimes:pdf',
+            'validite',
+            'autre_document'=>'required|mimes:pdf',
+            'commentaires',
+        ];
+    }
+
+    public function messages()
+    {
         return [
-            //
+            'lettre.required' => 'Veuillez charger une lettre en format PDF',
+            'lettre.mimes' => 'Veuillez charger une lettre en format PDF',
+            'autre_document.required' => 'Veuillez charger un document en format PDF',
         ];
     }
 }
