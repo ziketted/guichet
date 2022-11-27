@@ -15,8 +15,7 @@ class CreateEnrolementsTable extends Migration
     {
         Schema::create('enrolements', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
             $table->string('lettre',300)->nullable();
             $table->string('validite')->default('2024');
             $table->string('commentaires')->nullable();
@@ -24,12 +23,11 @@ class CreateEnrolementsTable extends Migration
             $table->string('statut')->default('soumis');
             $table->timestamps();
             $table->softDeletes();
-
             $table->foreign('user_id')
-            ->references('id')
-            ->on('users')
-            ->onDelete('cascade');
-
+                    ->references('id')
+                    ->on('users')
+                    ->onDelete('restrict')
+                    ->unUpdate('restrict');
         });
     }
 
