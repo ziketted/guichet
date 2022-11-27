@@ -52,6 +52,7 @@ class EnrolementController extends Controller
 
         }
 
+
         $enrolement = auth()->user()->enrolementUser()->create($request->all());
         $enrolement->save();
         return redirect()->route('enrolement.index')->with('save', 'Opération effectuée avec succès.');;
@@ -66,9 +67,10 @@ class EnrolementController extends Controller
      * @param  \App\Http\Requests\StoreEnrolementRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEnrolementRequest $request)
+    public function store()
     {
         //
+        return view('enrolement.create');
     }
 
     /**
