@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,17 +29,13 @@ Route::middleware([
 ])->group(function () {
 
 
-    Route::prefix('requerant')->group(function () {
-        Route::get('/users', function () {
-            // Matches The "/admin/users" URL
-        });
+    Route::prefix('enrolement')->group(function () {
+        Route::get('/enrolement/index', [EnrolementController::class, 'index'])->name('index');
+        Route::post('/enrolement/create', [EnrolementController::class, 'create'])->name('create');
+        Route::post('/enrolement/show/', [EnrolementController::class, 'create'])->name('create');
     });
 
-    Route::prefix('requerant')->group(function () {
-        Route::get('/users', function () {
-            // Matches The "/admin/users" URL
-        });
-    });
+
 
 
     Route::get('/dashboard', function () {
