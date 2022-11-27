@@ -14,7 +14,7 @@ class AddTitreColumnsToExonerations extends Migration
     public function up()
     {
         Schema::table('exonerations', function (Blueprint $table) {
-            $table->string('titre',300);
+            $table->string('titre',300)->after('user_id');
 
         });
     }
