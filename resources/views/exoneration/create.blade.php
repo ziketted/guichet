@@ -10,14 +10,21 @@
                 <!-- General Form Elements -->
                 <form action="{{ route('exoneration.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
+                    
+                    
+                   
                     <div class="col-md-10">
-                        <div class="row mb-3">
-                            <label for="inputNumber" class="col-sm-10 col-form-label">Lettre à la Direction du FNPSS</label>
-                    <div class="col-md-8">
+                      <div class="form-floating">
+                          <input class="form-control" name="titre" type="text" id="formFile" required>
+                          <label for="floatingEmail">Description de la demande  d'exonération</label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-10">
                         <div class="mb-3 row">
-                            <label for="inputNumber" class="col-sm-3 col-form-label">Lettre à la Direction du FNPSS</label>
+                            <label for="inputNumber" class="col-sm-10 col-form-label">Lettre à la Direction du FNPSS</label>
                             <div class="col-sm-10">
-                              <input class="form-control" name="lettre" type="file" id="formFile">
+                              <input class="form-control" name="lettre" type="file" id="formFile" required>
                             </div>
                           </div>
                     </div>
