@@ -19,6 +19,8 @@ class Exoneration extends Model
         'facture',
         'affectation',
         'commentaire',
+        'type',
+        'statut',
         'user_id',
        ];
 }

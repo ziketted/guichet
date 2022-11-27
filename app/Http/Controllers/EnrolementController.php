@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use auth;
+use DateTime;
 use App\Models\Enrolement;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreEnrolementRequest;
@@ -28,9 +29,11 @@ class EnrolementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(StoreEnrolementRequest $request, Enrolement $enrolement)
+
+    public function create(Request $request, Enrolement $enrolement)
     {
         //
+
         if ($request->hasFile('lettre')) {
 
             $file = $request->file('lettre');
@@ -38,6 +41,7 @@ class EnrolementController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
+            $request->autre_document=$filename;
 
 
         }
@@ -48,13 +52,17 @@ class EnrolementController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-
-
+            $request->lettre=$filename;
         }
-
-
-        $enrolement = auth()->user()->enrolementUser()->create($request->all());
+        $now = new DateTime();
+        $year = $now->format("Y");
+        $enrolement->lettre=$request->lettre;
+        $enrolement->autre_document=$request->autre_document;
+        $enrolement->validite=$year+2;
+        $enrolement->commentaires=$request->commentaires;
+        $enrolement->user_id=auth()->user()->id;
         $enrolement->save();
+
         return redirect()->route('enrolement.index')->with('save', 'Opération effectuée avec succès.');;
 
 

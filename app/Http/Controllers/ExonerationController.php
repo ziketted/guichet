@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exoneration;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreExonerationRequest;
 use App\Http\Requests\UpdateExonerationRequest;
 
@@ -23,9 +24,10 @@ class ExonerationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request, Exoneration $exoneration)
     {
         //
+        
     }
 
     /**
@@ -34,9 +36,10 @@ class ExonerationController extends Controller
      * @param  \App\Http\Requests\StoreExonerationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreExonerationRequest $request)
+    public function store()
     {
         //
+        return view('exoneration.create');
     }
 
     /**
