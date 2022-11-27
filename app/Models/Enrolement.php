@@ -17,7 +17,7 @@ class Enrolement extends Model
         'validite',
         'autre_document',
         'commentaires',
-        'statut', //Statut de l'enrolement : soumis, activé, annulé, expiré
+        'statut', 
        ];
 
        public function user(){

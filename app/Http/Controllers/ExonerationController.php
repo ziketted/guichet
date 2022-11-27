@@ -31,28 +31,91 @@ class ExonerationController extends Controller
     {
         //
         if ($request->hasFile('lettre')) {
-
             $file = $request->file('lettre');
             $filename = uniqid() . '_lettre_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->autre_document=$filename;
+            $request->lettre=$filename;
         }
-        if ($request->hasFile('autre_document')) {
+        if ($request->hasFile('attestation')) {
 
-            $file = $request->file('autre_document');
-            $filename = uniqid() . '_bordereau_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+            $file = $request->file('attestation');
+            $filename = uniqid() . '_attestation_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->lettre=$filename;
+            $request->attestation=$filename;
         }
-        $now = new DateTime();
-        $year = $now->format("Y");
+
+        if ($request->hasFile('copie_avis')) {
+
+            $file = $request->file('copie_avis');
+            $filename = uniqid() . '_copie_avis_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            $request->copie_avis=$filename;
+        }
+
+        if ($request->hasFile('liste_colisage')) {
+
+            $file = $request->file('liste_colisage');
+            $filename = uniqid() . '_liste_colisage_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            $request->liste_colisage=$filename;
+        }
+        if ($request->hasFile('projet')) {
+
+            $file = $request->file('projet');
+            $filename = uniqid() . '_projet_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            $request->projet=$filename;
+        }
+
+        if ($request->hasFile('transport')) {
+
+            $file = $request->file('transport');
+            $filename = uniqid() . '_transport_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            $request->transport=$filename;
+        }
+
+        if ($request->hasFile('facture')) {
+
+            $file = $request->file('facture');
+            $filename = uniqid() . '_facture_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            $request->facture=$filename;
+        }
+        if ($request->hasFile('affectation')) {
+
+            $file = $request->file('affectation');
+            $filename = uniqid() . '_affectation_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            $request->affectation=$filename;
+        }
+
         $exoneration->lettre=$request->lettre;
-        $exoneration->autre_document=$request->autre_document;
-        $exoneration->validite=$year+2;
-        $exoneration->commentaires=$request->commentaires;
+        $exoneration->attestation=$request->attestation;
+        $exoneration->copie_avis=$request->copie_avis;
+        $exoneration->liste_colisage=$request->liste_colisage;
+        $exoneration->projet=$request->projet;
+        $exoneration->transport=$request->transport;
+        $exoneration->facture=$request->facture;
+        $exoneration->affectation=$request->affectation;
+        $exoneration->commentaire=$request->commentaire;
+        $exoneration->type=$request->type;
+        $exoneration->statut=$request->statut;
         $exoneration->user_id=auth()->user()->id;
         $exoneration->save();
 

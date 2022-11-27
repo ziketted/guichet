@@ -41,7 +41,7 @@ class EnrolementController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->autre_document=$filename;
+            $request->lettre=$filename;
 
 
         }
@@ -52,7 +52,7 @@ class EnrolementController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->lettre=$filename;
+            $request->autre_document=$filename;
         }
         $now = new DateTime();
         $year = $now->format("Y");

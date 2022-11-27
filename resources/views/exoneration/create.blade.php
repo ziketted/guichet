@@ -1,18 +1,21 @@
 @include('header')
 <main id="main" class="main">
-    <section class="section align-items-center justify-content-center py-4">
-        <div class="row align-items-center justify-content-center py-4">
+    <section class="py-4 section align-items-center justify-content-center">
+        <div class="py-4 row align-items-center justify-content-center">
           <div class="col-lg-8">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Demande de certificat d'exoneration au FNPSS</h5>
-    
+
                 <!-- General Form Elements -->
                 <form action="{{ route('exoneration.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-10">
                         <div class="row mb-3">
                             <label for="inputNumber" class="col-sm-10 col-form-label">Lettre à la Direction du FNPSS</label>
+                    <div class="col-md-8">
+                        <div class="mb-3 row">
+                            <label for="inputNumber" class="col-sm-3 col-form-label">Lettre à la Direction du FNPSS</label>
                             <div class="col-sm-10">
                               <input class="form-control" name="lettre" type="file" id="formFile">
                             </div>
@@ -93,18 +96,18 @@
                             <label for="floatingEmail">Commentaires</label>
                         </div>
                     </div>
-                
-                
+
+
                     <div class="col-sm-10">
                       <button type="submit" class="btn btn-primary">Demander le certificat d'exonération</button>
                     </div>
-                  
-    
+
+
                 </form><!-- End General Form Elements -->
-    
+
               </div>
             </div>
-    
+
           </div>
         </div>
     </section>
