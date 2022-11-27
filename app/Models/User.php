@@ -27,6 +27,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'google_id',
+        'role_id',
     ];
 
     /**
@@ -58,4 +60,19 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function documentUser(){
+        return $this->hasMany(\App\Models\Document::class);
+    }
+
+    public function enrolementUser(){
+        return $this->hasMany(\App\Models\Enrolement::class);
+    }
+
+    public function exonerationUser(){
+        return $this->hasMany(\App\Models\Exoneration::class);
+    }
+    public function roleUser(){
+        return $this->hasMany(\App\Models\Role::class);
+    }
 }
