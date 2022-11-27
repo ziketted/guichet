@@ -105,6 +105,7 @@ class ExonerationController extends Controller
             $request->affectation=$filename;
         }
 
+        $exoneration->titre=$request->titre;
         $exoneration->lettre=$request->lettre;
         $exoneration->attestation=$request->attestation;
         $exoneration->copie_avis=$request->copie_avis;

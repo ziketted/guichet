@@ -10,6 +10,8 @@ class Exoneration extends Model
 {
     use HasFactory,SoftDeletes;
     protected $fillable = [
+
+        'titre',
         'lettre',
         'attestation',
         'copie_avis',
