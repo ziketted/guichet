@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Yummy Bootstrap Template - Index</title>
+  <title>Fonds national de promotion et de service social</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -77,7 +77,13 @@
         </ul>
       </nav><!-- .navbar -->
 
-      <a class="btn-book-a-table" href="{{ route('login') }}">Connexion</a>
+      @auth
+      <a class="btn-book-a-table" href="{{ route('dashbaord') }}">Mon compte</a>
+      @endauth
+      @guest
+      <a class="btn-book-a-table" href="{{ route('login') }}">Connexion à votre compte</a>
+      @endguest
+      
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -1055,23 +1061,15 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Yummy</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>Fonds national de promotion et de service social</span></strong>. Tous les droits sont reservés
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      
     </div>
 
   </footer><!-- End Footer -->
   <!-- End Footer -->
 
   <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="{{ asset('assets-home/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
