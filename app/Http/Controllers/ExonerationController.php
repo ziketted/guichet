@@ -18,7 +18,16 @@ class ExonerationController extends Controller
     public function index()
     {
         $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
-        return view('exoneration.index', ['exonerations'=>$exoneration]);
+        $importationCount= Exoneration::where('user_id',  auth()->user()->id)
+                                        ->where('type', 'Importation')
+                                        ->count();
+
+        $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
+                                        ->where('type', 'Interieur')
+                                        ->count();
+        return view('exoneration.index', ['exonerations'=>$exoneration,
+                                          'nombreDemande'=>$importationCount,
+                                          'nombreInterieur'=>$interieurCount, ]);
         //
     }
 
