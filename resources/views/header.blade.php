@@ -173,18 +173,19 @@
             </a>
           </li>
           <li>
+            <form action="{{ route('logout') }}" method="POST" >
+              @csrf
+              <button class="dropdown-item d-flex align-items-center">
+                    <i class="bi-box-arrow-right"></i>
+                    <span>Deconnexion</span>
+              </button>
+            </form>
+          </li>
+          <li>
             <hr class="dropdown-divider">
           </li>
 
-          <li>
-            <a class="dropdown-item d-flex align-items-center" href="">
-              <i class="bi bi-box-arrow-right"></i>
-              <span>Deconnexion</span>
-            </a>
-            <form action="{{ route('logout') }}" id="logout" method="POST" class="d-none">
-                  @csrf
-            </form>
-          </li>
+          
 
         </ul><!-- End Profile Dropdown Items -->
       </li><!-- End Profile Nav -->
