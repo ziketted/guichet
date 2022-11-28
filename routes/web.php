@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\EnrolementController;
-use App\Http\Controllers\ExonerationController;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\AdmingeneController;
+use App\Http\Controllers\EnrolementController;
+use App\Http\Controllers\ExonerationController;
 use App\Http\Controllers\ImportationController;
 use App\Http\Controllers\NotificationController;
-use App\Http\Controllers\RoleController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -76,5 +77,5 @@ Route::middleware([
         Route::post('/role/show/{role}', [RoleController::class, 'show'])->name('show');
         });
 
-        Route::get('/dashboard', [EnrolementController::class, 'index'])->name('dashbaord');
+        Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
 });

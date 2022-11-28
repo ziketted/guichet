@@ -15,7 +15,7 @@
     <section class="section dashboard">
       <div class="row">
 
-       
+
 
         <!-- Right side columns -->
         <div class="col-lg-6">
@@ -30,7 +30,7 @@
                 <div class="activity-item d-flex">
                   <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
-                    <a href="#" class="fw-bold text-dark">Enrolement de l'année : {{ $enrolement->validite }}  </a> 
+                    <a href="#" class="fw-bold text-dark">Enrolement de l'année : {{ $enrolement->validite }}  </a>
                   </div>
                 </div><!-- End activity item-->
                 @endforeach
