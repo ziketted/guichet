@@ -32,7 +32,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="pt-1 text-success small fw-bold">12%</span> <span class="pt-2 text-muted small ps-1">increase</span>
 
                     </div>
                   </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="pt-1 text-success small fw-bold">8%</span> <span class="pt-2 text-muted small ps-1">increase</span>
 
                     </div>
                   </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                      <span class="pt-1 text-danger small fw-bold">12%</span> <span class="pt-2 text-muted small ps-1">decrease</span>
 
                     </div>
                   </div>
@@ -156,7 +156,7 @@
 
             <!-- Recent Sales -->
             <div class="col-12">
-              <div class="card recent-sales overflow-auto">
+              <div class="overflow-auto card recent-sales">
 
                 <div class="card-body">
                   <h5 class="card-title">Recent Sales <span>| Today</span></h5>
@@ -217,9 +217,9 @@
 
             <!-- Top Selling -->
             <div class="col-12">
-              <div class="card top-selling overflow-auto">
+              <div class="overflow-auto card top-selling">
 
-                <div class="card-body pb-0">
+                <div class="pb-0 card-body">
                   <h5 class="card-title">Top Selling <span>| Today</span></h5>
 
                   <table class="table table-borderless">
@@ -345,8 +345,8 @@
 
           <!-- Budget Report -->
           <div class="card">
-            
-            <div class="card-body pb-0">
+
+            <div class="pb-0 card-body">
               <h5 class="card-title">Budget Report <span>| This Month</span></h5>
 
               <div id="budgetChart" style="min-height: 400px;" class="echart"></div>
@@ -407,8 +407,8 @@
 
           <!-- Website Traffic -->
           <div class="card">
-        
-            <div class="card-body pb-0">
+
+            <div class="pb-0 card-body">
               <h5 class="card-title">Website Traffic <span>| Today</span></h5>
 
               <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
@@ -473,36 +473,36 @@
 
           <!-- News & Updates Traffic -->
           <div class="card">
-    
-            <div class="card-body pb-0">
+
+            <div class="pb-0 card-body">
               <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
 
               <div class="news">
-                <div class="post-item clearfix">
+                <div class="clearfix post-item">
                   <img src="assets/img/news-1.jpg" alt="">
                   <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
                   <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
                 </div>
 
-                <div class="post-item clearfix">
+                <div class="clearfix post-item">
                   <img src="assets/img/news-2.jpg" alt="">
                   <h4><a href="#">Quidem autem et impedit</a></h4>
                   <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
                 </div>
 
-                <div class="post-item clearfix">
+                <div class="clearfix post-item">
                   <img src="assets/img/news-3.jpg" alt="">
                   <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
                   <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
                 </div>
 
-                <div class="post-item clearfix">
+                <div class="clearfix post-item">
                   <img src="assets/img/news-4.jpg" alt="">
                   <h4><a href="#">Laborum corporis quo dara net para</a></h4>
                   <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
                 </div>
 
-                <div class="post-item clearfix">
+                <div class="clearfix post-item">
                   <img src="assets/img/news-5.jpg" alt="">
                   <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
                   <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>

@@ -78,5 +78,8 @@ Route::middleware([
         Route::post('/role/show/{role}', [RoleController::class, 'show'])->name('show');
         });
 
+        //Admin profile
         Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
+        Route::get('/profile', [AdmingeneController::class, 'profle'])->name('profile');
+
 });

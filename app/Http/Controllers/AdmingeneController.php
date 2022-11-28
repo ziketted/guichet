@@ -16,6 +16,11 @@ class AdmingeneController extends Controller
         //
         return view('dashboard-general');
     }
+    public function profile()
+    {
+        //
+        return view('profile');
+    }
 
     /**
      * Show the form for creating a new resource.

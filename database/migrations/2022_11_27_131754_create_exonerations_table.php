@@ -26,7 +26,7 @@ class CreateExonerationsTable extends Migration
             $table->string('affectation',300)->nullable();
             $table->string('commentaire',300)->nullable();
             $table->string('type',300)->nullable();
-            $table->string('statut',300)->nullable();
+            $table->string('statut',300)->default('soumis');
             $table->timestamps();
             $table->softDeletes();
 
