@@ -61,8 +61,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
-    public function documentUser(){
-        return $this->hasMany(\App\Models\Document::class);
+    public function profileUser(){
+        return $this->hasMany(\App\Models\Profile::class);
     }
 
     public function enrolementUser(){

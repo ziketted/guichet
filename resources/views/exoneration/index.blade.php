@@ -99,7 +99,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($exonerations as $exoneration )
+                        @forelse ($exonerations as $exoneration )
 
 
                       <tr>
@@ -124,7 +124,10 @@
                                 </div>
                               </div>
                         </td>
-                        @endforeach
+                         @empty
+                              <p class="p-1 text-white bg-secondary">Aucune demande n'a été soumise.</p>
+                         @endforelse
+
                       </tr>
 
                     </tbody>
@@ -163,14 +166,14 @@
                   </div>
                 </div><!-- End activity item-->
 
-             
+
 
               </div>
 
             </div>
           </div><!-- End Recent Activity -->
 
-          
+
 
         </div><!-- End Right side columns -->
 

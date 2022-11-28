@@ -26,14 +26,16 @@
               <h5 class="card-title">Enrolements <span>|</span></h5>
 
               <div class="activity">
-                @foreach ($enrolements as $enrolement )
+                @forelse ($enrolements as $enrolement )
                 <div class="activity-item d-flex">
                   <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
                   <div class="activity-content">
                     <a href="#" class="fw-bold text-dark">Enrolement de l'année : {{ $enrolement->validite }}  </a>
                   </div>
                 </div><!-- End activity item-->
-                @endforeach
+                @empty
+                   <p class="p-1 text-white bg-secondary">Aucune enrolement est encours...</p>
+                @endforelse
               </div>
             </div>
           </div><!-- End Recent Activity -->

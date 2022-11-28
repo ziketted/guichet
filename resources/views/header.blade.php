@@ -99,7 +99,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="{{url('/aide')}}">
               <i class="bi bi-question-circle"></i>
               <span>Aide</span>
             </a>
@@ -117,7 +117,7 @@
             <hr class="dropdown-divider">
           </li>
 
-          
+
 
         </ul><!-- End Profile Dropdown Items -->
       </li><!-- End Profile Nav -->
@@ -154,7 +154,7 @@
             <i class="bi bi-circle"></i><span>Exonerations</span>
           </a>
         </li>
-        
+
       </ul>
     </li><!-- End Components Nav -->
 
@@ -166,7 +166,7 @@
     </li><!-- End Profile Page Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#">
+      <a class="nav-link collapsed" href="{{url('/aide')}}">
         <i class="bi bi-question-circle"></i>
         <span>Aide</span>
       </a>

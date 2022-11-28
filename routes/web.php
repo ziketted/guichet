@@ -4,12 +4,13 @@ use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\GoogleController;
-use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdmingeneController;
 use App\Http\Controllers\EnrolementController;
 use App\Http\Controllers\ExonerationController;
 use App\Http\Controllers\ImportationController;
 use App\Http\Controllers\NotificationController;
+use Symfony\Component\HttpKernel\EventListener\ProfilerListener;
 
 Route::get('/', function () {
     return view('welcome');
@@ -45,12 +46,13 @@ Route::middleware([
 
         });
 
-    Route::name('document.')->group(function () {
-        Route::get('/document/index', [DocumentController::class, 'index'])->name('index');
-        Route::get('/document/store', [DocumentController::class, 'store'])->name('store');
-        Route::post('/document/create', [DocumentController::class, 'create'])->name('create');
-        Route::post('/document/{document}/show', [DocumentController::class, 'show'])->name('show');
-        Route::delete('/document/{docuemnt}',[DocumentController::class, 'destroy'])->name('destroy');
+    Route::name('profile.')->group(function () {
+        Route::get('/profile/index', [ProfileController::class, 'index'])->name('index');
+        Route::get('/profile/{profile}/edit/', [ProfileController::class, 'edit'])->name('edit');
+        Route::get('/profile/store', [ProfileController::class, 'store'])->name('store');
+        Route::post('/profile/create', [ProfileController::class, 'create'])->name('create');
+        Route::post('/profile/{profile}/show', [ProfileController::class, 'show'])->name('show');
+        Route::delete('/profile/{profile}',[ProfileController::class, 'destroy'])->name('destroy');
 
         });
 
@@ -82,4 +84,8 @@ Route::middleware([
         Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
         Route::get('/profile', [AdmingeneController::class, 'profle'])->name('profile');
 
+        //Aide lien
+        Route::get('/aide', function () {
+            return view('aide');
+        });
 });
