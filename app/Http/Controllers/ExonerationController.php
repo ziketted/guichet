@@ -166,7 +166,7 @@ class ExonerationController extends Controller
     public function edit($exoneration)
     {
         $exonerationFind=Exoneration::findOrFail($exoneration);
-         return view('exoneration.edit', ['exonerations'=>$exonerationFind]);
+        return view('exoneration.edit', ['exonerations'=>$exonerationFind]);
     }
 
     /**

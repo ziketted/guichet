@@ -24,11 +24,11 @@
               <div class="card info-card sales-card">
 
                 <div class="card-body">
-                  <h5 class="card-title"> <span>Importation</span></h5>
+                  <h5 class="card-title"> <span>Exonération à l'importation</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                      <i class="bi bi-bag-check"></i>
                     </div>
                     <div class="ps-3">
                       <h6>{{$nombreDemande}}</h6>
@@ -41,15 +41,15 @@
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-8 col-md-8">
               <div class="card info-card revenue-card">
 
                 <div class="card-body">
-                  <h5 class="card-title"><span> Intérieure</span></h5>
+                  <h5 class="card-title"><span>Exonération à l'interieur du pays</span></h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-cart"></i>
+                      <i class="bi bi-bag-check-fill"></i>
                     </div>
                     <div class="ps-3">
                       <h6>{{$nombreInterieur}}</h6>
@@ -61,7 +61,7 @@
               </div>
             </div><!-- End Revenue Card -->
 
-            <!-- Customers Card -->
+            {{-- <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
               <div class="card info-card customers-card">
@@ -82,7 +82,7 @@
                 </div>
               </div>
 
-            </div><!-- End Customers Card -->
+            </div><!-- End Customers Card --> --}}
 
             <!-- Recent Sales -->
             <div class="col-12">
@@ -142,11 +142,18 @@
         <!-- Right side columns -->
         <div class="col-lg-4">
 
+          <div class="activity-item d-flex">
+            <a href="{{ route('exoneration.store') }}" class="btn btn-success">
+                <i class="bi bi-check-circle"></i>
+                Nouvelle demande d'exoneration
+            </a>
+          </div><br>
+
           <!-- Recent Activity -->
           <div class="card">
 
             <div class="card-body">
-              <h5 class="card-title">Recent Activity <span>| Today</span></h5>
+              <h5 class="card-title">Suivi de la demande en cours</span></h5>
 
               <div class="activity">
 
@@ -158,58 +165,14 @@
                   </div>
                 </div><!-- End activity item-->
 
-                <div class="activity-item d-flex">
-                  <div class="activite-label">56 min</div>
-                  <i class='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                  <div class="activity-content">
-                    Voluptatem blanditiis blanditiis eveniet
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 hrs</div>
-                  <i class='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                  <div class="activity-content">
-                    Voluptates corrupti molestias voluptatem
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">1 day</div>
-                  <i class='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                  <div class="activity-content">
-                    Tempore autem saepe <a href="#" class="fw-bold text-dark">occaecati voluptatem</a> tempore
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">2 days</div>
-                  <i class='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                  <div class="activity-content">
-                    Est sit eum reiciendis exercitationem
-                  </div>
-                </div><!-- End activity item-->
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">4 weeks</div>
-                  <i class='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                  <div class="activity-content">
-                    Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                  </div>
-                </div><!-- End activity item-->
+             
 
               </div>
 
             </div>
           </div><!-- End Recent Activity -->
 
-          <div class="activity-item d-flex">
-
-            <a href="{{ route('exoneration.store') }}" class="btn btn-success">
-                <i class="bi bi-check-circle"></i>
-                Nouvelle demande d'exoneration
-            </a>
-          </div>
+          
 
         </div><!-- End Right side columns -->
 

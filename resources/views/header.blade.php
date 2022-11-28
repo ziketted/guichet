@@ -133,7 +133,7 @@
   <ul class="sidebar-nav" id="sidebar-nav">
 
     <li class="nav-item">
-      <a class="nav-link " href="{{ route('enrolement.index') }}">
+      <a class="nav-link " href="/dashboard">
         <i class="bi bi-grid"></i>
         <span>Tableau de bord</span>
       </a>
