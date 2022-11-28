@@ -32,7 +32,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>145</h6>
-                      <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="pt-1 text-success small fw-bold">12%</span> <span class="pt-2 text-muted small ps-1">increase</span>
 
                     </div>
                   </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>$3,264</h6>
-                      <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+                      <span class="pt-1 text-success small fw-bold">8%</span> <span class="pt-2 text-muted small ps-1">increase</span>
 
                     </div>
                   </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="ps-3">
                       <h6>1244</h6>
-                      <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+                      <span class="pt-1 text-danger small fw-bold">12%</span> <span class="pt-2 text-muted small ps-1">decrease</span>
 
                     </div>
                   </div>
@@ -88,7 +88,7 @@
 
             <!-- Recent Sales -->
             <div class="col-12">
-              <div class="card recent-sales overflow-auto">
+              <div class="overflow-auto card recent-sales">
 
                 <div class="card-body">
                   <h5 class="card-title">Les demandes d'exonération <span>| Today</span></h5>
@@ -103,25 +103,34 @@
                       </tr>
                     </thead>
                     <tbody>
+                        @foreach ($exonerations as $exoneration )
+
+
                       <tr>
-                        <td>Brandon Jacob</td>
-                        <td>2015</td>
-                        <td><span class="badge bg-success">Terminée</span></td>
+                        <td>{{$exoneration->titre}}</td>
+                        <td>{{$exoneration->created_at}}</td>
+                        <td><span class="badge bg-success">{{$exoneration->statut}}</span></td>
                         <td>
-                            <div class="row x-gap-10 y-gap-10 items-center">
+                            <div class="items-center row x-gap-10 y-gap-10">
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-primary"><i class="bi bi-eye-fill"></i></button>
+                                    <a href="{{route('exoneration.show', $exoneration->id)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-warning"><i class="bi bi-pen-fill"></i></button>
+                                    <a href="{{route('exoneration.edit', $exoneration->id)}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
                                 </div>
                                 <div class="col-auto">
-                                    <button type="button" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                    <form action="{{ route('exoneration.destroy', $exoneration->id) }}"
+                                        method="POST" >
+                                        @method('DELETE')
+                                        @csrf
+                                        <button href="{{route('exoneration.destroy', $exoneration->id)}}" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
+                                    </form>
                                 </div>
                               </div>
                         </td>
+                        @endforeach
                       </tr>
-                    
+
                     </tbody>
                   </table>
 
@@ -192,12 +201,12 @@
                 </div><!-- End activity item-->
 
               </div>
-              
+
             </div>
           </div><!-- End Recent Activity -->
 
           <div class="activity-item d-flex">
-            
+
             <a href="{{ route('exoneration.store') }}" class="btn btn-success">
                 <i class="bi bi-check-circle"></i>
                 Nouvelle demande d'exoneration
