@@ -178,7 +178,43 @@
         <span>Retour sur le site</span>
       </a>
     </li><!-- End F.A.Q Page Nav -->
+<hr>
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+        <i class="bi bi-back"></i>
+        <span>Tableau de bord Admin. </span>
+        </a>
+    </li><!-- End F.A.Q Page Nav -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+        <i class="bi bi-person"></i>
+        <span>Nos requerants </span>
+        </a>
+    </li><!-- End F.A.Q Page Nav -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Dossier à valider</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="tables-general.html">
+              <i class="bi bi-circle"></i><span>Enrolement</span>
+            </a>
+          </li>
+          <li>
+            <a href="tables-data.html">
+              <i class="bi bi-circle"></i><span>Exonérations</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Tables Nav -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+        <i class="bi bi-folder"></i>
+        <span>Licences en cours...</span>
+        </a>
+    </li><!-- End F.A.Q Page Nav -->
   </ul>
 
 </aside><!-- End Sidebar-->
