@@ -130,10 +130,10 @@
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
-    @if (auth()->user()->role_id == '1')
+
 
     <ul class="sidebar-nav" id="sidebar-nav">
-
+        @if (auth()->user()->role_id == '2')
         <li class="nav-item">
         <a class="nav-link " href="/dashboard">
             <i class="bi bi-grid"></i>
@@ -223,9 +223,10 @@
             <span>Notifiez le requerant</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
+        @endif
     </ul>
 
-    @endif
+
 
 </aside><!-- End Sidebar-->
 @endauth
