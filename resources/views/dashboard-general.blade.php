@@ -113,36 +113,36 @@
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
                         <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">EXONERATION INPORTATION</a></td>
+                        <td><a href="#" class="text-primary">IMPORTATION</a></td>
                         <td>25-11-2022 </td>
                         <td><span class="badge bg-success">Soumis</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
                         <td>Demande du mois de Decembre</td>
-                        <td><a href="#" class="text-primary">EXONERATION</a></td>
-                        <td>25-11-2022 </td>
+                        <td><a href="#" class="text-primary">INTERIEUR DU PAYS</a></td>
+                        <td>25-11-2021 </td>
                         <td><span class="badge bg-success">Soumis</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
                         <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">EXONERATION</a></td>
-                        <td>25-11-2022 </td>
+                        <td><a href="#" class="text-primary">INTERIEUR DU PAYS</a></td>
+                        <td>25-05-2022 </td>
                         <td><span class="badge bg-success">Soumis</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
                         <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">EXONERATION</a></td>
-                        <td>25-11-2022 </td>
+                        <td><a href="#" class="text-primary">IMPORTATION</a></td>
+                        <td>25-04-2022 </td>
                         <td><span class="badge bg-success">Soumis</span></td>
                       </tr>
                       <tr>
                         <th scope="row"><a href="#">#2457</a></th>
                         <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">EXONERATION</a></td>
-                        <td>25-11-2022 </td>
+                        <td><a href="#" class="text-primary">INTERIEUR DU PAYS</a></td>
+                        <td>25-01-2022 </td>
                         <td><span class="badge bg-success">Soumis</span></td>
                       </tr>
                     </tbody>
