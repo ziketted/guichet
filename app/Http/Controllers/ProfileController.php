@@ -57,7 +57,7 @@ class ProfileController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Document  $document
+     * @param  \App\Models\Do cument  $document
      * @return \Illuminate\Http\Response
      */
     public function edit(Profile $profile)
@@ -85,6 +85,6 @@ class ProfileController extends Controller
      */
     public function destroy(Profile $document)
     {
-        //
+
     }
 }

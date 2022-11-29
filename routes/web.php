@@ -83,7 +83,7 @@ Route::middleware([
 
         //Admin profile
         Route::name('admin.')->group(function () {
-            Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
+
             Route::get('/profile', [AdmingeneController::class, 'profle'])->name('profile');
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
             Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
@@ -94,4 +94,5 @@ Route::middleware([
         Route::get('/aide', function () {
             return view('aide');
         });
+        Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
 });
