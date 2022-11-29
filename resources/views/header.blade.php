@@ -40,6 +40,7 @@
 <body>
   <!-- ======= Header ======= -->
 @auth
+
 <header id="header" class="header fixed-top d-flex align-items-center">
 
   <div class="d-flex align-items-center justify-content-between">
@@ -129,99 +130,102 @@
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
+    @if (auth()->user()->role_id == '1')
 
-  <ul class="sidebar-nav" id="sidebar-nav">
+    <ul class="sidebar-nav" id="sidebar-nav">
 
-    <li class="nav-item">
-      <a class="nav-link " href="/dashboard">
-        <i class="bi bi-grid"></i>
-        <span>Tableau de bord</span>
-      </a>
-    </li><!-- End Dashboard Nav -->
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-menu-button-wide"></i><span>Mes demandes</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="{{ route('enrolement.index') }}">
-            <i class="bi bi-circle"></i><span>Enrolements</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{ route('exoneration.index') }}">
-            <i class="bi bi-circle"></i><span>Exonerations</span>
-          </a>
-        </li>
-
-      </ul>
-    </li><!-- End Components Nav -->
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('profile.index') }}">
-        <i class="bi bi-person"></i>
-        <span>Profil</span>
-      </a>
-    </li><!-- End Profile Page Nav -->
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="{{url('/aide')}}">
-        <i class="bi bi-question-circle"></i>
-        <span>Aide</span>
-      </a>
-    </li><!-- End F.A.Q Page Nav -->
-
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="/">
-        <i class="bi bi-back"></i>
-        <span>Retour sur le site</span>
-      </a>
-    </li><!-- End F.A.Q Page Nav -->
-<hr>
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="/">
-        <i class="bi bi-back"></i>
-        <span>Tableau de bord Admin. </span>
+        <li class="nav-item">
+        <a class="nav-link " href="/dashboard">
+            <i class="bi bi-grid"></i>
+            <span>Tableau de bord</span>
         </a>
-    </li><!-- End F.A.Q Page Nav -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="/">
-        <i class="bi bi-person"></i>
-        <span>Nos requerants </span>
+        </li><!-- End Dashboard Nav -->
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-menu-button-wide"></i><span>Mes demandes</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-    </li><!-- End F.A.Q Page Nav -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Dossier à valider</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>Enrolement</span>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+            <a href="{{ route('enrolement.index') }}">
+                <i class="bi bi-circle"></i><span>Enrolements</span>
             </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <i class="bi bi-circle"></i><span>Exonérations</span>
+            </li>
+            <li>
+            <a href="{{ route('exoneration.index') }}">
+                <i class="bi bi-circle"></i><span>Exonerations</span>
             </a>
-          </li>
+            </li>
+
         </ul>
-      </li><!-- End Tables Nav -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="/">
-        <i class="bi bi-folder"></i>
-        <span>Licences en cours...</span>
+        </li><!-- End Components Nav -->
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('profile.index') }}">
+            <i class="bi bi-person"></i>
+            <span>Profil</span>
         </a>
-    </li><!-- End F.A.Q Page Nav -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="/">
-        <i class="bi bi-bell"></i>
-        <span>Notifiez le requerant</span>
+        </li><!-- End Profile Page Nav -->
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="{{url('/aide')}}">
+            <i class="bi bi-question-circle"></i>
+            <span>Aide</span>
         </a>
-    </li><!-- End F.A.Q Page Nav -->
-  </ul>
+        </li><!-- End F.A.Q Page Nav -->
+
+        <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+            <i class="bi bi-back"></i>
+            <span>Retour sur le site</span>
+        </a>
+        </li><!-- End F.A.Q Page Nav -->
+        <hr>
+        @else
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/">
+            <i class="bi bi-back"></i>
+            <span>Tableau de bord Admin. </span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/">
+            <i class="bi bi-person"></i>
+            <span>Nos requerants </span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+            <i class="bi bi-layout-text-window-reverse"></i><span>Dossier à valider</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+            <li>
+                <a href="tables-general.html">
+                <i class="bi bi-circle"></i><span>Enrolement</span>
+                </a>
+            </li>
+            <li>
+                <a href="tables-data.html">
+                <i class="bi bi-circle"></i><span>Exonérations</span>
+                </a>
+            </li>
+            </ul>
+        </li><!-- End Tables Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/">
+            <i class="bi bi-folder"></i>
+            <span>Licences en cours...</span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="/">
+            <i class="bi bi-bell"></i>
+            <span>Notifiez le requerant</span>
+            </a>
+        </li><!-- End F.A.Q Page Nav -->
+    </ul>
+
+    @endif
 
 </aside><!-- End Sidebar-->
 @endauth

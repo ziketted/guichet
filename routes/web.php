@@ -27,8 +27,6 @@ Route::middleware([
     'verified'
 ])->group(function () {
 
-
-
     Route::name('enrolement.')->group(function () {
         Route::get('/enrolement/index', [EnrolementController::class, 'index'])->name('index');
         Route::get('/enrolement/store', [EnrolementController::class, 'store'])->name('store');
@@ -40,6 +38,7 @@ Route::middleware([
     Route::name('exoneration.')->group(function () {
         Route::get('/exoneration/index', [ExonerationController::class, 'index'])->name('index');
         Route::get('/exoneration/store', [ExonerationController::class, 'store'])->name('store');
+        Route::post('/exoneration/update', [ExonerationController::class, 'update'])->name('update');
         Route::get('/exoneration/{exoneration}/edit/', [ExonerationController::class, 'edit'])->name('edit');
         Route::post('/exoneration/create', [ExonerationController::class, 'create'])->name('create');
         Route::get('/exoneration/{exoneration}/show', [ExonerationController::class, 'show'])->name('show');
@@ -71,7 +70,7 @@ Route::middleware([
         Route::get('/notification/index', [NotificationController::class, 'index'])->name('index');
         Route::post('/notification/store', [NotificationController::class, 'store'])->name('store');
         Route::post('/notification/create', [NotificationController::class, 'create'])->name('create');
-        Route::delete('/notification/{notifi}',[Notification::class, 'destroy'])->name('destroy');
+        Route::delete('/notification/{notification}',[NotificationController::class, 'destroy'])->name('destroy');
         Route::post('/notification/show/{notification}', [NotificationController::class, 'show'])->name('show');
         });
 
