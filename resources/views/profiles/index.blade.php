@@ -31,7 +31,7 @@
                       <i class="bi bi-file-person"></i>
                     </div>
                     <div class="ps-3">
-                        <a href="">
+                        <a href="{{ route('profile.edit') }}">
                           <button type="button" class="btn btn-outline-danger btn-sm">Voir plus</button>
                         </a>
                     </div>
