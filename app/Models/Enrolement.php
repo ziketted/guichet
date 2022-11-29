@@ -17,7 +17,10 @@ class Enrolement extends Model
         'validite',
         'autre_document',
         'commentaires',
-        'statut', 
+        'statut',
+        //attribut complémentaire pour le design.
+        'etat',
+        'couleur',
        ];
 
        public function user(){
@@ -25,4 +28,20 @@ class Enrolement extends Model
         return $this->belongsTo(\App\Models\User::class);
 
     }
+
+    public function getCouleurAttribute($value){
+
+
+        if ($this->statut == 'soumis') {
+            $value='warning';
+            $this->etat='En attente de validation';
+        }else{
+            $value='success';
+            $this->etat='activé';
+        }
+        return $value;
+
+    }
+
+
 }

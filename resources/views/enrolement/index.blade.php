@@ -27,12 +27,21 @@
 
               <div class="activity">
                 @forelse ($enrolements as $enrolement )
-                <div class="activity-item d-flex">
-                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                  <div class="activity-content">
-                    <a href="#" class="fw-bold text-dark">Enrolement de l'année : {{ $enrolement->validite }}  </a>
-                  </div>
-                </div><!-- End activity item-->
+                    <div class="activity-item d-flex">
+                    <i class='bi bi-circle-fill activity-badge text-{{$enrolement->couleur}} align-self-start'></i>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="activity-content">
+                                <a href="#" class="fw-bold text-dark">Enrolement de l'année : {{ $enrolement->validite }}  </a>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <span class="badge bg-{{$enrolement->couleur}}">{{$enrolement->etat}}</span>
+                        </div>
+                    </div>
+
+
+                </div><!-- End activity i tem-->
                 @empty
                    <p class="p-1 text-white bg-secondary">Aucune enrolement est encours...</p>
                 @endforelse

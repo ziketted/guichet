@@ -215,6 +215,12 @@
         <span>Licences en cours...</span>
         </a>
     </li><!-- End F.A.Q Page Nav -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/">
+        <i class="bi bi-bell"></i>
+        <span>Notifiez le requerant</span>
+        </a>
+    </li><!-- End F.A.Q Page Nav -->
   </ul>
 
 </aside><!-- End Sidebar-->

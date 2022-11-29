@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enrolement;
+use App\Models\Exoneration;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,6 +17,12 @@ class AdminController extends Controller
     public function index()
     {
         //
+        $requerant= DB::table('users')
+        ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
+        ->select('users.*', 'profiles.responsable_nom', 'profiles.province', 'profiles.domaine')
+        ->where('users.id','<>',auth()->user()->id)
+        ->get();
+        return view('admin.index', [ 'requerants'=>$requerant]);
     }
 
     /**
@@ -43,9 +52,16 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($requerant)
     {
-        //
+        //On utilisera Requerant.blade.php
+        $requerants= DB::table('users')
+                        ->join('documents', 'users.id', '=', 'documents.user_id')
+                        ->select('users.email','users.name', 'documents.*')
+                        ->where('users.id','=',$requerant) /*   */
+                        ->get();
+
+        return view('dashboard.show', ['requerants'=>$requerants]);
     }
 
     /**
@@ -80,5 +96,34 @@ class AdminController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    //Validation d'un enrolement
+    public function valider_enrolement(){
+         Enrolement::where('user_id', auth()->user()->id)
+        ->update([
+            'statut' => 'activé',
+        ]);
+    }
+    public function annuler_enrolement(){
+         Enrolement::where('user_id', auth()->user()->id)
+        ->update([
+            'statut' => 'annulé',
+        ]);
+    }
+
+    //Validation d'une exonération
+    public function valider_exoneration(){
+        Exoneration::where('user_id', auth()->user()->id)
+       ->update([
+           'statut' => 'activé',
+        ]);
+    }
+    public function annuler_exoneration(){
+        Exoneration::where('user_id', auth()->user()->id)
+       ->update([
+            'statut' => 'annulé',
+        ]);
     }
 }
