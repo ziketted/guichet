@@ -133,7 +133,7 @@
 
 
     <ul class="sidebar-nav" id="sidebar-nav">
-        @if (auth()->user()->role_id == '2')
+        @if (auth()->user()->role_id == '1')
         <li class="nav-item">
         <a class="nav-link " href="/dashboard">
             <i class="bi bi-grid"></i>
