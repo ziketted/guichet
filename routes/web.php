@@ -82,8 +82,13 @@ Route::middleware([
         });
 
         //Admin profile
-        Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
-        Route::get('/profile', [AdmingeneController::class, 'profle'])->name('profile');
+        Route::name('admin.')->group(function () {
+            Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
+            Route::get('/profile', [AdmingeneController::class, 'profle'])->name('profile');
+            Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
+            Route::get('/validation_exneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
+            });
+
 
         //Aide lien
         Route::get('/aide', function () {
