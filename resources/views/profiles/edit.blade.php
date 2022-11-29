@@ -67,7 +67,6 @@
                       <button type="submit" class="btn btn-success">Mettre à jour</button>
                     </div>
     
-    
                 </form><!-- End General Form Elements -->
     
               </div>

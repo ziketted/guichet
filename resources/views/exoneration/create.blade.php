@@ -26,7 +26,7 @@
                             <div class="col-sm-10">
                               <input class="form-control" name="lettre" type="file" id="formFile" required>
                             </div>
-                          </div>
+                        </div>
                     </div>
                     <div class="col-md-10">
                         <div class="mb-3 row">

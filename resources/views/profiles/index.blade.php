@@ -53,7 +53,9 @@
                       <i class="bi bi-folder-check"></i>
                     </div>
                     <div class="ps-3">
-                      <button type="button" class="btn btn-outline-danger btn-sm">Voir plus</button>
+                      <a href="{{ route('profile.document') }}">
+                        <button type="button" class="btn btn-outline-danger btn-sm">Voir plus</button>
+                      </a>
                     </div>
                   </div>
                 </div>
