@@ -84,7 +84,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.index') }}">
               <i class="bi bi-person"></i>
               <span>Profil</span>
             </a>
@@ -159,7 +159,7 @@
     </li><!-- End Components Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="#">
+      <a class="nav-link collapsed" href="{{ route('profile.index') }}">
         <i class="bi bi-person"></i>
         <span>Profil</span>
       </a>
