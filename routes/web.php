@@ -10,6 +10,7 @@ use App\Http\Controllers\EnrolementController;
 use App\Http\Controllers\ExonerationController;
 use App\Http\Controllers\ImportationController;
 use App\Http\Controllers\NotificationController;
+use App\Models\Notification;
 use Symfony\Component\HttpKernel\EventListener\ProfilerListener;
 
 Route::get('/', function () {
@@ -68,7 +69,7 @@ Route::middleware([
         Route::get('/notification/index', [NotificationController::class, 'index'])->name('index');
         Route::post('/notification/store', [NotificationController::class, 'store'])->name('store');
         Route::post('/notification/create', [NotificationController::class, 'create'])->name('create');
-        Route::delete('/notification/{notifi}',[DocumentController::class, 'destroy'])->name('destroy');
+        Route::delete('/notification/{notifi}',[Notification::class, 'destroy'])->name('destroy');
         Route::post('/notification/show/{notification}', [NotificationController::class, 'show'])->name('show');
         });
 
