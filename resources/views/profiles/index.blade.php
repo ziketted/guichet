@@ -75,7 +75,9 @@
                       <i class="bi bi-folder-plus"></i>
                     </div>
                     <div class="ps-3">
-                        <button type="button" class="btn btn-outline-danger btn-sm">Voir plus</button>
+                        <a href="{{ route('profile.autre_infos') }}">
+                          <button type="button" class="btn btn-outline-danger btn-sm">Voir plus</button>
+                        </a>
                     </div>
                   </div>
 

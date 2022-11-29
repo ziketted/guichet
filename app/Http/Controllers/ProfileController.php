@@ -27,7 +27,8 @@ class ProfileController extends Controller
         //
         return view('profiles.documents');
     }
-    public function autre_info()
+
+    public function autre_infos()
     {
         //
         return view('profiles.autres_infos');
