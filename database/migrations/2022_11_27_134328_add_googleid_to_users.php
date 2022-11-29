@@ -16,6 +16,7 @@ class AddGoogleidToUsers extends Migration
         Schema::table('users', function (Blueprint $table) {
             //
             $table->string('google_id')->nullable();
+            $table->string('role_id')->default('1');
         });
     }
 
