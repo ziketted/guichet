@@ -94,4 +94,5 @@ Route::middleware([
         Route::get('/aide', function () {
             return view('aide');
         });
+
 });
