@@ -56,8 +56,8 @@ class AdminController extends Controller
     {
         //On utilisera Requerant.blade.php
         $requerants= DB::table('users')
-                        ->join('documents', 'users.id', '=', 'documents.user_id')
-                        ->select('users.email','users.name', 'documents.*')
+                        ->join('profiles', 'users.id', '=', 'profiles.user_id')
+                        ->select('users.email','users.name', 'profiles.*')
                         ->where('users.id','=',$requerant) /*   */
                         ->get();
 

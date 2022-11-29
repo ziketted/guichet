@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\Document;
 use App\Http\Requests\StoreDocumentRequest;
 use App\Http\Requests\UpdateDocumentRequest;
+use App\Models\Profile;
+use GuzzleHttp\Psr7\Request;
+use Illuminate\Support\Facades\Redis;
 
-class DocumentController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +37,7 @@ class DocumentController extends Controller
      * @param  \App\Http\Requests\StoreDocumentRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreDocumentRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -45,7 +48,7 @@ class DocumentController extends Controller
      * @param  \App\Models\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show(Document $document)
+    public function show(Profile $profile)
     {
         //
     }
@@ -56,7 +59,7 @@ class DocumentController extends Controller
      * @param  \App\Models\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function edit(Document $document)
+    public function edit(Profile $profile)
     {
         //
     }
@@ -68,7 +71,7 @@ class DocumentController extends Controller
      * @param  \App\Models\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateDocumentRequest $request, Document $document)
+    public function update(Request $request, Profile $profile)
     {
         //
     }
@@ -79,7 +82,7 @@ class DocumentController extends Controller
      * @param  \App\Models\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Document $document)
+    public function destroy(Profile $document)
     {
         //
     }
