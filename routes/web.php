@@ -49,6 +49,8 @@ Route::middleware([
 
     Route::name('profile.')->group(function () {
         Route::get('/profile/index', [ProfileController::class, 'index'])->name('index');
+        Route::get('/profile/document', [ProfileController::class, 'document'])->name('document');
+        Route::get('/profile/autre_infos', [ProfileController::class, 'autre_infos'])->name('autre_infos');
         Route::get('/profile/{profile}/edit/', [ProfileController::class, 'edit'])->name('edit');
         Route::get('/profile/store', [ProfileController::class, 'store'])->name('store');
         Route::post('/profile/create', [ProfileController::class, 'create'])->name('create');

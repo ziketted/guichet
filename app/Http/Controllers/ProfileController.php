@@ -22,6 +22,17 @@ class ProfileController extends Controller
         return view('profiles.index');
     }
 
+    public function document()
+    {
+        //
+        return view('profiles.documents');
+    }
+    public function autre_info()
+    {
+        //
+        return view('profiles.autres_infos');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
