@@ -9,8 +9,8 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NiceAdmin</span>
+                  <img src="assets-home/img/hero-img.png" class="h-100 w-50" alt="">
+                  <span class="d-none d-lg-block">PORTAIL FNPSS</span>
                 </a>
               </div><!-- End Logo -->
 
@@ -59,13 +59,13 @@
                     </div><br>
 
                     <div class="col-12">
-                     
+
                       <a href="{{ url('auth/google') }}" class="btn btn-danger w-100">
                         <i class="bi bi-google"></i>
                           Google
                       </a>
                     </div>
-                   
+
                     <div class="col-12">
                       <p class="small mb-0">Vous n'avez pas de compte ? <a href="{{ route('register') }}">Creer un compte</a></p>
                     </div>

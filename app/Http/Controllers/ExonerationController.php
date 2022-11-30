@@ -113,7 +113,7 @@ class ExonerationController extends Controller
             $file->move($filePath, $filename);
             $request->affectation=$filename;
         }
-
+        $request->statut="soumis";
         $exoneration->titre=$request->titre;
         $exoneration->lettre=$request->lettre;
         $exoneration->attestation=$request->attestation;
@@ -165,10 +165,13 @@ class ExonerationController extends Controller
      */
     public function edit($exoneration)
     {
-        $exonerationFind=Exoneration::findOrFail($exoneration)->get();
+        $exonerationFind=Exoneration::findOrFail($exoneration)->take(1)->get();
         return view('exoneration.edit', ['exonerations'=>$exonerationFind]);
     }
 
+    public function test(){
+        return dd('salut');
+    }
     /**
      * Update the specified resource in storage.
      *
@@ -178,6 +181,7 @@ class ExonerationController extends Controller
      */
     public function update(Request $request, Exoneration $exoneration)
     {
+        $this->test();
         //
         if ($request->hasFile('lettre')) {
             $file = $request->file('lettre');
@@ -190,7 +194,6 @@ class ExonerationController extends Controller
 
             $file = $request->file('attestation');
             $filename = uniqid() . '_attestation_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
             $request->attestation=$filename;
@@ -200,7 +203,6 @@ class ExonerationController extends Controller
 
             $file = $request->file('copie_avis');
             $filename = uniqid() . '_copie_avis_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
             $request->copie_avis=$filename;
@@ -254,6 +256,7 @@ class ExonerationController extends Controller
             $request->affectation=$filename;
         }
 
+        $request->statut="soumis";
         $exoneration->titre=$request->titre;
         $exoneration->lettre=$request->lettre;
         $exoneration->attestation=$request->attestation;

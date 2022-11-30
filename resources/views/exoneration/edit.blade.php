@@ -7,11 +7,9 @@
               <div class="card-body">
                 <h5 class="card-title">Modification de la demande de certificat d'exoneration au FNPSS</h5>
 
-
                 @foreach ($exonerations as $exoneration )
                     <form action="{{ route('exoneration.update') }} " class="row g-3"  method="POST" enctype="multipart/form-data">
                         @csrf
-
                         <div class="col-md-10">
 
                             <div class="form-floating">
@@ -36,7 +34,7 @@
                             <div class="col-md-10">
                                     <div class="mb-3 row">
                                     <div class="form-floating">
-                                        <a href="./storage/{{$exoneration->lettre}}" download="lettre">  <i class="bi bi-plus"></i>Télécharger la lettre</a>
+                                        <a href="{{Storage::url($exoneration->lettre)}}" download="lettre">  <i class="bi bi-plus"></i>Télécharger la lettre</a>
                                     </div>
                                 </div>
                             </div>
