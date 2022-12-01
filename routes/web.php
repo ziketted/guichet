@@ -38,11 +38,24 @@ Route::middleware([
     Route::name('exoneration.')->group(function () {
         Route::get('/exoneration/index', [ExonerationController::class, 'index'])->name('index');
         Route::get('/exoneration/store', [ExonerationController::class, 'store'])->name('store');
-        Route::post('/exoneration/update', [ExonerationController::class, 'update'])->name('update');
         Route::get('/exoneration/{exoneration}/edit/', [ExonerationController::class, 'edit'])->name('edit');
         Route::post('/exoneration/create', [ExonerationController::class, 'create'])->name('create');
         Route::get('/exoneration/{exoneration}/show', [ExonerationController::class, 'show'])->name('show');
         Route::delete('/exoneration/{exoneration}',[ExonerationController::class, 'destroy'])->name('destroy');
+
+        //Mise à jour des exonérations
+
+        Route::post('/exoneration/titre', [ExonerationController::class, 'titre'])->name('upd_titre');
+        Route::post('/exoneration/lettre', [ExonerationController::class, 'upd_lettre'])->name('upd_lettre');
+        Route::post('/exoneration/attestation', [ExonerationController::class, 'upd_attestation'])->name('upd_attestation');
+        Route::post('/exoneration/copie_avis', [ExonerationController::class, 'upd_copie_avis'])->name('upd_copie_avis');
+        Route::post('/exoneration/liste_colisage', [ExonerationController::class, 'upd_liste_colisage'])->name('upd_liste_colisage');
+        Route::post('/exoneration/projet', [ExonerationController::class, 'upd_projet'])->name('upd_projet');
+        Route::post('/exoneration/transport', [ExonerationController::class, 'upd_transport'])->name('upd_transport');
+        Route::post('/exoneration/facture', [ExonerationController::class, 'upd_facture'])->name('upd_facture');
+        Route::post('/exoneration/affectation', [ExonerationController::class, 'upd_affectation'])->name('upd_affectation');
+        Route::post('/exoneration/commentaire', [ExonerationController::class, 'upd_commentaire'])->name('upd_commentaire');
+        Route::post('/exoneration/type', [ExonerationController::class, 'upd_type'])->name('upd_type');
 
         });
 
@@ -53,6 +66,7 @@ Route::middleware([
         Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('edit');
         Route::get('/profile/store', [ProfileController::class, 'store'])->name('store');
         Route::post('/profile/create', [ProfileController::class, 'create'])->name('create');
+        Route::post('/profile/identiteupdate', [ProfileController::class, 'identiteupdate'])->name('identiteupdate');
         Route::post('/profile/{profile}/show', [ProfileController::class, 'show'])->name('show');
         Route::delete('/profile/{profile}',[ProfileController::class, 'destroy'])->name('destroy');
 

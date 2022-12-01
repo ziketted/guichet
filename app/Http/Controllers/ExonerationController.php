@@ -169,9 +169,6 @@ class ExonerationController extends Controller
         return view('exoneration.edit', ['exonerations'=>$exonerationFind]);
     }
 
-    public function test(){
-        return dd('salut');
-    }
     /**
      * Update the specified resource in storage.
      *
@@ -181,115 +178,286 @@ class ExonerationController extends Controller
      */
     public function update(Request $request, Exoneration $exoneration)
     {
-        $this->test();
         //
-        if ($request->hasFile('lettre')) {
-            $file = $request->file('lettre');
-            $filename = uniqid() . '_lettre_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-            $filePath = public_path() . '/storage';
-            $file->move($filePath, $filename);
-            $request->lettre=$filename;
-        }
-        if ($request->hasFile('attestation')) {
 
-            $file = $request->file('attestation');
-            $filename = uniqid() . '_attestation_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-            $filePath = public_path() . '/storage';
-            $file->move($filePath, $filename);
-            $request->attestation=$filename;
-        }
+    }
 
-        if ($request->hasFile('copie_avis')) {
+    public function upd_type(Request $request, Exoneration $exoneration)
+    {
 
-            $file = $request->file('copie_avis');
-            $filename = uniqid() . '_copie_avis_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-            $filePath = public_path() . '/storage';
-            $file->move($filePath, $filename);
-            $request->copie_avis=$filename;
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'type' =>'',
+            ]);
+            return back();
         }
 
-        if ($request->hasFile('liste_colisage')) {
+        if ($request->hasFile('type')) {
 
-            $file = $request->file('liste_colisage');
-            $filename = uniqid() . '_liste_colisage_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+            $file = $request->file('type');
+            $filename = uniqid() . '_type_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->liste_colisage=$filename;
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'type' => $filename,
+                ]);
+                return back();
+
         }
-        if ($request->hasFile('projet')) {
+    }
+    public function upd_commentaire(Request $request, Exoneration $exoneration)
+    {
 
-            $file = $request->file('projet');
-            $filename = uniqid() . '_projet_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+        $user_id = auth()->user()->id;
 
-            $filePath = public_path() . '/storage';
-            $file->move($filePath, $filename);
-            $request->projet=$filename;
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'commentaire' =>$request->commentaire,
+            ]);
+            return back();
+
+    }
+    public function upd_affectation(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'affectation' =>'',
+            ]);
+            return back();
         }
 
-        if ($request->hasFile('transport')) {
+        if ($request->hasFile('affectation')) {
 
-            $file = $request->file('transport');
-            $filename = uniqid() . '_transport_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+            $file = $request->file('affectation');
+            $filename = uniqid() . '_affectation_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->transport=$filename;
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'affectation' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_facture(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'facture' =>'',
+            ]);
+            return back();
         }
 
         if ($request->hasFile('facture')) {
 
             $file = $request->file('facture');
-            $filename = uniqid() . '_facture_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+            $filename = uniqid() . '_facture_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->facture=$filename;
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'facture' => $filename,
+                ]);
+                return back();
         }
-        if ($request->hasFile('affectation')) {
+    }
+    public function upd_transport(Request $request, Exoneration $exoneration)
+    {
 
-            $file = $request->file('affectation');
-            $filename = uniqid() . '_affectation_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'transport' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('transport')) {
+
+            $file = $request->file('transport');
+            $filename = uniqid() . '_transport_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->affectation=$filename;
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'transport' => $filename,
+                ]);
+                return back();  return back();
+        }
+    }
+    public function upd_projet(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'projet' =>'',
+            ]);
+             return back();
         }
 
-        $request->statut="soumis";
-        $exoneration->titre=$request->titre;
-        $exoneration->lettre=$request->lettre;
-        $exoneration->attestation=$request->attestation;
-        $exoneration->copie_avis=$request->copie_avis;
-        $exoneration->liste_colisage=$request->liste_colisage;
-        $exoneration->projet=$request->projet;
-        $exoneration->transport=$request->transport;
-        $exoneration->facture=$request->facture;
-        $exoneration->affectation=$request->affectation;
-        $exoneration->commentaire=$request->commentaire;
-        $exoneration->type=$request->type;
-        $exoneration->statut=$request->statut;
-        $exoneration->user_id=auth()->user()->id;
-        $exoneration->save();
+        if ($request->hasFile('projet')) {
 
-        Exoneration::where('id', $exoneration)
-        ->where('user_id', auth()->user()->id)
-        ->update([
-            'titre' => $exoneration->titre,
-            'lettre' => $exoneration->lettre,
-            'attestation' => $exoneration->attestation,
-            'copie_avis' => $exoneration->copie_avis,
-            'liste_colisage' => $exoneration->liste_colisage,
-            'projet' => $exoneration->projet,
-            'transport' => $exoneration->transport,
-            'affectation' => $exoneration->affectation,
-            'commentaire' => $exoneration->commentaire,
-            'type' => $exoneration->type,
-            'statut' => $exoneration->statut,
-        ]);
-        return redirect()->route('exoneration.index');
+            $file = $request->file('projet');
+            $filename = uniqid() . '_projet_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'projet' => $filename,
+                ]);
+             return back();
+        }
+    }
+    public function upd_liste_colisage(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'liste_colisage' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('liste_colisage')) {
+
+            $file = $request->file('liste_colisage');
+            $filename = uniqid() . '_liste_colisage_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'liste_colisage' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_copie_avis(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'copie_avis' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('copie_avis')) {
+
+            $file = $request->file('copie_avis');
+            $filename = uniqid() . '_copie_avis_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'attestation' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_attestation(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'attestation' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('attestation')) {
+
+            $file = $request->file('attestation');
+            $filename = uniqid() . '_attestation_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'attestation' => $filename,
+                ]);
+                return back();
+        }
     }
 
+    public function upd_titre(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->titre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'titre' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('titre')) {
+
+            $file = $request->file('titre');
+            $filename = uniqid() . '_titre_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'titre' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_lettre(Request $request, Exoneration $exoneration)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->lettre)) {
+            Exoneration::where('user_id', $user_id)
+            ->update([
+                'lettre' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('lettre')) {
+
+            $file = $request->file('lettre');
+            $filename = uniqid() . '_lettre_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+
+
+            Exoneration::where('user_id', $user_id)
+                ->update([
+                    'lettre' => $filename,
+                ]);
+            return back();
+        }
+    }
     /**
      * Remove the specified resource from storage.
      *
