@@ -18,6 +18,24 @@ class ProfileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function check_profil(){
+         $profile= new Profile;
+        $user_id = auth()->user()->id;
+        $profile_exist = Profile::where('user_id', $user_id)->get();
+        if ($profile_exist->count() == 0) {
+            $profile->user_id =auth()->user()->id;
+            $profile->save();
+        }
+     }
+     public function autre_infos(Profile $profile)
+     {
+         //
+         $this->check_profil();
+         $profile = Profile::where('user_id',auth()->user()->id)->get();
+         return view('profiles.autres_infos', [ 'profiles' => $profile]);
+
+     }
     public function index()
     {
         //
@@ -39,11 +57,7 @@ class ProfileController extends Controller
 
     }
 
-    public function autre_infos()
-    {
-        //
-        return view('profiles.autres_infos');
-    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -167,6 +181,21 @@ class ProfileController extends Controller
     {
 
     }
+    //Update profil objetcif
+
+
+    public function upd_autre_infos (Request $request, Profile $profile)
+    {
+        $user_id = auth()->user()->id;
+
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'objectif_global' => $request->objectif_global,
+                    'objectif_specifique' => $request->objectif_specifique,
+                ]);
+                return back();
+
+    }
     public function upd_statut(Request $request, Profile $profile)
     {
 
@@ -215,6 +244,110 @@ class ProfileController extends Controller
             Profile::where('user_id', $user_id)
                 ->update([
                     'doc_autorisation' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_personnalite(Request $request, Profile $profile)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->doc_personnalite)) {
+            Profile::where('user_id', $user_id)
+            ->update([
+                'doc_personnalite' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('doc_personnalite')) {
+
+            $file = $request->file('doc_personnalite');
+            $filename = uniqid() . '_doc_personnalite_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'doc_personnalite' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_certificat(Request $request, Profile $profile)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->doc_certificat)) {
+            Profile::where('user_id', $user_id)
+            ->update([
+                'doc_certificat' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('doc_certificat')) {
+
+            $file = $request->file('doc_certificat');
+            $filename = uniqid() . '_doc_certificat_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'doc_certificat' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_convention(Request $request, Profile $profile)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->doc_convention)) {
+            Profile::where('user_id', $user_id)
+            ->update([
+                'doc_convention' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('doc_convention')) {
+
+            $file = $request->file('doc_convention');
+            $filename = uniqid() . '_doc_convention_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'doc_convention' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_accord(Request $request, Profile $profile)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->doc_accord)) {
+            Profile::where('user_id', $user_id)
+            ->update([
+                'doc_accord' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('doc_accord')) {
+
+            $file = $request->file('doc_accord');
+            $filename = uniqid() . '_doc_accord_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'doc_accord' => $filename,
                 ]);
                 return back();
         }

@@ -70,9 +70,13 @@ Route::middleware([
         Route::post('/profile/{profile}/show', [ProfileController::class, 'show'])->name('show');
         Route::delete('/profile/{profile}',[ProfileController::class, 'destroy'])->name('destroy');
 
-
+        Route::post('/profile/upd_autres_infos', [ProfileController::class, 'upd_autre_infos'])->name('upd_autres_infos');
         Route::post('/profile/udpstatut', [ProfileController::class, 'upd_statut'])->name('updStatut');
         Route::post('/profile/udpautorisation', [ProfileController::class, 'upd_autorisation'])->name('updAutorisation');
+        Route::post('/profile/upd_personnalite', [ProfileController::class, 'upd_personnalite'])->name('upd_personnalite');
+        Route::post('/profile/upd_convention', [ProfileController::class, 'upd_convention'])->name('upd_convention');
+        Route::post('/profile/upd_certificat', [ProfileController::class, 'upd_certificat'])->name('upd_certificat');
+        Route::post('/profile/upd_accord', [ProfileController::class, 'upd_accord'])->name('upd_accord');
 
         });
 

@@ -56,24 +56,24 @@
                             </div>
                         </div>
                         <hr>
-                    @else
-                    <div class="col-md-4 p-3">
-                            <div class="mb-3 row">
-                            <div class="form-floating">
-                                <a href="{{Storage::url($profile->doc_autorisation)}}" download="lettre">
-                                    <h5>&nbsp;<i class="bi bi-download text-danger"></i>
-                                        Télécharger le statut &nbsp;</h5></a>
+                        @else
+                        <div class="col-md-4 p-3">
+                                <div class="mb-3 row">
+                                <div class="form-floating">
+                                    <a href="{{Storage::url($profile->doc_autorisation)}}" download="lettre">
+                                        <h5>&nbsp;<i class="bi bi-download text-danger"></i>
+                                            Télécharger le statut &nbsp;</h5></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-4">
-                        <button class="btn btn-success">
-                            Modifier</button> </h5>
-                    </div>
-                    @endif
-                </form>
-                <form action="{{ route('profile.document') }}" class="row g-3" method="POST" enctype="multipart/form-data">
+                        <div class="col-md-4">
+                            <button class="btn btn-success">
+                                Modifier</button> </h5>
+                        </div>
+                        @endif
+                    </form>
+                <form action="{{ route('profile.upd_personnalite') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if (is_null($profile->doc_personnalite) || $profile->doc_personnalite=='' )
 
@@ -105,7 +105,7 @@
                     </div>
                     @endif
                 </form>
-                <form action="{{ route('profile.document') }}" class="row g-3" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('profile.upd_certificat') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if (is_null($profile->doc_certificat) || $profile->doc_certificat=='' )
 
@@ -138,7 +138,7 @@
                     </div>
                     @endif
                 </form>
-                <form action="{{ route('profile.document') }}" class="row g-3" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('profile.upd_convention') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if (is_null($profile->doc_convention) || $profile->doc_convention=='' )
 
@@ -168,7 +168,7 @@
                         </div>
                     @endif
                 </form>
-                <form action="{{ route('profile.document') }}" class="row g-3" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('profile.upd_accord') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
                     @if (is_null($profile->doc_accord) || $profile->doc_accord=='' )
 
