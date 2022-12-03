@@ -106,7 +106,7 @@
                                 <div class="form-floating">
                                     <a href="{{Storage::url($exoneration->copie_avis)}}" download="copie_avis">
                                         <h5>&nbsp;<i class="bi bi-download text-danger"></i>
-                                            Télécharger la lettre &nbsp; </h5></a>
+                                            Télécharger la copie d'avis &nbsp; </h5></a>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +137,7 @@
                                 <div class="form-floating">
                                     <a href="{{Storage::url($exoneration->liste_colisage)}}" download="liste_colisage">
                                         <h5>&nbsp;<i class="bi bi-download text-danger"></i>
-                                            Télécharger la lettre &nbsp;</h5></a>
+                                            Télécharger la liste de colisage &nbsp;</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +170,7 @@
                                 <div class="form-floating">
                                     <a href="{{Storage::url($exoneration->projet)}}" download="projet">
                                         <h5>&nbsp;<i class="bi bi-download text-danger"></i>
-                                            Télécharger la lettre &nbsp; </h5></a>
+                                            Télécharger le projet &nbsp; </h5></a>
                                 </div>
                             </div>
                         </div>

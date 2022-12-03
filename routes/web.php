@@ -70,6 +70,10 @@ Route::middleware([
         Route::post('/profile/{profile}/show', [ProfileController::class, 'show'])->name('show');
         Route::delete('/profile/{profile}',[ProfileController::class, 'destroy'])->name('destroy');
 
+
+        Route::post('/profile/udpstatut', [ProfileController::class, 'upd_statut'])->name('updStatut');
+        Route::post('/profile/udpautorisation', [ProfileController::class, 'upd_autorisation'])->name('updAutorisation');
+
         });
 
     Route::name('importation.')->group(function () {

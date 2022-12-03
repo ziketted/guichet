@@ -186,28 +186,16 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
-            Exoneration::where('user_id', $user_id)
-            ->update([
-                'type' =>'',
-            ]);
-            return back();
-        }
 
-        if ($request->hasFile('type')) {
 
-            $file = $request->file('type');
-            $filename = uniqid() . '_type_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-
-            $filePath = public_path() . '/storage';
-            $file->move($filePath, $filename);
             Exoneration::where('user_id', $user_id)
                 ->update([
-                    'type' => $filename,
+                    'type' => $request->type,
                 ]);
                 return back();
 
-        }
+
+
     }
     public function upd_commentaire(Request $request, Exoneration $exoneration)
     {
@@ -225,7 +213,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->affectation)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'affectation' =>'',
@@ -251,7 +239,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->facture)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'facture' =>'',
@@ -277,7 +265,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->transport)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'transport' =>'',
@@ -303,7 +291,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->projet)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'projet' =>'',
@@ -329,7 +317,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->liste_colisage)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'liste_colisage' =>'',
@@ -355,7 +343,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->copie_avis)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'copie_avis' =>'',
@@ -372,7 +360,7 @@ class ExonerationController extends Controller
             $file->move($filePath, $filename);
             Exoneration::where('user_id', $user_id)
                 ->update([
-                    'attestation' => $filename,
+                    'copie_avis' => $filename,
                 ]);
                 return back();
         }
@@ -381,7 +369,7 @@ class ExonerationController extends Controller
     {
 
         $user_id = auth()->user()->id;
-        if (!isset($request->titre)) {
+        if (!isset($request->attestation)) {
             Exoneration::where('user_id', $user_id)
             ->update([
                 'attestation' =>'',

@@ -24,10 +24,19 @@ class ProfileController extends Controller
         return view('profiles.index');
     }
 
-    public function document()
+    public function document(Profile $profile)
     {
-        //
-        return view('profiles.documents');
+        // $profile= new Profile();
+        $user_id = auth()->user()->id;
+        $profile_exist = Profile::where('user_id', $user_id)->get();
+        if ($profile_exist->count() == 0) {
+            $profile->user_id =auth()->user()->id;
+            $profile->save();
+        }
+        $user = User::where('id', $user_id)->get();
+        $profile = Profile::where('user_id', $user_id)->get();
+        return view('profiles.documents', ['users' => $user, 'profiles' => $profile]);
+
     }
 
     public function autre_infos()
@@ -157,5 +166,57 @@ class ProfileController extends Controller
     public function destroy(Profile $document)
     {
 
+    }
+    public function upd_statut(Request $request, Profile $profile)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->doc_statut)) {
+            Profile::where('user_id', $user_id)
+            ->update([
+                'doc_statut' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('doc_statut')) {
+
+            $file = $request->file('doc_statut');
+            $filename = uniqid() . '_doc_statut_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'doc_statut' => $filename,
+                ]);
+                return back();
+        }
+    }
+    public function upd_autorisation(Request $request, Profile $profile)
+    {
+
+        $user_id = auth()->user()->id;
+        if (!isset($request->doc_autorisation)) {
+            Profile::where('user_id', $user_id)
+            ->update([
+                'doc_autorisation' =>'',
+            ]);
+            return back();
+        }
+
+        if ($request->hasFile('doc_autorisation')) {
+
+            $file = $request->file('doc_autorisation');
+            $filename = uniqid() . '_doc_autorisation_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+            Profile::where('user_id', $user_id)
+                ->update([
+                    'doc_autorisation' => $filename,
+                ]);
+                return back();
+        }
     }
 }
