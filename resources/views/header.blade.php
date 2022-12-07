@@ -35,6 +35,8 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
 <body>
