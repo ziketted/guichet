@@ -31,7 +31,7 @@
                       <i class="bi bi-cart"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>2</h6>
+                      <h6>{{$exonerationTotal}}</h6>
                     </div>
                   </div>
                 </div>
@@ -51,7 +51,7 @@
                       <i class="bi bi-bag-fill"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>5</h6>
+                      <h6>{{$importationCount}}</h6>
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@
                       <i class="bi bi-people"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>5</h6>
+                      <h6>{{$interieurCount}}</h6>
                     </div>
                   </div>
 
@@ -110,41 +110,17 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2459</a></th>
-                        <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">IMPORTATION</a></td>
-                        <td>25-11-2022 </td>
-                        <td><span class="badge bg-success">Soumis</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2460</a></th>
-                        <td>Demande du mois de Decembre</td>
-                        <td><a href="#" class="text-primary">INTERIEUR DU PAYS</a></td>
-                        <td>25-11-2021 </td>
-                        <td><span class="badge bg-success">Soumis</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2461</a></th>
-                        <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">INTERIEUR DU PAYS</a></td>
-                        <td>25-05-2022 </td>
-                        <td><span class="badge bg-success">Soumis</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2462</a></th>
-                        <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">IMPORTATION</a></td>
-                        <td>25-04-2022 </td>
-                        <td><span class="badge bg-success">Soumis</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2463</a></th>
-                        <td>Demande d'exonération du mois de Novembre</td>
-                        <td><a href="#" class="text-primary">INTERIEUR DU PAYS</a></td>
-                        <td>25-01-2022 </td>
-                        <td><span class="badge bg-success">Soumis</span></td>
-                      </tr>
+                        @forelse ($exonerations as $exoneration )
+                            <tr>
+                                <th scope="row"><a href="#">#{{$exoneration->id}}</a></th>
+                                <td>{{$exoneration->titre}}</td>
+                                <td><a href="#" class="text-primary">{{$exoneration->type}}</a></td>
+                                <td>{{$exoneration->created_at}} </td>
+                                <td><span class="badge bg-{{$exoneration->couleur}}">{{$exoneration->statut}}</span></td>
+                            </tr>
+                        @empty
+                          <p class="p-1 text-white bg-secondary">Aucune enrolement est encours...</p>
+                        @endforelse
                     </tbody>
                   </table>
 
@@ -152,7 +128,7 @@
 
               </div>
             </div><!-- End Recent Sales -->
-          
+
           </div>
         </div><!-- End Left side columns -->
 

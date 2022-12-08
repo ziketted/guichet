@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exoneration;
 use Illuminate\Http\Request;
 
 class AdmingeneController extends Controller
@@ -14,7 +15,21 @@ class AdmingeneController extends Controller
     public function index()
     {
         //
-        return view('dashboard-general');
+        $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
+        $exonerationTotal= Exoneration::where('user_id',  auth()->user()->id)->count();
+        $importationCount= Exoneration::where('user_id',  auth()->user()->id)
+                                        ->where('type', 'Importation')
+                                        ->count();
+
+        $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
+                                        ->where('type', 'Interieur')
+                                        ->count();
+        return view('dashboard-general', ['exonerations'=>$exoneration,
+                                          'importationCount'=>$importationCount,
+                                          'interieurCount'=>$interieurCount,
+                                          'exonerationTotal'=>$exonerationTotal, ]);
+
+
     }
     public function profile()
     {

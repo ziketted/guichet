@@ -25,4 +25,22 @@ class Exoneration extends Model
         'statut',
         'user_id',
        ];
+       public function user(){
+
+        return $this->belongsTo(\App\Models\User::class);
+
+    }
+       public function getCouleurAttribute($value){
+
+
+        if ($this->statut == 'soumis') {
+            $value='warning';
+            $this->etat='soumis';
+        }else{
+            $value='success';
+            $this->etat='activé';
+        }
+        return $value;
+
+    }
 }
