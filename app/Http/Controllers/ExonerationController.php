@@ -7,6 +7,7 @@ use App\Models\Exoneration;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreExonerationRequest;
 use App\Http\Requests\UpdateExonerationRequest;
+use App\Models\Enrolement;
 
 class ExonerationController extends Controller
 {
@@ -17,17 +18,26 @@ class ExonerationController extends Controller
      */
     public function index()
     {
+        $enrolement= new Enrolement();
         $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
         $importationCount= Exoneration::where('user_id',  auth()->user()->id)
                                         ->where('type', 'Importation')
                                         ->count();
 
         $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
-                                        ->where('type', 'Interieur')
-                                        ->count();
+                                      ->where('type', 'Interieur')
+                                      ->count();
+
+       if( $enrolement->verification_document()== true){
+        return redirect()->route('enrolement.index')->with('Message', 'Veuillez d \n abord vous enroler' );
+       }else{
         return view('exoneration.index', ['exonerations'=>$exoneration,
-                                          'nombreDemande'=>$importationCount,
-                                          'nombreInterieur'=>$interieurCount, ]);
+        'nombreDemande'=>$importationCount,
+        'nombreInterieur'=>$interieurCount, ]);
+
+       }
+
+
         //
     }
 

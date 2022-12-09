@@ -115,7 +115,7 @@
                                 <th scope="row"><a href="#">#{{$exoneration->id}}</a></th>
                                 <td>{{$exoneration->titre}}</td>
                                 <td><a href="#" class="text-primary">{{$exoneration->type}}</a></td>
-                                <td>{{$exoneration->created_at}} </td>
+                                <td> {{ \Carbon\Carbon::parse($exoneration->created_at)->diffForHumans() }} </td>
                                 <td><span class="badge bg-{{$exoneration->couleur}}">{{$exoneration->statut}}</span></td>
                             </tr>
                         @empty

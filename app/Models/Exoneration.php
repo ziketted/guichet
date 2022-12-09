@@ -43,4 +43,5 @@ class Exoneration extends Model
         return $value;
 
     }
+
 }

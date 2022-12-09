@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Notification;
 use App\Http\Requests\StoreNotificationRequest;
 use App\Http\Requests\UpdateNotificationRequest;
+use Illuminate\Http\Request;
 
 class NotificationController extends Controller
 {
@@ -16,6 +17,10 @@ class NotificationController extends Controller
     public function index()
     {
         //
+        $notifications= Notification:: where('user_id', auth()->user()->id)
+                                      ->where('statut', '<>', 'lu' )
+                                      ->get();
+
     }
 
     /**
@@ -26,6 +31,8 @@ class NotificationController extends Controller
     public function create()
     {
         //
+
+
     }
 
     /**
@@ -34,9 +41,11 @@ class NotificationController extends Controller
      * @param  \App\Http\Requests\StoreNotificationRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreNotificationRequest $request)
+    public function store(Request $request, Notification $notification)
     {
         //
+        $notification=auth()->user()->notificationUser()->create($request->all());
+        $notification->save();
     }
 
     /**

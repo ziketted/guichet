@@ -69,11 +69,11 @@ class User extends Authenticatable
         return $this->hasMany(\App\Models\Enrolement::class);
     }
 
-    public function importationUser(){
-        return $this->hasMany(\App\Models\Exoneration::class);
-    }
     public function exonerationUser(){
         return $this->hasMany(\App\Models\Exoneration::class);
+    }
+    public function notificationUser(){
+        return $this->hasMany(\App\Models\Notification::class);
     }
     public function roleUser(){
         return $this->hasMany(\App\Models\Role::class);

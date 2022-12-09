@@ -42,6 +42,15 @@ class Enrolement extends Model
         return $value;
 
     }
-
+    public function verification_document (){
+        $enrolementDocument = Enrolement:: where('user_id',  auth()->user()->id)
+        ->where('statut', 'activé')
+        ->orderBy('created_at', 'DESC')
+        ->take(1)->count();
+        //Vérifiez si le requerant a un enrolement
+        if ($enrolementDocument==0){
+           return true;
+        }
+    }
 
 }

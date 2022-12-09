@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Exoneration;
+use App\Models\Notification;
 use Illuminate\Http\Request;
 
 class AdmingeneController extends Controller
@@ -15,6 +16,10 @@ class AdmingeneController extends Controller
     public function index()
     {
         //
+        $notification=Notification::where('user_id', auth()->user()->id)
+                                    ->where('statut')
+                                    ->count();
+
         $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
         $exonerationTotal= Exoneration::where('user_id',  auth()->user()->id)->count();
         $importationCount= Exoneration::where('user_id',  auth()->user()->id)
@@ -26,8 +31,9 @@ class AdmingeneController extends Controller
                                         ->count();
         return view('dashboard-general', ['exonerations'=>$exoneration,
                                           'importationCount'=>$importationCount,
+                                          'exonerationTotal'=>$exonerationTotal,
                                           'interieurCount'=>$interieurCount,
-                                          'exonerationTotal'=>$exonerationTotal, ]);
+                                          'notification'=>$notification, ]);
 
 
     }
