@@ -55,24 +55,59 @@
           <div class="row">
             <!-- Sales Card -->
             <div class="col-xxl-8 col-md-10">
-              <div class="card info-card sales-card">
-                <div class="card-body">
-                  <h5 class="card-title">Nouvel enrolement ? <span>|</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-plus"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h5><a href="{{ route('enrolement.store') }}">Cliquez ici pour s'enroler</a></h5>
-                    </div>
+              <article class="rounded-lg border border-gray-100 bg-white p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-sm text-gray-500">Nouvel enrolement ?</p>
+              
+                    <p class="text-2xl font-medium text-gray-900"></p>
                   </div>
+              
+                  <span class="rounded-full bg-blue-100 p-3 text-blue-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </span>
                 </div>
-
-              </div>
+              
+                <div class="mt-1 flex gap-1 text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+              
+                  <p class="flex gap-2 text-xs">
+                    <span class="font-medium"> <a href="{{ route('enrolement.store') }}">Cliquez ici pour s'enroler</a> </span>
+              
+                    
+                  </p>
+                </div>
+              </article>
             </div><!-- End Sales Card -->
           </div>
         </div><!-- End Left side columns -->
+        
 
       </div>
     </section>
