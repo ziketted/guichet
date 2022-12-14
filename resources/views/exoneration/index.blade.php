@@ -21,42 +21,107 @@
 
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
-
-                <div class="card-body">
-                  <h5 class="card-title"> <span>Exonération à l'importation</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bag-check"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>{{$nombreDemande}}</h6>
-
-                    </div>
+              <article class="rounded-lg border border-gray-100 bg-white p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-sm text-gray-500">Exonération à l'importation</p>
+              
+                    <p class="text-2xl font-medium text-gray-900">{{$nombreDemande}}</p>
                   </div>
+              
+                  <span class="rounded-full bg-blue-100 p-3 text-blue-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </span>
+                  
                 </div>
-
-              </div>
+              
+                <div class="mt-1 flex gap-1 text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+              
+                  <p class="flex gap-2 text-xs">
+                  </p>
+                </div>
+              </article>
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
             <div class="col-xxl-8 col-md-8">
-              <div class="card info-card revenue-card">
-
-                <div class="card-body">
-                  <h5 class="card-title"><span>Exonération à l'interieur du pays</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-bag-check-fill"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>{{$nombreInterieur}}</h6>
-                    </div>
+              <article class="rounded-lg border border-gray-100 bg-white p-6">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <p class="text-sm text-gray-500">Exonération à l'interieur du pays</p>
+              
+                    <p class="text-2xl font-medium text-gray-900">{{$nombreInterieur}}</p>
                   </div>
+              
+                  <span class="rounded-full bg-blue-100 p-3 text-blue-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-8 w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                      />
+                    </svg>
+                  </span>
+                  
                 </div>
-              </div>
+              
+                <div class="mt-1 flex gap-1 text-green-600">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-4 w-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                    />
+                  </svg>
+              
+                  <p class="flex gap-2 text-xs">
+                  </p>
+                </div>
+              </article><br>
+
+              
+
             </div><!-- End Revenue Card -->
 
             {{-- <!-- Customers Card -->
@@ -108,9 +173,9 @@
                         <td><span class="badge bg-success">{{$exoneration->statut}}</span></td>
                         <td>
                             <div class="items-center row x-gap-10 y-gap-10">
-                                <div class="col-auto">
+                                {{-- <div class="col-auto">
                                     <a href="{{route('exoneration.show', $exoneration->id)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </div>
+                                </div> --}}
                                 <div class="col-auto">
                                     <a href="{{route('exoneration.edit', $exoneration->id)}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
                                 </div>
@@ -144,10 +209,15 @@
         <div class="col-lg-4">
 
           <div class="activity-item d-flex">
-            <a href="{{ route('exoneration.store') }}" class="btn btn-success">
-                <i class="bi bi-check-circle"></i>
-                Nouvelle demande d'exoneration
+            
+            <a href="{{ route('exoneration.store') }}">
+              <button
+                  type="submit"
+                  class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                  Nouvelle exoneration
+              </button>
             </a>
+            
           </div><br>
 
           <!-- Recent Activity -->

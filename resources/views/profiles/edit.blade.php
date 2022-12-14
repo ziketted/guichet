@@ -108,7 +108,7 @@
                         </div>
                         </div>
 
-                        <div class="col-sm-4">
+                        <div class="col-sm-6">
                         {{-- <button type="submit" class="btn btn-success">Mettre à jour</button> --}}
                         <button
                             type="submit"

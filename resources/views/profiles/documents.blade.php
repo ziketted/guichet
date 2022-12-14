@@ -46,7 +46,7 @@
                                 </div>
                                   
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-7">
                                 {{-- <button type="submit" class="btn btn-success">Mettre à jour</button> --}}
                                 <button
                                     type="submit"
@@ -116,7 +116,7 @@
                                 </div>
 
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-7">
                                 <button
                                     type="submit"
                                     class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
@@ -185,7 +185,7 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-7">
                             <button
                                 type="submit"
                                 class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
@@ -253,7 +253,7 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-7">
                             <button
                                 type="submit"
                                 class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
@@ -323,7 +323,7 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-7">
                             <button
                                 type="submit"
                                 class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
@@ -389,7 +389,7 @@
                                 
                             </div>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-7">
                             <button
                                 type="submit"
                                 class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
