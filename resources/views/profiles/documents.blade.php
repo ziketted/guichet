@@ -14,23 +14,56 @@
 
                         <div class="col-md-6">
                             <div class="mb-3 row">
-                                <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez vos statuts</label>
-                                <div class="col-sm-10">
-                                <input class="form-control" name="doc_statut" type="file" id="formFile" required>
+                                <div>
+                                    <label for="email" class="text-sm font-medium"><b>Modifiez vos statuts</b></label>
+                
+                                    <div class="relative mt-1">
+                                      <input
+                                        type="file"
+                                        id="formFile"
+                                        name="doc_statut"
+                                        class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                        placeholder="Chercher les fichiers"
+                                      />
+                
+                                      <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="h-5 w-5 text-gray-400"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke="currentColor"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </div>
                                 </div>
+                                  
                             </div>
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-success">Mettre à jour</button>
+                            <div class="col-sm-5">
+                                {{-- <button type="submit" class="btn btn-success">Mettre à jour</button> --}}
+                                <button
+                                    type="submit"
+                                    class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                    Mettre à jour
+                                </button>
                             </div>
                         </div>
                         @else
                             <div class="col-md-4 p-3">
-                                    <div class="mb-3 row">
+                                <div class="mb-3 row">
                                     <div class="form-floating">
                                         <a href="{{Storage::url($profile->doc_statut)}}" download="lettre">
                                             <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                 Télécharger le statut &nbsp;</h5></a>
                                     </div>
+                                    
                                 </div>
                             </div>
 
@@ -46,14 +79,50 @@
 
                         <div class="col-md-6">
                             <div class="mb-3 row">
-                                <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre autorisation de fonctionnement</label>
+                                {{-- <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre autorisation de fonctionnement</label>
                                 <div class="col-sm-10">
                                 <input class="form-control" name="doc_autorisation" type="file" id="formFile" required>
+                                </div> --}}
+
+                                <div>
+                                    <label for="email" class="text-sm font-medium"><b>Modifiez votre autorisation de fonctionnement</b></label>
+                
+                                    <div class="relative mt-1">
+                                      <input
+                                        type="file"
+                                        id="formFile"
+                                        name="doc_autorisation"
+                                        class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                        placeholder="Chercher les fichiers"
+                                      />
+                
+                                      <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          class="h-5 w-5 text-gray-400"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          stroke="currentColor"
+                                        >
+                                          <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                          />
+                                        </svg>
+                                      </span>
+                                    </div>
                                 </div>
+
                             </div>
-                            <div class="col-sm-10">
-                                <button type="submit" class="btn btn-success">Mettre à jour</button>
-                            </div>
+                            <div class="col-sm-5">
+                                <button
+                                    type="submit"
+                                    class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                    Mettre à jour
+                                </button>
+                            </div><br>
                         </div>
                         <hr>
                         @else
@@ -79,14 +148,50 @@
 
                     <div class="col-md-6">
                         <div class="mb-3 row">
-                            <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre personnalité juridique</label>
+                            {{-- <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre personnalité juridique</label>
                             <div class="col-sm-10">
                               <input class="form-control" name="doc_personnalite" type="file" id="formFile" required>
+                            </div> --}}
+
+                            <div>
+                                <label for="email" class="text-sm font-medium"><b>Modifiez votre personnalité juridique</b></label>
+            
+                                <div class="relative mt-1">
+                                  <input
+                                    type="file"
+                                    id="formFile"
+                                    name="doc_personnalite"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Chercher les fichiers" required
+                                  />
+            
+                                  <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="h-5 w-5 text-gray-400"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
                             </div>
+
                         </div>
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-success">Mettre à jour</button>
-                        </div>
+                        <div class="col-sm-5">
+                            <button
+                                type="submit"
+                                class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                Mettre à jour
+                            </button>
+                        </div><br>
                     </div>
                     @else
                     <div class="col-md-4 p-3">
@@ -111,14 +216,50 @@
 
                     <div class="col-md-6">
                         <div class="mb-3 row">
-                            <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre Certificat</label>
+                            {{-- <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre Certificat</label>
                             <div class="col-sm-10">
                               <input class="form-control" name="doc_certificat" type="file" id="formFile" required>
+                            </div> --}}
+
+                            <div>
+                                <label for="email" class="text-sm font-medium"><b>Modifiez votre Certificat</b></label>
+            
+                                <div class="relative mt-1">
+                                  <input
+                                    type="file"
+                                    id="formFile"
+                                    name="doc_certificat"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Chercher les fichiers" required
+                                  />
+            
+                                  <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="h-5 w-5 text-gray-400"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
                             </div>
+
                         </div>
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-success">Mettre à jour</button>
-                        </div>
+                        <div class="col-sm-5">
+                            <button
+                                type="submit"
+                                class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                Mettre à jour
+                            </button>
+                        </div><br>
                     </div>
                     <hr>
                     @else
@@ -144,14 +285,51 @@
 
                     <div class="col-md-6">
                         <div class="mb-3 row">
-                            <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre convention de partenariat</label>
+                            {{-- <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre convention de partenariat</label>
                             <div class="col-sm-10">
                               <input class="form-control" name="doc_convention" type="file" id="formFile" required>
+                            </div> --}}
+
+                            <div>
+                                <label for="email" class="text-sm font-medium"><b>Modifiez votre convention de partenariat</b></label>
+            
+                                <div class="relative mt-1">
+                                  <input
+                                    type="file"
+                                    id="formFile"
+                                    name="doc_convention"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Chercher les fichiers" required
+                                  />
+            
+                                  <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="h-5 w-5 text-gray-400"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+
                             </div>
+
                         </div>
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-success">Mettre à jour</button>
-                        </div>
+                        <div class="col-sm-5">
+                            <button
+                                type="submit"
+                                class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                Mettre à jour
+                            </button>
+                        </div><br>
                     </div>
                     @else
                         <div class="col-md-4 p-3">
@@ -174,14 +352,50 @@
 
                     <div class="col-md-6">
                         <div class="mb-3 row">
-                            <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre accord cadre</label>
+                            {{-- <label for="inputNumber" class="col-sm-10 col-form-label">Modifiez votre accord cadre</label>
                             <div class="col-sm-10">
                               <input class="form-control" name="doc_accord" type="file" id="formFile" required>
+                            </div> --}}
+
+                            <div>
+                                <label for="email" class="text-sm font-medium"><b>Modifiez votre accord cadre</b></label>
+            
+                                <div class="relative mt-1">
+                                  <input
+                                    type="file"
+                                    id="formFile"
+                                    name="doc_accord"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Chercher les fichiers" required
+                                  />
+            
+                                  <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      class="h-5 w-5 text-gray-400"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      stroke="currentColor"
+                                    >
+                                      <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                                      />
+                                    </svg>
+                                  </span>
+                                </div>
+                                
                             </div>
                         </div>
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-success">Mettre à jour</button>
-                        </div>
+                        <div class="col-sm-5">
+                            <button
+                                type="submit"
+                                class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                Mettre à jour
+                            </button>
+                        </div><br>
                     </div>
                     <hr>
                     @else

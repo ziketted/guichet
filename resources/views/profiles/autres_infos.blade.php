@@ -15,26 +15,38 @@
 
                     <div class="col-md-10">
                       <div class="form-floating">
-                          <textarea class="form-control"  name="objectif_global" id="" cols="30" rows="10" required>{{$profile->objectif_global}}</textarea>
-                          <label for="floatingEmail">Objectif global de l'organisation</label>
+                          <textarea
+                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                            placeholder=""
+                            rows="8"
+                            name="objectif_global"
+                            id="message"
+                          >{{$profile->objectif_global}}</textarea>
                       </div>
                     </div>
 
 
                     <div class="col-md-10">
                         <div class="form-floating">
-                            <Textarea type="text" rows="50" cols="30" class="form-control" id="floatingEmail" name="objectif_specifique">{{$profile->objectif_specifique}}</Textarea>
-                            <label for="floatingEmail">Objectif specifique</label>
+                            
+                            <textarea
+                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                            placeholder=""
+                            rows="8"
+                            name="objectif_specifique"
+                            id="message"
+                          >{{$profile->objectif_specifique}}</textarea>
                         </div>
                     </div>
 
-
-
-                    <div class="col-sm-10">
-                      <button type="submit" class="btn btn-primary">Mettre à jour</button>
+                    <div class="col-sm-4">
+                      {{-- <button type="submit" class="btn btn-success">Mettre à jour</button> --}}
+                      <button
+                          type="submit"
+                          class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                              Mettre à jour
+                      </button>
                     </div>
-
-
                 </form><!-- End General Form Elements -->
 
                 <!-- General Form Elements -->

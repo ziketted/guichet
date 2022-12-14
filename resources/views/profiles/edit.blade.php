@@ -15,69 +15,106 @@
                         <h5 class="card-title">Identification de la structure</h5>
                         <div class="col-md-6">
                         <div class="form-floating">
-                            <input class="form-control" name="denomination" value="{{$profile->denomination}}"
-                            type="text" id="formFile" required>
-                            <label for="floatingEmail">Denomination</label>
+                            <input
+                                class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                placeholder="Denomination"
+                                type="text" value="{{$profile->denomination}}"
+                                name="denomination"
+                                id="formFile" required
+                            />
                         </div>
                         </div>
 
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input class="form-control" name="sigle" type="text"
-                                value="{{$profile->sigle}}" id="formFile" required>
-                                <label for="floatingEmail">Sigle</label>
+                                <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Sigle"
+                                    type="text" value="{{$profile->sigle}}"
+                                    name="sigle"
+                                    id="formFile" required
+                                />
                             </div>
                         </div>
 
                         <h5 class="card-title">Responsable de l'organisation</h5>
                         <div class="col-md-6">
                         <div class="form-floating">
-                            <input class="form-control" name="responsable_nom"
-                            value="{{$profile->responsable_nom}}" type="text" id="formFile" required>
-                            <label for="floatingEmail">Nom</label>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-floating">
-                            <input class="form-control" name="responsable_postnom"
-                            value="{{$profile->responsable_postnom}}" type="text"
-                            id="formFile" required>
-                            <label for="floatingEmail">PostNom</label>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-floating">
-                            <input class="form-control" name="responsable_prenom"
-                            type="text" id="formFile" value="{{$profile->responsable_prenom}}"
-                             required>
-                            <label for="floatingEmail">Prenom</label>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-floating">
-                            <input class="form-control" name="responsable_fonction"
-                            value="{{$profile->responsable_fonction}}"
-                             type="text" id="formFile" required>
-                            <label for="floatingEmail">Fonction</label>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-floating">
-                            <input class="form-control" name="responsable_phone"
-                            value="{{$profile->responsable_phone}}" type="text" id="formFile" required>
-                            <label for="floatingEmail">Téléphone</label>
-                        </div>
-                        </div>
-                        <div class="col-md-6">
-                        <div class="form-floating">
-                            <input class="form-control" name="responsable_email"
-                            value="{{$profile->responsable_email}}" type="text" id="formFile" required>
-                            <label for="floatingEmail">Email</label>
+                            
+                                <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Nom"
+                                    type="text" value="{{$profile->responsable_nom}}"
+                                    name="responsable_nom"
+                                    id="formFile" required
+                                />
                         </div>
                         </div>
 
-                        <div class="col-sm-10">
-                        <button type="submit" class="btn btn-success">Mettre à jour</button>
+                        <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="PostNom"
+                                    type="text" value="{{$profile->responsable_postnom}}"
+                                    name="responsable_postnom"
+                                    id="formFile" required
+                                />
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-floating">
+                            
+                                <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Prenom"
+                                    type="text" value="{{$profile->responsable_prenom}}"
+                                    name="responsable_prenom"
+                                    id="formFile" required
+                                />
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-floating">
+                                <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Fonction"
+                                    type="text" value="{{$profile->responsable_fonction}}"
+                                    name="responsable_fonction"
+                                    id="formFile" required
+                                />
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-floating">
+                                <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Téléphone"
+                                    type="text" value="{{$profile->responsable_phone}}"
+                                    name="responsable_phone"
+                                    id="formFile" required
+                                />
+                        </div>
+                        </div>
+                        <div class="col-md-6">
+                        <div class="form-floating">
+                            <input
+                                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    placeholder="Email"
+                                    type="text" value="{{$profile->responsable_email}}"
+                                    name="responsable_email"
+                                    id="formFile" required
+                                />
+                        </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                        {{-- <button type="submit" class="btn btn-success">Mettre à jour</button> --}}
+                        <button
+                            type="submit"
+                            class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                                Mettre à jour
+                        </button>
                         </div>
 
                     </form>
@@ -89,5 +126,7 @@
         </div>
     </section>
     </main>
+
+    
 
 @include('footer')
