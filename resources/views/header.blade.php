@@ -209,18 +209,18 @@
                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-        
+
                 <span class="ml-3 text-sm font-medium"> Tableau de bord </span>
               </a>
-        
+
               <details class="group [&_summary::-webkit-details-marker]:hidden">
                 <summary
                   class="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700"
                 >
                 <img src="https://img.icons8.com/emoji/48/null/open-file-folder-emoji.png" width="16" height="16"/>
-        
+
                   <span class="ml-3 text-sm font-medium"> Mes demandes </span>
-        
+
                   <span
                     class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
                   >
@@ -238,7 +238,7 @@
                     </svg>
                   </span>
                 </summary>
-        
+
                 <nav aria-label="Teams Nav" class="mt-1.5 ml-8 flex flex-col">
                   <a
                     href="{{ route('enrolement.index') }}"
@@ -258,10 +258,10 @@
                         d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636"
                       />
                     </svg>
-        
+
                     <span class="ml-3 text-sm font-medium"> Enrolements </span>
                   </a>
-        
+
                   <a
                     href="{{ route('exoneration.index') }}"
                     class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
@@ -280,27 +280,27 @@
                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       />
                     </svg>
-        
+
                     <span class="ml-3 text-sm font-medium"> Exonerations </span>
                   </a>
                 </nav>
               </details>
-        
+
               <a
                 href="{{ route('profile.index') }}"
                 class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <img src="https://img.icons8.com/ios-filled/50/null/user-male-circle.png" width="16" height="16"/>
-        
+
                 <span class="ml-3 text-sm font-medium"> Profil </span>
               </a>
-        
+
               <a
                 href="/aide"
                 class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <img src="https://img.icons8.com/ios-filled/50/null/info-squared.png" width="16" height="16"/>
-        
+
                 <span class="ml-3 text-sm font-medium"> Aide </span>
               </a>
 
@@ -309,29 +309,29 @@
                 class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <img src="https://img.icons8.com/ios-glyphs/30/null/circled-left.png" width="16" height="16"/>
-        
+
                 <span class="ml-3 text-sm font-medium"> Retour sur le site </span>
               </a>
-        
-              
+
+
             </nav>
           </div>
-        
-         
+
+
         </div>
-        
-        
-      
+
+
+
         <hr>
         @else
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/">
+            <a class="nav-link collapsed" href="{{route('admin.admin')}}">
             <i class="bi bi-back"></i>
             <span>Tableau de bord Admin</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/">
+            <a class="nav-link collapsed" href="{{route('admin.profile')}}">
             <i class="bi bi-person"></i>
             <span>Nos requerants </span>
             </a>
@@ -342,13 +342,13 @@
             </a>
             <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
             <li>
-                <a href="#">
-                <i class="bi bi-circle"></i><span>Enrolement</span>
+                <a href="{{route('admin.enrolement')}}">
+                    <i class="bi bi-circle"></i><span>Enrolement</span>
                 </a>
             </li>
             <li>
-                <a href="#">
-                <i class="bi bi-circle"></i><span>Exonérations</span>
+                <a href="{{route('admin.exoneration')}}">
+                    <i class="bi bi-circle"></i><span>Exonérations</span>
                 </a>
             </li>
             </ul>
@@ -360,7 +360,7 @@
             </a>
         </li><!-- End F.A.Q Page Nav -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/">
+            <a class="nav-link collapsed" href="{{route('notification.index')}}">
             <i class="bi bi-bell"></i>
             <span>Notifiez le requerant</span>
             </a>
@@ -368,7 +368,7 @@
         @endif
     </ul>
 
-    
+
 
 
 </aside><!-- End Sidebar-->

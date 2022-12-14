@@ -35,7 +35,6 @@ class AdmingeneController extends Controller
                                           'interieurCount'=>$interieurCount,
                                           'notification'=>$notification, ]);
 
-
     }
     public function profile()
     {
@@ -43,6 +42,21 @@ class AdmingeneController extends Controller
         return view('profile');
     }
 
+    public function adminindex()
+    {
+        //
+        return view('admin.index');
+    }
+    public function enrolement()
+    {
+        //
+        return view('admin.valid_enrolement');
+    }
+    public function exoneration()
+    {
+        //
+        return view('admin.validation_exoneration');
+    }
     /**
      * Show the form for creating a new resource.
      *

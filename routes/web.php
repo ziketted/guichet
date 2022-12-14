@@ -107,7 +107,8 @@ Route::middleware([
         //Admin profile
         Route::name('admin.')->group(function () {
 
-            Route::get('/profile', [AdmingeneController::class, 'profle'])->name('profile');
+            Route::get('/admin/index', [AdmingeneController::class, 'adminindex'])->name('admin');
+            Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
             Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
             });
