@@ -199,17 +199,11 @@
                         <td></td>
                         <td><span class="badge bg-success"></span></td>
                         <td>
-                            <div class="items-center row x-gap-10 y-gap-10">
-                                {{-- <div class="col-auto">
-                                    <a href="{{route('exoneration.show', $exoneration->id)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </div> --}}
-                                <div class="col-auto">
+
                                     <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
-                                </div>
-                                <div class="col-auto">
+
                                     <a href="" class="btn btn-danger"><i class="bi bi-pen-fill"></i></a>
-                                </div>
-                              </div>
+
                         </td>
 
 

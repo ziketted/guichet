@@ -75,7 +75,13 @@ class AdmingeneController extends Controller
     public function enrolement()
     {
         //
-        $enrolements= Enrolement::where('user_id','<>', auth()->user()->id)->get();
+        $enrolements= DB::table('users')
+        ->leftJoin('enrolements', 'users.id', '=', 'enrolements.user_id')
+        ->select('enrolements.*', 'users.name', 'users.email')
+        ->where('users.id','<>',auth()->user()->id)
+        ->where('enrolements.deleted_at',NULL)
+        ->get();
+
         return view('admin.valid_enrolement',[ 'enrolements'=>$enrolements]);
 
     }

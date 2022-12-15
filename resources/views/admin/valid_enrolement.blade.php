@@ -19,16 +19,16 @@
         <div class="col-lg-8">
           <div class="row">
 
-           
+
             {{-- <div class="col-xxl-4 col-md-6">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Nombre de requerants</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900"></p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +45,9 @@
                       />
                     </svg>
                   </span>
-                  
+
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,24 +63,24 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
+
                   <p class="flex gap-2 text-xs">
                   </p>
                 </div>
               </article>
             </div> --}}
 
-           
+
             {{-- <div class="col-xxl-4 col-md-6">
 
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Demandes d'exoneration à valider</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900"></p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -97,9 +97,9 @@
                       />
                     </svg>
                   </span>
-                  
+
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -115,23 +115,23 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
+
                   <p class="flex gap-2 text-xs">
                   </p>
                 </div>
               </article>
             </div> --}}
 
-           
+
             {{-- <div class="col-xxl-4 col-md-6">
                 <article class="rounded-lg border border-gray-100 bg-white p-6">
                   <div class="flex items-center justify-between">
                     <div>
                       <p class="text-sm text-gray-500">Enrolements à valider</p>
-                
+
                       <p class="text-2xl font-medium text-gray-900"></p>
                     </div>
-                
+
                     <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -148,9 +148,9 @@
                         />
                       </svg>
                     </span>
-                    
+
                   </div>
-                
+
                   <div class="mt-1 flex gap-1 text-green-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -166,7 +166,7 @@
                         d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                       />
                     </svg>
-                
+
                     <p class="flex gap-2 text-xs">
                     </p>
                   </div>
@@ -175,7 +175,7 @@
 
 
 
-            
+
             <!-- Recent Sales -->
             <div class="col-12">
               <div class="overflow-auto card recent-sales">
@@ -188,32 +188,28 @@
                       <tr>
                         <th scope="col">Requerant</th>
                         <th scope="col">Enrolement</th>
+                        <th scope="col">Etat</th>
                         <th scope="col">Date</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                        
 
 
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td><span class="badge bg-success"></span></td>
-                        <td>
-                            <div class="items-center row x-gap-10 y-gap-10">
-                                {{-- <div class="col-auto">
-                                    <a href="{{route('exoneration.show', $exoneration->id)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </div> --}}
-                                <div class="col-auto">
-                                    <a href="" class="btn btn-warning"><i class="bi bi-eye-fill"></i></a>
-                                </div>
-                                
-                              </div>
-                        </td>
-                        
 
-                      </tr>
+                      @foreach ($enrolements as $enrolement)
+                        <tr>
+                          <td>{{$enrolement->name}}</td>
+                          <td> <a href="{{Storage::url($enrolement->lettre)}}" download="lettre">
+                            <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
+                          <td><span class="badge bg-success">{{$enrolement->statut}}</span></td>
+                          <td>{{$enrolement->created_at}}</td>
+                          <td>
+                            <a href="" class="btn btn-warning"><i class="bi bi-eye-fill"></i></a>
+                            <a href="" class="btn btn-danger"><i class="bi bi-pen"></i></a>
+                          </td>
+                        </tr>
+                      @endforeach
 
                     </tbody>
                   </table>
