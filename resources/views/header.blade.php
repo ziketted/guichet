@@ -188,7 +188,7 @@
             <nav aria-label="Main Nav" class="flex flex-col mt-6 space-y-1">
               <a
                 href="/dashboard"
-                class="flex items-center px-4 py-2 text-gray-700 bg-red-100 rounded-lg"
+                class="flex items-center px-4 py-2 text-gray-700 {{ (request()->is('dashboard')) ? 'bg-red-100' : '' }} rounded-lg"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -215,7 +215,11 @@
 
               <details class="group [&_summary::-webkit-details-marker]:hidden">
                 <summary
-                  class="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer hover:bg-gray-100 hover:text-gray-700"
+                  class="flex items-center px-4 py-2 text-gray-500 rounded-lg cursor-pointer
+                  {{ (request()->is('enrolement/index')) ? 'bg-red-100' : '' }}
+                  {{ (request()->is('exoneration/index')) ? 'bg-red-100' : '' }}
+
+                    hover:bg-gray-100 hover:text-gray-700"
                 >
                 <img src="https://img.icons8.com/emoji/48/null/open-file-folder-emoji.png" width="16" height="16"/>
 
@@ -288,7 +292,9 @@
 
               <a
                 href="{{ route('profile.index') }}"
-                class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                class="flex items-center px-4 py-2 text-gray-500 rounded-lg
+                {{ (request()->is('profile/index')) ? 'bg-red-100' : '' }}
+                hover:bg-gray-100 hover:text-gray-700"
               >
                 <img src="https://img.icons8.com/ios-filled/50/null/user-male-circle.png" width="16" height="16"/>
 
@@ -297,7 +303,9 @@
 
               <a
                 href="/aide"
-                class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                class="flex items-center px-4 py-2
+                {{ (request()->is('aide')) ? 'bg-red-100' : '' }}
+                text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <img src="https://img.icons8.com/ios-filled/50/null/info-squared.png" width="16" height="16"/>
 
@@ -472,7 +480,7 @@
                 <span class="ml-3 text-sm font-medium"> Notifiez le requerant </span>
               </a>
 
-              
+
 
 
             </nav>
