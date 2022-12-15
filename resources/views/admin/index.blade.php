@@ -25,10 +25,10 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Nombre de requerants</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900"></p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -44,10 +44,11 @@
                         d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
                       />
                     </svg>
+
                   </span>
-                  
+                {{$requerantNombre}}
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +64,7 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
+
                   <p class="flex gap-2 text-xs">
                   </p>
                 </div>
@@ -76,11 +77,11 @@
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
-                    <p class="text-sm text-gray-500">Demandes d'exoneration à valider</p>
-              
+                    <p class="text-sm text-gray-500"> <a href="{{route('admin.exoneration',['statut'=>'soumis'])}}"> Demandes d'exoneration à valider</a></p>
+
                     <p class="text-2xl font-medium text-gray-900"></p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -97,9 +98,9 @@
                       />
                     </svg>
                   </span>
-                  
+                  {{$exonerationNombre}}
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +116,7 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
+
                   <p class="flex gap-2 text-xs">
                   </p>
                 </div>
@@ -129,10 +130,10 @@
                   <div class="flex items-center justify-between">
                     <div>
                       <p class="text-sm text-gray-500">Enrolements à valider</p>
-                
+
                       <p class="text-2xl font-medium text-gray-900"></p>
                     </div>
-                
+
                     <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -149,9 +150,9 @@
                         />
                       </svg>
                     </span>
-                    
+                    {{$enrolementNombre}}
                   </div>
-                
+
                   <div class="mt-1 flex gap-1 text-green-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -167,39 +168,13 @@
                         d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                       />
                     </svg>
-                
+
                     <p class="flex gap-2 text-xs">
                     </p>
                   </div>
                 </article><br>
               </div>
 
-
-
-            {{-- <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
-
-              <div class="card info-card customers-card">
-                <div class="card-body">
-                  <h5 class="card-title">Customers <span>| This Year</span></h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="bi bi-people"></i>
-                    </div>
-                    <div class="ps-3">
-                      <h6>1244</h6>
-                      <span class="pt-1 text-danger small fw-bold">12%</span> <span class="pt-2 text-muted small ps-1">decrease</span>
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-            </div><!-- End Customers Card --> --}}
-
-            <!-- Recent Sales -->
             <div class="col-12">
               <div class="overflow-auto card recent-sales">
 
@@ -216,7 +191,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        
+
 
 
                       <tr>
@@ -236,7 +211,7 @@
                                 </div>
                               </div>
                         </td>
-                        
+
 
                       </tr>
 

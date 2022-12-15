@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Enrolement;
 use App\Models\Exoneration;
 use App\Models\Notification;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdmingeneController extends Controller
 {
@@ -39,23 +42,62 @@ class AdmingeneController extends Controller
     public function profile()
     {
         //
-        return view('profile');
+        $requerant= DB::table('users')
+        ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
+        ->select('users.*', 'profiles.responsable_nom', 'profiles.province', 'profiles.domaine','profiles.telephone')
+        ->where('users.id','<>',auth()->user()->id)
+        ->get();
+        return view('profile', [ 'requerants'=>$requerant]);
+
     }
 
     public function adminindex()
     {
         //
-        return view('admin.index');
+          //
+          $notification=Notification::where('user_id', auth()->user()->id)
+          ->where('statut')
+          ->count();
+            $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
+            $exonerationTotal= Exoneration::where('user_id','<>',  auth()->user()->id)
+                                            ->where('statut', 'soumis')->count();
+            $enrolementNombre=Enrolement::where('user_id','<>',  auth()->user()->id)
+                                          ->where('statut', 'soumis')->count();
+
+
+            return view('admin.index', [
+                            'enrolementNombre'=>$enrolementNombre,
+                            'exonerationNombre'=>$exonerationTotal,
+                            'requerantNombre'=>$requerantNombre,
+                            'notification'=>$notification, ]);
+
     }
     public function enrolement()
     {
         //
-        return view('admin.valid_enrolement');
+        $enrolements= Enrolement::where('user_id','<>', auth()->user()->id)->get();
+        return view('admin.valid_enrolement',[ 'enrolements'=>$enrolements]);
+
     }
+
+
     public function exoneration()
     {
         //
-        return view('admin.validation_exoneration');
+        $exonerationTotal= Exoneration::where('user_id','<>',  auth()->user()->id)  ->count();
+        $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
+
+        $exonerations= DB::table('users')
+        ->leftJoin('exonerations', 'users.id', '=', 'exonerations.user_id')
+        ->select('exonerations.*', 'users.name', 'users.email')
+        ->where('users.id','<>',auth()->user()->id)
+        ->where('exonerations.deleted_at',NULL)
+        ->get();
+
+
+        return view('admin.validation_exoneration',['exonerations'=>$exonerations
+                                                    ,'requerantNombre'=>$requerantNombre
+                                                    ,'exonerationTotal'=>$exonerationTotal]);
     }
     /**
      * Show the form for creating a new resource.

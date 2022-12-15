@@ -19,7 +19,7 @@
         <div class="col-lg-8">
           <div class="row">
 
-          
+
             {{-- <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
@@ -52,37 +52,34 @@
 
                   <table class="table table-borderless datatable">
                     <thead>
-                      <tr>
-                        <th scope="col">Requerant</th>
-                        <th scope="col">Telephone</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Action</th>
-                      </tr>
+
+                         <tr>
+                           <th scope="col">Requerant</th>
+                           <th scope="col">Telephone</th>
+                           <th scope="col">Email</th>
+                           <th scope="col">Action</th>
+                         </tr>
+
                     </thead>
                     <tbody>
-                        
 
 
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td><span class="badge bg-success"></span></td>
-                        <td>
-                            <div class="items-center row x-gap-10 y-gap-10">
-                                {{-- <div class="col-auto">
-                                    <a href="{{route('exoneration.show', $exoneration->id)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
-                                </div> --}}
-                                <div class="col-auto">
-                                    <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
-                                </div>
-                                <div class="col-auto">
-                                    <a href="" class="btn btn-danger"><i class="bi bi-pen-fill"></i></a>
-                                </div>
-                              </div>
-                        </td>
-                        
+                        @foreach ($requerants as $requerant)
+                            <tr>
+                            <td>{{$requerant->name}}</td>
+                            <td>{{$requerant->telephone}}</td>
+                            <td>{{$requerant->email}}</td>
+                            <td>
 
-                      </tr>
+                                        <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
+
+                                        <a href="" class="btn btn-danger"><i class="bi bi-pen-fill"></i></a>
+
+                            </td>
+
+
+                        </tr>
+                      @endforeach
 
                     </tbody>
                   </table>
