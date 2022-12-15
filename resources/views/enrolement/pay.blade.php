@@ -53,13 +53,24 @@
 
             <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
               <div class="mx-auto max-w-lg">
-                <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-                  Enrolement au FNPSS
-                </h1>
+                <h3 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
+                  Paiement de l'enrolement 
+                </h3>
+                <?php 
 
-                
+                    $users = DB::table('users')
+                    ->where('id', $user_id)
+                    ->get(); 
+                ?>
+                @foreach ($users as $user )
+                    <h7>Nom : {{ $user->name }}</h7><br>
+                    <h7>Email : {{ $user->email }}</h7><br>
+                    <h7>Montant : 50 USD</h7><br>
+                @endforeach
 
-                <form action="{{ route('enrolement.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
+
+            
+                {{-- <form action="{{ route('enrolement.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                   @csrf
                   
 
@@ -144,7 +155,32 @@
                   </button>
 
                   
-                </form>
+                </form> --}}
+
+                <form action="https://api.maxicashapp.com/PayEntryPost" method="POST">
+                    <input type="hidden" name="PayType" value="MaxiCash">
+                    <input type="hidden" name="Amount" value="5000">
+                    <input type="hidden" name="Currency" value="MaxiDollar">
+                    <input type="hidden" name="Telephone" value="0813579841">
+                    <input type="hidden" name="Email" value="{{ $user->email }}">
+                   
+                    <input type="hidden" name="MerchantID" value="cffbf69177664b7595fe285527cc9ccd">
+                    <input type="hidden" name="MerchantPassword" value="66267160e1c84713bd098395902fff19">
+                    <input type="hidden" name="Language" value="En">
+                    <input type="hidden" name="Reference" value="0001">
+                    <input type="hidden" name="accepturl" value="https://www.google.fr/">
+                    <input type="hidden" name="cancelurl" value="https://www.google.fr/">
+                    <input type="hidden" name="declineurl" value="https://www.google.fr/">
+                    <input type="hidden" name="notifyurl" value="https://www.google.fr/">
+              
+                    <button
+                        type="submit"
+                        class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                        Payer votre enrolement maintenant
+                    </button>
+
+                  </form>
+
               </div>
             </div>
 
@@ -155,6 +191,7 @@
       </div>
     </div>
     
+
 </section>
 
 </main>

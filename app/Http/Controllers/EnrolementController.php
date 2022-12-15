@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use auth;
 use DateTime;
+use GuzzleHttp\Client;
+use App\Models\paiements;
 use App\Models\Enrolement;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Http;
 use App\Http\Requests\StoreEnrolementRequest;
 use App\Http\Requests\UpdateEnrolementRequest;
 
@@ -30,7 +34,7 @@ class EnrolementController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function create(Request $request, Enrolement $enrolement)
+    public function create(Request $request, Enrolement $enrolement, paiements $paiements)
     {
         //
 
@@ -54,18 +58,31 @@ class EnrolementController extends Controller
             $file->move($filePath, $filename);
             $request->autre_document=$filename;
         }
+
         $now = new DateTime();
         $year = $now->format("Y");
+
         $enrolement->lettre=$request->lettre;
         $enrolement->autre_document=$request->autre_document;
         $enrolement->validite=$year+2;
         $enrolement->commentaires=$request->commentaires;
-        $enrolement->user_id=auth()->user()->id;
+        $user_id = $enrolement->user_id=auth()->user()->id;
         $enrolement->save();
 
-        return redirect()->route('enrolement.index')->with('save', 'Opération effectuée avec succès.');;
+        $last_id = DB::getPDO()->lastInsertId();
 
+        $form_data_2 = array(
+            'user_id'   => $user_id,
+            'type_paiement'   =>   'Enrolement',
+            'montant'   =>   '50',
+            'statut'   =>   'pending',
+            "id_enrolement"=>$last_id,
+            );
+            
+            paiements::create($form_data_2);
+        
 
+        return view('enrolement.pay')->with('user_id', $user_id);
 
     }
 
