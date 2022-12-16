@@ -213,38 +213,14 @@
             <a href="{{ route('exoneration.store') }}">
               <button
                   type="submit"
-                  class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                  class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
                   Nouvelle exoneration
               </button>
             </a>
 
           </div><br>
 
-          <!-- Recent Activity -->
-          <div class="card">
-
-            <div class="card-body">
-              <h5 class="card-title">Suivi de la demande en cours</span></h5>
-
-              <div class="activity">
-
-                <div class="activity-item d-flex">
-                  <div class="activite-label">32 min</div>
-                  <i class='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                  <div class="activity-content">
-                    Quia quae rerum <a href="#" class="fw-bold text-dark">explicabo officiis</a> beatae
-                  </div>
-                </div><!-- End activity item-->
-
-
-
-              </div>
-
-            </div>
-          </div><!-- End Recent Activity -->
-
-
-
+          
         </div><!-- End Right side columns -->
 
       </div>
