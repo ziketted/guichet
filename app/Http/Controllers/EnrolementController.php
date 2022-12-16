@@ -23,12 +23,14 @@ class EnrolementController extends Controller
     public function index()
     {
         //
-        
+
         $enrolements= Enrolement::where('user_id',  auth()->user()->id)->get();
         return view('enrolement.index', ['enrolements'=>$enrolements]);
     }
-
-    /**
+    /* public function pay(){
+        return view ('enrolement.pay');
+    } */
+        /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
@@ -78,9 +80,9 @@ class EnrolementController extends Controller
             'statut'   =>   'pending',
             "id_enrolement"=>$last_id,
             );
-            
+
             paiements::create($form_data_2);
-        
+
 
         return view('enrolement.pay')->with('user_id', $user_id);
 

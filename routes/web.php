@@ -29,7 +29,7 @@ Route::middleware([
 
     Route::name('enrolement.')->group(function () {
         Route::get('/enrolement/index', [EnrolementController::class, 'index'])->name('index');
-        Route::get('/enrolement/pay', [EnrolementController::class, ''])->name('pay');
+        Route::get('/enrolement/pay', [EnrolementController::class, 'pay'])->name('pay');
         Route::get('/enrolement/store', [EnrolementController::class, 'store'])->name('store');
         Route::post('/enrolement/create', [EnrolementController::class, 'create'])->name('create');
         Route::get('/enrolement/show/{enrolement}', [EnrolementController::class, 'show'])->name('show');
@@ -122,5 +122,5 @@ Route::middleware([
         Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
 
 
-        
+
 });

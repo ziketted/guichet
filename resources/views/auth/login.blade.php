@@ -111,7 +111,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-            
+
             <form method="POST" action="{{ route('login') }}" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
               @csrf
               <div>
@@ -188,15 +188,16 @@
                 >
                 Connectez-vous
                 </button>
-                <button
+                <a
+                href="{{ url('auth/google') }}"
                   type="submit"
                   class="ml-3 inline-block rounded-lg bg-red-500 px-5 py-3 text-sm font-medium text-white"
                 >
                 Google
-                </button>
+                </a>
               </div>
             </form>
-          </div>           
+          </div>
 </section>
 
     </div>

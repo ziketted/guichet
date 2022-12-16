@@ -25,10 +25,10 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Exonération à l'importation</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900">{{$nombreDemande}}</p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +45,9 @@
                       />
                     </svg>
                   </span>
-                  
+
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,7 +63,7 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
+
                   <p class="flex gap-2 text-xs">
                   </p>
                 </div>
@@ -76,10 +76,10 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Exonération à l'interieur du pays</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900">{{$nombreInterieur}}</p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -96,9 +96,9 @@
                       />
                     </svg>
                   </span>
-                  
+
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,13 +114,13 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
+
                   <p class="flex gap-2 text-xs">
                   </p>
                 </div>
               </article><br>
 
-              
+
 
             </div><!-- End Revenue Card -->
 
@@ -209,7 +209,7 @@
         <div class="col-lg-4">
 
           <div class="activity-item d-flex">
-            
+
             <a href="{{ route('exoneration.store') }}">
               <button
                   type="submit"
@@ -217,7 +217,7 @@
                   Nouvelle exoneration
               </button>
             </a>
-            
+
           </div><br>
 
           <!-- Recent Activity -->

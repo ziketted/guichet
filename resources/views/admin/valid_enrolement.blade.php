@@ -198,17 +198,17 @@
 
 
                       @foreach ($enrolements as $enrolement)
-                        <tr>
-                          <td>{{$enrolement->name}}</td>
-                          <td> <a href="{{Storage::url($enrolement->lettre)}}" download="lettre">
-                            <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
-                          <td><span class="badge bg-success">{{$enrolement->statut}}</span></td>
-                          <td>{{$enrolement->created_at}}</td>
-                          <td>
-                            <a href="" class="btn btn-warning"><i class="bi bi-eye-fill"></i></a>
-                            <a href="" class="btn btn-danger"><i class="bi bi-pen"></i></a>
-                          </td>
-                        </tr>
+                            <tr>
+                                <td>{{$enrolement->name}}</td>
+                                <td> <a href="{{Storage::url($enrolement->lettre)}}" download="lettre">
+                                    <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
+                                <td><span class="badge bg-success">{{$enrolement->statut}}</span></td>
+                                <td>{{$enrolement->created_at}}</td>
+                                <td>
+                                    <a href="" class="btn btn-warning"><i class="bi bi-eye-fill"></i></a>
+                                    <a href="" class="btn btn-danger"><i class="bi bi-pen"></i></a>
+                                </td>
+                            </tr>
                       @endforeach
 
                     </tbody>

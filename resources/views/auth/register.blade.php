@@ -51,7 +51,7 @@
                         <div class="invalid-feedback">Veuillez confirmer votre mot de passe</div>
                     </div>
 
-                    
+
                     <div class="col-12">
                       <button class="btn btn-primary w-100" type="submit">Creer un compte</button>
                     </div>
@@ -63,7 +63,7 @@
                 </div>
               </div>
 
-              
+
             </div>
           </div>
         </div>
@@ -90,7 +90,8 @@
             dolores deleniti inventore quaerat mollitia?
           </p>
 
-          <form action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+          <form method="POST" action="{{ route('register') }}" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+            @csrf
             <p class="text-lg font-medium">Sign in to your account</p>
 
             <div>
