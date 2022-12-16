@@ -35,7 +35,7 @@ class ConventionController extends Controller
      * @param  \App\Http\Requests\StoreConventionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreConventionRequest $request)
+    public function store()
     {
         //
     }

@@ -118,7 +118,7 @@ Route::middleware([
         Route::name('convention.')->group(function () {
             Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');
             Route::post('/convention/index', [ConventionController::class, 'create'])->name('create');
-            Route::post('/convention/show/{convention}', [ConventionController::class, 'show'])->name('create');
+            Route::get('/convention/show/{convention}', [ConventionController::class, 'show'])->name('create');
             Route::delete('/convention/{convention}',[RoleController::class, 'destroy'])->name('destroy');
 
         });
