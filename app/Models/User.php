@@ -60,7 +60,9 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
+    public function conventionUser(){
+        return $this->hasMany(\App\Models\Convention::class);
+    }
     public function profileUser(){
         return $this->hasMany(\App\Models\Profile::class);
     }

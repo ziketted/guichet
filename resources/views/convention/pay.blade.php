@@ -54,7 +54,7 @@
             <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
               <div class="mx-auto max-w-lg">
                 <h3 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
-                  Paiement de l'enrolement
+                  Paiement de la convention
                 </h3>
                 <?php
 
@@ -63,29 +63,13 @@
                     ->where('id', $user_id)
                     ->get();
                 ?>
-            @foreach ($users as $user )
-                    
-            <a
-              class="relative block rounded-xl border border-gray-100 p-8 shadow-xl"
-              href=""
-            >
-              <span
-                class="absolute right-4 top-4 rounded-full bg-green-100 px-3 py-1.5 text-xs font-medium text-green-600"
-              >
-                Paiement
-              </span>
+                @foreach ($users as $user )
+                    <h7>Nom : {{ $user->name }}</h7><br>
+                    <h7>Email : {{ $user->email }}</h7><br>
+                    <h7>Montant : 300 USD</h7><br>
+                @endforeach
 
-              <div class="mt-4 text-gray-500 sm:pr-8">
-                
-                <h7 class="mt-4 text-xl font-bold text-gray-900">Nom : {{ $user->name }}</h7><br>
-                <h7 class="mt-4 text-xl font-bold text-gray-900">Email : {{ $user->email }}</h7><br>
-                <h7 class="mt-4 text-xl font-bold text-gray-900">Montant : 50 USD</h7>
 
-                
-              </div>
-            </a><br>
-
-            @endforeach
 
                 {{-- <form action="{{ route('enrolement.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                   @csrf
@@ -176,7 +160,7 @@
 
                 <form action="https://api.maxicashapp.com/PayEntryPost" method="POST">
                     <input type="hidden" name="PayType" value="MaxiCash">
-                    <input type="hidden" name="Amount" value="5000">
+                    <input type="hidden" name="Amount" value="300.00">
                     <input type="hidden" name="Currency" value="MaxiDollar">
                     <input type="hidden" name="Telephone" value="0813579841">
                     <input type="hidden" name="Email" value="{{ $user->email }}">

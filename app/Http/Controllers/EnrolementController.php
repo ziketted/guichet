@@ -78,7 +78,7 @@ class EnrolementController extends Controller
             'type_paiement'   =>   'Enrolement',
             'montant'   =>   '50',
             'statut'   =>   'pending',
-            "id_enrolement"=>$last_id,
+            "id_operation"=>$last_id,
             );
 
             paiements::create($form_data_2);
