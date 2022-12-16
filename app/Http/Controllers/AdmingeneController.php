@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Enrolement;
 use App\Models\Exoneration;
 use App\Models\Notification;
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class AdmingeneController extends Controller
 {
@@ -19,24 +20,38 @@ class AdmingeneController extends Controller
     public function index()
     {
         //
-        $notification=Notification::where('user_id', auth()->user()->id)
-                                    ->where('statut')
-                                    ->count();
 
-        $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
-        $exonerationTotal= Exoneration::where('user_id',  auth()->user()->id)->count();
-        $importationCount= Exoneration::where('user_id',  auth()->user()->id)
-                                        ->where('type', 'Importation')
-                                        ->count();
+        if (auth()->user()->role_id==2){
 
-        $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
-                                        ->where('type', 'Interieur')
-                                        ->count();
-        return view('dashboard-general', ['exonerations'=>$exoneration,
-                                          'importationCount'=>$importationCount,
-                                          'exonerationTotal'=>$exonerationTotal,
-                                          'interieurCount'=>$interieurCount,
-                                          'notification'=>$notification, ]);
+            return redirect()->route('admin.admin');
+
+
+        }
+        else{
+
+            $notification=Notification::where('user_id', auth()->user()->id)
+            ->where('statut')
+            ->count();
+
+            $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
+            $exonerationTotal= Exoneration::where('user_id',  auth()->user()->id)->count();
+            $importationCount= Exoneration::where('user_id',  auth()->user()->id)
+                            ->where('type', 'Importation')
+                            ->count();
+
+            $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
+                            ->where('type', 'Interieur')
+                            ->count();
+            return view('dashboard-general', ['exonerations'=>$exoneration,
+                            'importationCount'=>$importationCount,
+                            'exonerationTotal'=>$exonerationTotal,
+                            'interieurCount'=>$interieurCount,
+                            'notification'=>$notification, ]);
+
+        }
+
+
+
 
     }
     public function profile()
