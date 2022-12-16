@@ -109,7 +109,7 @@ class AdmingeneController extends Controller
         $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
 
         $exonerations= DB::table('users')
-        ->leftJoin('exonerations', 'users.id', '=', 'exonerations.user_id')
+        ->join('exonerations', 'users.id', '=', 'exonerations.user_id')
         ->select('exonerations.*', 'users.name', 'users.email')
         ->where('users.id','<>',auth()->user()->id)
         ->where('exonerations.deleted_at',NULL)

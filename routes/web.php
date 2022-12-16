@@ -6,6 +6,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdmingeneController;
+use App\Http\Controllers\ConventionController;
 use App\Http\Controllers\EnrolementController;
 use App\Http\Controllers\ExonerationController;
 use App\Http\Controllers\ImportationController;
@@ -113,6 +114,14 @@ Route::middleware([
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
             Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
             });
+        //Convention
+        Route::name('convention.')->group(function () {
+            Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');
+            Route::post('/convention/index', [ConventionController::class, 'create'])->name('create');
+            Route::post('/convention/show/{convention}', [ConventionController::class, 'show'])->name('create');
+            Route::delete('/convention/{convention}',[RoleController::class, 'destroy'])->name('destroy');
+
+        });
 
 
         //Aide lien
