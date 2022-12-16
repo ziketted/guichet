@@ -205,8 +205,8 @@
                                 <td><span class="badge bg-success">{{$enrolement->statut}}</span></td>
                                 <td>{{$enrolement->created_at}}</td>
                                 <td>
-                                    <a href="" class="btn btn-warning"><i class="bi bi-eye-fill"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="bi bi-pen"></i></a>
+                                    <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
+                                    <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                       @endforeach
