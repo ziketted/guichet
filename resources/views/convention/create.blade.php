@@ -8,55 +8,10 @@
                 <h5 class="card-title">Demande de convention au FNPSS</h5>
 
                 <!-- General Form Elements -->
-                <form action="" class="row g-3" method="POST" enctype="multipart/form-data">
+                <form action="{{route('convention.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                    <div class="col-md-6">
-                        <div class="mb-3 row">
-                            <div class="col-sm-10">
-                              <div>
-                                <label for="Bordereau" class="text-sm font-medium">Lettre à la Direction du FNPSS</label>
 
-                                <div class="relative mt-1">
-                                  <input
-                                    type="file"
-                                    id="formFile"
-                                    name="lettre"
-                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                    placeholder="Chercher les fichiers" required
-                                  />
-                                </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4"><br>
-                      <div role="alert" class="rounded-xl border border-gray-100 p-4 shadow-xl">
-                        <div class="flex items-start gap-4">
-                          <span class="text-green-600">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="h-6 w-6"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                          </span>
-                      
-                          <div class="flex-1">
-                            <strong class="block font-medium text-gray-900"> Attestation</strong>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
 
                     <div class="col-md-3"><br>
                       <div role="alert" class="rounded-xl border border-gray-100 p-4 shadow-xl">
@@ -77,7 +32,34 @@
                               />
                             </svg>
                           </span>
-                      
+
+                          <div class="flex-1">
+                            <strong class="block font-medium text-gray-900"> Attestation</strong>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6"><br>
+                      <div role="alert" class="rounded-xl border border-gray-100 p-4 shadow-xl">
+                        <div class="flex items-start gap-4">
+                          <span class="text-green-600">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1.5"
+                              stroke="currentColor"
+                              class="h-6 w-6"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                          </span>
+
                           <div class="flex-1">
                             <strong class="block font-medium text-gray-900"> Plan d'actions</strong>
                           </div>
@@ -103,41 +85,34 @@
                               />
                             </svg>
                           </span>
-                      
+
                           <div class="flex-1">
                             <strong class="block font-medium text-gray-900"> Rapport</strong>
                           </div>
                         </div>
                       </div>
                     </div>
-                    <div class="col-md-3"><br>
-                      <div role="alert" class="rounded-xl border border-gray-100 p-4 shadow-xl">
-                        <div class="flex items-start gap-4">
-                          <span class="text-green-600">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke-width="1.5"
-                              stroke="currentColor"
-                              class="h-6 w-6"
-                            >
-                              <path
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
-                          </span>
-                      
-                          <div class="flex-1">
-                            <strong class="block font-medium text-gray-900"> Projet</strong>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    
 
+
+                    <div class="col-md-12">
+                        <div class="mb-3 row">
+                            <div class="col-sm-10">
+                              <div>
+                                <label for="Bordereau" class="text-sm font-medium">Copie du projet ou programme social.</label>
+
+                                <div class="relative mt-1">
+                                  <input
+                                    type="file"
+                                    id="formFile"
+                                    name="programme_social"
+                                    class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                    placeholder="Chercher les fichiers" required
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-10">
                         <div class="form-floating">
                             <div>
@@ -153,7 +128,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-sm-4">
                       <button
                         type="submit"

@@ -14,12 +14,7 @@ class Add extends Migration
     public function up()
     {
         Schema::table('paiements', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_enrolement');
-            $table->foreign('id_enrolement')
-                    ->references('id')
-                    ->on('enrolements')
-                    ->onDelete('restrict')
-                    ->unUpdate('restrict');
+            $table->integer('id_operation');
         });
     }
 

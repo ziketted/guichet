@@ -14,7 +14,7 @@ class paiements extends Model
         'type_paiement',
         'montant',
         'statut',
-        'id_enrolement',
+        'id_operation',
        ];
 
        public function user(){
