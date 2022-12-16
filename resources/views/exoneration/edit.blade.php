@@ -308,8 +308,13 @@
                             </div>
                         </div>
                             <div class="col-sm-4">
-                            <button type="submit" class="btn btn-success">Mettre à jour</button>
-                        </div>
+                                <button
+                                    type="submit"
+                                    class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                    Mettre à jour
+                              </button>
+                            </div>
+                           
                     </form>
                     @endforeach
               </div>

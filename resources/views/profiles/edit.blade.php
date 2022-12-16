@@ -112,7 +112,7 @@
                         {{-- <button type="submit" class="btn btn-success">Mettre à jour</button> --}}
                         <button
                             type="submit"
-                            class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                            class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
                                 Mettre à jour
                         </button>
                         </div>
