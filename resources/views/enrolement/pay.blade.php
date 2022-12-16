@@ -63,13 +63,29 @@
                     ->where('id', $user_id)
                     ->get();
                 ?>
-                @foreach ($users as $user )
-                    <h7>Nom : {{ $user->name }}</h7><br>
-                    <h7>Email : {{ $user->email }}</h7><br>
-                    <h7>Montant : 50 USD</h7><br>
-                @endforeach
+            @foreach ($users as $user )
+                    
+            <a
+              class="relative block rounded-xl border border-gray-100 p-8 shadow-xl"
+              href=""
+            >
+              <span
+                class="absolute right-4 top-4 rounded-full bg-green-100 px-3 py-1.5 text-xs font-medium text-green-600"
+              >
+                Paiement
+              </span>
 
+              <div class="mt-4 text-gray-500 sm:pr-8">
+                
+                <h7 class="mt-4 text-xl font-bold text-gray-900">Nom : {{ $user->name }}</h7><br>
+                <h7 class="mt-4 text-xl font-bold text-gray-900">Email : {{ $user->email }}</h7><br>
+                <h7 class="mt-4 text-xl font-bold text-gray-900">Montant : 50 USD</h7>
 
+                
+              </div>
+            </a><br>
+
+            @endforeach
 
                 {{-- <form action="{{ route('enrolement.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                   @csrf

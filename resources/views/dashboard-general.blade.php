@@ -64,11 +64,7 @@
                     />
                   </svg>
               
-                  <p class="flex gap-2 text-xs">
-                    <span class="font-medium"> 67.81% </span>
-              
-                    <span class="text-gray-500"> Since last week </span>
-                  </p>
+                 
                 </div>
               </article>
             </div><!-- End Sales Card -->
@@ -119,11 +115,7 @@
                     />
                   </svg>
               
-                  <p class="flex gap-2 text-xs">
-                    <span class="font-medium"> 67.81% </span>
-              
-                    <span class="text-gray-500"> Since last week </span>
-                  </p>
+                  
                 </div>
               </article>
             </div><!-- End Revenue Card -->
@@ -172,15 +164,44 @@
                     />
                   </svg>
               
-                  <p class="flex gap-2 text-xs">
-                    <span class="font-medium"> 67.81% </span>
-              
-                    <span class="text-gray-500"> Since last week </span>
-                  </p>
+                  
                 </div>
               </article>
+            </div>
 
-            </div><!-- End Customers Card -->
+            <div class="col-xxl-3 col-xl-12">
+
+              <div role="alert" class="rounded-xl border border-gray-100 p-4 shadow-xl">
+                <div class="flex items-start gap-4">
+                  <span class="text-green-600">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="h-6 w-6"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </span>
+              
+                  <div class="flex-1">
+                    <strong class="block font-medium text-gray-900"> Délai d'enrolement </strong>
+              
+                    <p class="mt-1 text-sm text-gray-700">
+                      Votre delai enrolement est valable pour : 
+                    </p>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
            <p></p>
             <br><br>
             <!-- Recent Sales -->
