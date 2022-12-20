@@ -62,7 +62,7 @@
       @guest
       <a class="btn-book-a-table" href="{{ route('login') }}">Connexion à votre compte</a>
       @endguest
-      
+
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
@@ -75,7 +75,7 @@
     <div class="container">
       <div class="row justify-content-between gy-5">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-          <h2 data-aos="fade-up">Nous appuyons l’action sociale <br>et humanitaire du Gouvernement</h2>
+          <h2 data-aos="fade-up">Appuyer l’action sociale et humanitaire du Gouvernement &nbsp;<br> et de servir de banque sociale</h2>
           {{-- <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p> --}}
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
             <a href="{{ route('login') }}" class="btn-book-a-table">Demander un document</a>
@@ -91,7 +91,7 @@
 
   <main id="main">
 
-    
+
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us section-bg">
       <div class="container" data-aos="fade-up">
@@ -102,8 +102,8 @@
             <div class="why-box">
               <h3>FNPSS a pour missions :</h3>
               <p>
-                Appuyer l’action sociale et humanitaire du 
-                Gouvernement dans le cadre de la politique sociale et humanitaire telle que définie par le Ministère des Affaires Sociales, 
+                Appuyer l’action sociale et humanitaire du
+                Gouvernement dans le cadre de la politique sociale et humanitaire telle que définie par le Ministère des Affaires Sociales,
                 Action Humanitaire et Solidarité Nationale
               </p>
               {{-- <div class="text-center">
@@ -119,7 +119,7 @@
                 <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                   <i class="bi bi-clipboard-data"></i>
                   <h4></h4>
-                  <p>Jouer le rôle d’interface pour l’appui aux structures de prise en charge du Ministère des Affaires Sociales, 
+                  <p>Jouer le rôle d’interface pour l’appui aux structures de prise en charge du Ministère des Affaires Sociales,
                     Action Humanitaire et Solidarité Nationale et des partenaires et intervenants sociaux et humanitaires</p>
                 </div>
               </div><!-- End Icon Box -->
@@ -149,8 +149,8 @@
       </div>
     </section><!-- End Why Us Section -->
 
-   
-   
+
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container" data-aos="fade-up">
@@ -245,7 +245,7 @@
       <div class="row gy-3">
         <center>
           <div class="col-lg-3 col-md-6 footer-links">
-            
+
             <div class="social-links d-flex">
               <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
               <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
@@ -262,7 +262,7 @@
       <div class="copyright">
         &copy; Copyright <strong><span>Fonds national de promotion et de service social</span></strong>. Tous les droits sont reservés
       </div>
-      
+
     </div>
 
   </footer><!-- End Footer -->
