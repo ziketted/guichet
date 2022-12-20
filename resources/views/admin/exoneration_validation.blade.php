@@ -7,7 +7,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
-          <li class="breadcrumb-item active">Enrolement</li>
+          <li class="breadcrumb-item active">Validation de l'enrolement</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -183,34 +183,39 @@
                 <div class="card-body">
                   <h5 class="card-title">Liste des enrolements</h5>
 
-                  <table class="table table-borderless datatable">
-                    <thead>
-                      <tr>
-                        <th scope="col">Requerant</th>
-                        <th scope="col">Enrolement</th>
-                        <th scope="col">Etat</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      
-                    @foreach ($enrolements as $enrolement)
-                            <tr>
-                                <td>{{$enrolement->name}}</td>
-                                <td> <a href="{{Storage::url($enrolement->lettre)}}" download="lettre">
-                                    <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
-                                <td><span class="badge bg-success">{{$enrolement->statut}}</span></td>
-                                <td>{{$enrolement->created_at}}</td>
-                                <td>
-                                    <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                </td>
-                            </tr>
-                      @endforeach
+                  <form action="" class="row g-3" method="POST" enctype="multipart/form-data">
 
-                    </tbody>
-                  </table>
+                    <div>
+                        <label for="email" class="text-sm font-medium">Avis favorable</label>
+    
+                        <div class="relative mt-1">
+                          <input
+                            type="text"
+                            id="titre"
+                            name="titre"
+                            class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                            placeholder="Chercher les fichiers"
+                          />
+                        </div>
+                    </div>
+                    <div>
+                        <label class="sr-only" for="message">Note</label>
+                        <textarea
+                          class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                          placeholder="Message"
+                          rows="8"
+                          id="note"
+                        ></textarea>
+                      </div>
+                    
+    
+                      <button
+                        type="submit"
+                        class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                        Valider l'enrolement
+                      </button>
+
+                  </form>
 
                 </div>
 

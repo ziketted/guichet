@@ -74,8 +74,6 @@
                         class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                         placeholder="Chercher les fichiers"
                       />
-
-                     
                     </div>
                   </div>
 
