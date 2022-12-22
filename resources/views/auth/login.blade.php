@@ -154,8 +154,8 @@
                 </div>
               </div>
               <p class="text-sm text-gray-500">
-                Vous n'avez pas de compte ?
-                <a class="underline" href="{{ route('register') }}">Creer un compte</a>
+                Mot de passe oublié ? 
+                <a class="underline" href="{{ route('password.request') }}">Cliquez ici</a>
               </p>
 
               <div class="flex items-center justify-between">
@@ -173,6 +173,10 @@
                 Google
                 </a>
               </div>
+              <p class="text-sm text-gray-500">
+                Vous n'avez pas de compte ?
+                <a class="underline" href="{{ route('register') }}">Creer un compte</a>
+              </p>
             </form>
           </div>
 </section>

@@ -22,6 +22,7 @@
 
             {{-- <div class="col-xxl-4 col-md-6">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
+                
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Nombre de requerants</p>
@@ -45,7 +46,6 @@
                       />
                     </svg>
                   </span>
-
                 </div>
 
                 <div class="mt-1 flex gap-1 text-green-600">
@@ -173,9 +173,6 @@
                 </article><br>
             </div> --}}
 
-
-
-
             <!-- Recent Sales -->
             <div class="col-12">
               <div class="overflow-auto card recent-sales">
@@ -209,6 +206,7 @@
                           name="notification"
                         ></textarea>
                       </div>
+<<<<<<< Updated upstream
 
 
                       <div class="row p-2">
@@ -223,6 +221,15 @@
                             </button>
                         </div>
                     </div>
+=======
+                    
+    
+                      <button
+                        type="submit"
+                        class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                        Valider l'exonération
+                      </button>
+>>>>>>> Stashed changes
 
                   </form>
 

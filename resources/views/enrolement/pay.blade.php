@@ -192,15 +192,20 @@
 
                     <button
                         type="submit"
-                        class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
-                        Payer votre enrolement maintenant
-                    </button>
+                        class="block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
+                        Payer maintenant
+                    </button><br>
+                    <div class="col-md-5">
+                      <a href="#" class="block rounded bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                        Payer plus tard
+                      </a>
+                    </div>
 
                   </form>
-
+                  
               </div>
             </div>
-
+            
 
           </div>
         </div>

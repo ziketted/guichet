@@ -3,7 +3,7 @@
 <main id="main" class="main">
 <section class="py-4 section align-items justify-content">
     <div class="py-4 row align-items justify-content">
-      <div class="col-lg-8">
+      <div class="col-lg-6">
         <div class="card">
           <div class="card-body">
 
@@ -56,9 +56,6 @@
                 <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
                   Enrolement au FNPSS
                 </h1>
-
-                
-
                 <form action="{{ route('enrolement.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                   @csrf
                   
@@ -134,7 +131,29 @@
 
           </div>
         </div>
+      </div>
 
+      <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>
+                  <br>
+                  <b>Les documents exigés sont :</b>
+                </h3>
+                <ul>
+                  <li>Requête adressée au Directeur Général du Fonds National de Promotion et de Service Social 
+                    avec copie au Ministre des Affaires Sociales, Action Humanitaire et Solidarité Nationale</li>
+                  <li>Copie des statuts notariés</li>
+                  <li>Copie de l’Arrêté Ministériel des Affaires Sociales portant autorisation de fonctionnement et enregistrement ou 
+                    d’un autre Ministère sectoriel ou Copie de l’autorisation provisoire de fonctionnement délivrée par le Gouverneur de Province</li>
+                  <li>Copie de l’Arrêté du Ministère de la Justice accordant la personnalité juridique et/ou tout autre Accord 
+                    ou Convention signé entre l’État congolais et les Organisations Internationales</li>
+                  <li>Copie du Plan d’Action pour l’année en cours;</li>
+                  <li>Copie du rapport annuel d’activités</li>
+                  <li>Copie du numéro d’impôt ;</li>
+                </ul>
+            </div>
+        </div>
       </div>
     </div>
     
