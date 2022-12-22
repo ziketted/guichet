@@ -72,7 +72,7 @@
 
 
             <!-- Revenue Card -->
-            <div class="col-xxl-3 col-md-6">
+            <div class="col-xxl-3 col-md-6 p-2">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
@@ -121,7 +121,7 @@
             </div><!-- End Revenue Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-3 col-xl-12">
+            <div class="col-xxl-3 col-xl-12 p-2">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
@@ -199,7 +199,7 @@
                     <strong class="block font-medium text-gray-900"> Délai d'enrolement </strong>
 
                     <p class="mt-1 text-sm text-gray-700">
-                      Valable pour : <b> {{$valide}}</b>
+                      Valable pour : <b> {{$valide}} </b>
                     </p>
                   </div>
                   <?php }?>
@@ -216,23 +216,11 @@
             <div class="col-12">
               <div class="card recent-sales overflow-auto">
 
-                <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-
+                
                 <div class="card-body">
                   <h5 class="card-title">Details de demande</h5>
 
-                  <table class="table table-borderless datatable">
+                  <table class="table table-borderless">
                     <thead>
                       <tr>
                         <th scope="col">Numero du dossier</th>
@@ -253,6 +241,7 @@
                             </tr>
                         @empty
                           <p class="p-1 text-white bg-secondary">Aucune enrolement est encours...</p>
+                          <br>
                         @endforelse
                     </tbody>
                   </table>

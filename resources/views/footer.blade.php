@@ -11,9 +11,32 @@
   <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
   <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
 
+  
+
   <!-- Template Main JS File -->
   <script src="{{ asset('assets/js/main.js') }}"></script>
-
+  <script>
+      $(document).ready(function () {
+    var eventFired = function (type) {
+        var n = $('#demo_info')[0];
+        n.innerHTML += '<div>' + type + ' event - ' + new Date().getTime() + '</div>';
+        n.scrollTop = n.scrollHeight;
+    };
+ 
+    $('#example')
+        .on('order.dt', function () {
+            eventFired('Order');
+        })
+        .on('search.dt', function () {
+            eventFired('Search');
+        })
+        .on('page.dt', function () {
+            eventFired('Page');
+        })
+        .DataTable();
+});
+  </script>
+  
 </body>
 
 </html>

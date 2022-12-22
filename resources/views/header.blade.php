@@ -46,9 +46,6 @@
     }
     .validé{
         background-color:darkgreen
-        
-
-
     }
   </style>
 </head>
@@ -349,16 +346,14 @@
                 <span class="ml-3 text-sm font-medium"> Aide </span>
               </a>
 
-              <a
-                href="/"
-                class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
-              >
+                <a
+                  href="/"
+                  class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                >
                 <img src="https://img.icons8.com/ios-glyphs/30/null/circled-left.png" width="16" height="16"/>
 
                 <span class="ml-3 text-sm font-medium"> Retour sur le site </span>
               </a>
-
-
             </nav>
           </div>
 
@@ -496,6 +491,29 @@
 
                     <span class="ml-3 text-sm font-medium"> Exonerations </span>
                   </a>
+
+                  <a
+                    href="#"
+                    class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="w-5 h-5 opacity-75"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
+                    </svg>
+
+                    <span class="ml-3 text-sm font-medium"> Conventions </span>
+                  </a>
+
                 </nav>
               </details>
 

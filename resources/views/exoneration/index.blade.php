@@ -20,7 +20,7 @@
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-6 p-2">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
@@ -69,6 +69,18 @@
                 </div>
               </article>
             </div><!-- End Sales Card -->
+            
+            <div class="col-lg-4">
+              <div class="activity-item d-flex">
+                <a href="{{ route('exoneration.store') }}">
+                  <button
+                      type="submit"
+                      class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                      Nouvelle exoneration
+                  </button>
+                </a>
+              </div><br>          
+            </div><!-- End Right side columns -->
 
             <!-- Revenue Card -->
             <div class="col-xxl-8 col-md-8">
@@ -124,6 +136,8 @@
 
             </div><!-- End Revenue Card -->
 
+            
+
             {{-- <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
 
@@ -154,7 +168,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Les demandes d'exonération <span>| Today</span></h5>
 
-                  <table class="table table-borderless datatable">
+                  <table class="table table-borderless">
                     <thead>
                       <tr>
                         <th scope="col">Titre de dela demande</th>
@@ -191,6 +205,7 @@
                         </td>
                          @empty
                               <p class="p-1 text-white bg-secondary">Aucune demande n'a été soumise.</p>
+                              <br>
                          @endforelse
 
                       </tr>
@@ -198,30 +213,20 @@
                     </tbody>
                   </table>
 
+                  
+
+
+
                 </div>
 
               </div>
             </div><!-- End Recent Sales -->
+            
           </div>
         </div><!-- End Left side columns -->
 
         <!-- Right side columns -->
-        <div class="col-lg-4">
-
-          <div class="activity-item d-flex">
-
-            <a href="{{ route('exoneration.store') }}">
-              <button
-                  type="submit"
-                  class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
-                  Nouvelle exoneration
-              </button>
-            </a>
-
-          </div><br>
-
-          
-        </div><!-- End Right side columns -->
+        
 
         <div class="col-lg-12">
           <div class="card">
