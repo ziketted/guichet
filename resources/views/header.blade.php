@@ -37,6 +37,20 @@
   ======================================================== -->
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+  <style>
+    .annulé{
+        background-color: brown
+    }
+    .soumis{
+        background-color:dodgerblue
+    }
+    .validé{
+        background-color:darkgreen
+        
+
+
+    }
+  </style>
 </head>
 
 <body>
@@ -70,7 +84,7 @@
       <li class="nav-item dropdown pe-3">
 
         <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-          
+
           <img src="https://img.icons8.com/pastel-glyph/64/null/name.png" alt="Profile" class="rounded-circle" />
             <span class="d-none d-md-block dropdown-toggle ps-2">{{ Auth::user()->name }}</span>
 

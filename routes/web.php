@@ -112,8 +112,16 @@ Route::middleware([
             Route::get('/admin/index', [AdmingeneController::class, 'adminindex'])->name('admin');
             Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
+
             Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
-            });
+            Route::get('/valider/{enrolement}', [AdmingeneController::class, 'show'])->name('valider');
+            Route::post('/modifier/enrolement/', [AdmingeneController::class, 'valider_enrolement'])->name('validerenrolement');
+
+            Route::post('/modifier/exoneration/', [AdmingeneController::class, 'valider_exoneration'])->name('validerexoneration');
+            Route::get('/exoneration/valider/{exoneration}', [AdmingeneController::class, 'showExoneration'])->name('validerExo');
+
+        });
+
         //Convention
         Route::name('convention.')->group(function () {
             Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');

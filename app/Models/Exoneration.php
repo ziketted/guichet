@@ -22,6 +22,7 @@ class Exoneration extends Model
         'affectation',
         'commentaire',
         'type',
+        'notification',
         'statut',
         'user_id',
        ];
@@ -36,7 +37,12 @@ class Exoneration extends Model
         if ($this->statut == 'soumis') {
             $value='warning';
             $this->etat='soumis';
-        }else{
+        }
+        elseif ($this->statut == 'annulé') {
+            $value='danger';
+            $this->etat='annulé';
+        }
+        else{
             $value='success';
             $this->etat='activé';
         }

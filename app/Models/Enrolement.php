@@ -17,6 +17,7 @@ class Enrolement extends Model
         'validite',
         'autre_document',
         'commentaires',
+        'notification',
         'statut',
         //attribut complémentaire pour le design.
         'etat',
@@ -35,7 +36,11 @@ class Enrolement extends Model
         if ($this->statut == 'soumis') {
             $value='warning';
             $this->etat='En attente de validation';
-        }else{
+        } elseif ($this->statut == 'annulé') {
+            $value='secondary';
+            $this->etat='Demande annulé';
+        }
+        else{
             $value='success';
             $this->etat='activé';
         }
@@ -44,7 +49,7 @@ class Enrolement extends Model
     }
     public function verification_document (){
         $enrolementDocument = Enrolement:: where('user_id',  auth()->user()->id)
-        ->where('statut', 'activé')
+        ->where('statut', 'validé')
         ->orderBy('created_at', 'DESC')
         ->take(1)->count();
         //Vérifiez si le requerant a un enrolement

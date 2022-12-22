@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Enrolement;
 use App\Models\Exoneration;
 use App\Models\Notification;
+use Illuminate\Http\Client\Request as ClientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -91,7 +92,7 @@ class AdmingeneController extends Controller
     {
         //
         $enrolements= DB::table('users')
-        ->leftJoin('enrolements', 'users.id', '=', 'enrolements.user_id')
+        ->join('enrolements', 'users.id', '=', 'enrolements.user_id')
         ->select('enrolements.*', 'users.name', 'users.email')
         ->where('users.id','<>',auth()->user()->id)
         ->where('enrolements.deleted_at',NULL)
@@ -101,11 +102,87 @@ class AdmingeneController extends Controller
 
     }
 
+    public function valider_enrolement(Request $request ){
 
+        $filename ="";
+        if ($request->hasFile('autre_document')) {
+
+            $file = $request->file('autre_document');
+            $filename = uniqid() . '_AvisFavorable_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+            $filePath = public_path() . '/storage';
+            $file->move($filePath, $filename);
+        }  /* */
+
+
+        switch ($request->input('action')) {
+
+            case 'valider':
+                // Save model
+                Enrolement::where('id', $request->id_enrolement)
+                ->update([
+                    'statut' => 'validé',
+                    'autre_document' => $filename,
+                    'notification' => $request->notification,
+                ]);
+                return redirect()->route('admin.enrolement');
+
+                break;
+
+            case 'annuler':
+
+                Enrolement::where('id', $request->id_enrolement)
+                ->update([
+                    'statut' => 'annulé',
+                    'autre_document' => $filename,
+                ]);
+                return redirect()->route('admin.enrolement');
+
+                break;
+
+
+        }
+
+
+    }
+
+
+    public function valider_exoneration(Request $request ){
+
+
+
+
+        switch ($request->input('action')) {
+
+            case 'valider':
+                // Save model
+                Exoneration::where('id', $request->id)
+                ->update([
+                    'statut' => 'validé',
+                ]);
+                return redirect()->route('admin.exoneration');
+                break;
+
+            case 'annuler':
+                //
+                Exoneration::where('id', $request->id)
+                ->update([
+                    'statut' => 'annulé',
+                ]);
+                return redirect()->route('admin.exoneration');
+
+                break;
+
+
+        }
+
+
+    }
     public function exoneration()
     {
         //
         $exonerationTotal= Exoneration::where('user_id','<>',  auth()->user()->id)  ->count();
+        $exonerationAnnuler= Exoneration::where('statut','annulé')->
+                                 where('user_id','<>',  auth()->user()->id) ->count();
         $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
 
         $exonerations= DB::table('users')
@@ -118,6 +195,7 @@ class AdmingeneController extends Controller
 
         return view('admin.validation_exoneration',['exonerations'=>$exonerations
                                                     ,'requerantNombre'=>$requerantNombre
+                                                    ,'exonerationAnnuler'=>$exonerationAnnuler
                                                     ,'exonerationTotal'=>$exonerationTotal]);
     }
     /**
@@ -147,9 +225,19 @@ class AdmingeneController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($enrolement)
     {
         //
+        $enrolements=Enrolement::findOrFail($enrolement);
+
+        return view('admin.validation_enrolement', ['enrolements'=>$enrolements, 'id'=>$enrolement]);
+    }
+    public function showExoneration($exoneration)
+    {
+        //
+        $exonerations=Exoneration::findOrFail($exoneration);
+
+        return view('admin.exoneration_validation', ['exonerations'=>$exonerations, 'id'=>$exoneration]);
     }
 
     /**

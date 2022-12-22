@@ -106,9 +106,10 @@ class EnrolementController extends Controller
      * @param  \App\Models\Enrolement  $enrolement
      * @return \Illuminate\Http\Response
      */
-    public function show(Enrolement $enrolement)
+    public function show( $enrolement)
     {
         //
+        return view('admin.valid_enrolement');
 
     }
 

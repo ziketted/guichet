@@ -128,7 +128,7 @@
                   <div>
                     <p class="text-sm text-gray-500">Demandes annulée</p>
 
-                    <p class="text-2xl font-medium text-gray-900">0</p>
+                    <p class="text-2xl font-medium text-gray-900">{{$exonerationAnnuler}}</p>
                   </div>
 
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
@@ -199,10 +199,10 @@
                            <td>{{$exoneration->name}}</td>
                            <td>{{$exoneration->titre}}</td>
                            <td>{{$exoneration->created_at}}</td>
-                           <td><span class="badge bg-success">{{$exoneration->statut}}</span></td>
-                           <td>
-                                       <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
-                                       <a href="" class="btn btn-danger"><i class="bi bi-pen-fill"></i></a>
+                           <td><span class="badge {{$exoneration->statut}}">{{$exoneration->statut}}</span></td>
+                           <td class="{{$exoneration->statut}}">
+                                       <a href="{{url('/exoneration/valider/'.$exoneration->id)}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
+                                       <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                            </td>
 
 

@@ -181,18 +181,19 @@
               <div class="overflow-auto card recent-sales">
 
                 <div class="card-body">
-                  <h5 class="card-title">Liste des enrolements</h5>
+                  <h5 class="card-title">Valider l'exonération. </h5>
 
-                  <form action="" class="row g-3" method="POST" enctype="multipart/form-data">
-
+                  <form action="{{route('admin.validerexoneration')}}" class="row g-3" method="POST" enctype="multipart/form-data">
+                    @csrf
                     <div>
-                        <label for="email" class="text-sm font-medium">Avis favorable</label>
-    
-                        <div class="relative mt-1">
+
+
+                        <div class="relative mt-1" style="display: none;">
                           <input
                             type="text"
                             id="titre"
-                            name="titre"
+                            name="id"
+                            value="{{$id}}"
                             class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                             placeholder="Chercher les fichiers"
                           />
@@ -203,17 +204,25 @@
                         <textarea
                           class="w-full rounded-lg border-gray-200 p-3 text-sm"
                           placeholder="Message"
-                          rows="8"
+                          rows="4"
                           id="note"
+                          name="notification"
                         ></textarea>
                       </div>
-                    
-    
-                      <button
-                        type="submit"
-                        class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
-                        Valider l'enrolement
-                      </button>
+
+
+                      <div class="row p-2">
+                        <div class="col-6"><button type="submit" name="action" value="valider"
+                                class="block w-full rounded-lg bg-success px-5 py-3 text-sm font-medium text-white">
+                                Valider l'exonération
+                            </button></div>
+                        <div class="col-6">
+                            <button type="submit" value="annuler" name="action"
+                                class="block w-full rounded-lg bg-info px-5 py-3 text-sm font-medium text-white">
+                                Annuler l'exonération
+                            </button>
+                        </div>
+                    </div>
 
                   </form>
 
