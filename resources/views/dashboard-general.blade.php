@@ -25,10 +25,10 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Demandes d'exoneration</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900">{{$exonerationTotal}}</p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -45,9 +45,9 @@
                       />
                     </svg>
                   </span>
-                  
+
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -63,24 +63,24 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
-                 
+
+
                 </div>
               </article>
             </div><!-- End Sales Card -->
 
-            
-            
+
+
             <!-- Revenue Card -->
             <div class="col-xxl-3 col-md-6">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Importations</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900">{{$importationCount}}</p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +98,7 @@
                     </svg>
                   </span>
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,8 +114,8 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
-                  
+
+
                 </div>
               </article>
             </div><!-- End Revenue Card -->
@@ -126,10 +126,10 @@
                 <div class="flex items-center justify-between">
                   <div>
                     <p class="text-sm text-gray-500">Operations à l'interieur du pays</p>
-              
+
                     <p class="text-2xl font-medium text-gray-900">{{$interieurCount}}</p>
                   </div>
-              
+
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +147,7 @@
                     </svg>
                   </span>
                 </div>
-              
+
                 <div class="mt-1 flex gap-1 text-green-600">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -163,12 +163,15 @@
                       d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
                     />
                   </svg>
-              
-                  
+
+
                 </div>
               </article>
             </div>
-
+            <?php
+            $now = new DateTime();
+            $year = $now->format("Y");
+            if($valide>=$year){ ?>
             <div class="col-xxl-3 col-xl-12">
 
               <div role="alert" class="rounded-xl border border-gray-100 p-4 shadow-xl">
@@ -189,19 +192,24 @@
                       />
                     </svg>
                   </span>
-              
+
+
+
                   <div class="flex-1">
                     <strong class="block font-medium text-gray-900"> Délai d'enrolement </strong>
-              
+
                     <p class="mt-1 text-sm text-gray-700">
-                      Votre delai enrolement est valable pour : 
+                      Valable pour : <b> {{$valide}}</b>
                     </p>
                   </div>
+                  <?php }?>
+
+
                 </div>
               </div>
-              
+
             </div>
-            
+
            <p></p>
             <br><br>
             <!-- Recent Sales -->
@@ -258,7 +266,7 @@
         </div><!-- End Left side columns -->
 
       </div>
-      
+
     </section>
 
   </main><!-- End #main -->

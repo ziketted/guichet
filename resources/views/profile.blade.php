@@ -71,9 +71,9 @@
                             <td>{{$requerant->email}}</td>
                             <td>
 
-                                        <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
+                                        <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-info"><i class="bi bi-eye"></i> Détail</a>
 
-                                        <a href="" class="btn btn-danger"><i class="bi bi-pen-fill"></i></a>
+
 
                             </td>
 

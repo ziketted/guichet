@@ -110,6 +110,7 @@ Route::middleware([
         Route::name('admin.')->group(function () {
 
             Route::get('/admin/index', [AdmingeneController::class, 'adminindex'])->name('admin');
+            Route::get('/admin/requerant/{requerant}', [AdmingeneController::class, 'detailrequerant'])->name('detailrequerant');
             Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
 

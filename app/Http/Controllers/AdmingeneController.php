@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use DateTime;
 use App\Models\User;
 use App\Models\Enrolement;
 use App\Models\Exoneration;
 use App\Models\Notification;
-use Illuminate\Http\Client\Request as ClientRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Client\Request as ClientRequest;
 
 class AdmingeneController extends Controller
 {
@@ -21,6 +22,7 @@ class AdmingeneController extends Controller
     public function index()
     {
         //
+        $enrolementDoc=new Enrolement();
 
         if (auth()->user()->role_id==2){
 
@@ -43,10 +45,20 @@ class AdmingeneController extends Controller
             $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
                             ->where('type', 'Interieur')
                             ->count();
+
+            $documentEnrolement = $enrolementDoc->enrolement_encours();
+            $valide="";
+            foreach ($documentEnrolement as  $value) {
+                # code...
+                    $valide=$value['validite'];
+            }
+
+
             return view('dashboard-general', ['exonerations'=>$exoneration,
                             'importationCount'=>$importationCount,
                             'exonerationTotal'=>$exonerationTotal,
                             'interieurCount'=>$interieurCount,
+                            'valide'=>$valide,
                             'notification'=>$notification, ]);
 
         }
@@ -193,6 +205,13 @@ class AdmingeneController extends Controller
         ->get();
 
 
+
+
+
+
+
+
+
         return view('admin.validation_exoneration',['exonerations'=>$exonerations
                                                     ,'requerantNombre'=>$requerantNombre
                                                     ,'exonerationAnnuler'=>$exonerationAnnuler
@@ -225,6 +244,10 @@ class AdmingeneController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     public function detailrequerant(){
+        return view('admin.requerantdetail');
+     }
     public function show($enrolement)
     {
         //

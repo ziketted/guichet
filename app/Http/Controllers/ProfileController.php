@@ -87,9 +87,10 @@ class ProfileController extends Controller
      * @param  \App\Models\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show(Profile $profile)
+    public function show( $profile)
     {
         //
+        return view('profiles.show');
     }
 
     /**
