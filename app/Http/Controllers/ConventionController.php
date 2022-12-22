@@ -81,9 +81,10 @@ class ConventionController extends Controller
      * @param  \App\Models\Convention  $convention
      * @return \Illuminate\Http\Response
      */
-    public function show(Convention $convention)
+    public function show( $convention)
     {
         //
+
     }
 
     /**

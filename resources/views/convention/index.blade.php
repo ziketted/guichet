@@ -52,7 +52,7 @@
                         </article><br><br>
                     </div><!-- End Sales Card -->
 
-                   
+
 
                     <div class="col-lg-4">
                         <div class="activity-item d-flex">
@@ -73,15 +73,15 @@
                                   <b>Les documents exigés :</b>
                                 </h3>
                                 <ul style="font-size: 90%;">
-                                  <li>Requête adressée au Ministre des Affaires Sociales, Action Humanitaire et Solidarité 
+                                  <li>Requête adressée au Ministre des Affaires Sociales, Action Humanitaire et Solidarité
                                     Nationale avec copie au Directeur Général du Fonds National de Promotion et de Service Social (FNPSS)</li>
                                   <li>Copie de l’attestation d’enrôlement au FNPSS </li>
                                   <li>Copie du Plan d’Action pour l’année en cours</li>
                                   <li>Copie du rapport annuel d’activités de l’année écoulée</li>
                                   <li>Copie du projet ou programme social ou humanitaire concerné par le partenariat sollicité</li>
-                                  
+
                                 </ul>
-                
+
                                 <h3>
                                   <br>
                                   <b>Frais à payer et délai de traitement:</b>
@@ -95,7 +95,7 @@
                         </div>
                     </div>
 
- 
+
                     {{-- <div class="col-xxl-8 col-md-8">
                         <article class="rounded-lg border border-gray-100 bg-white p-6">
                             <div class="flex items-center justify-between">
@@ -189,8 +189,8 @@
                                                         class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
                                                 </div> --}}
                                                 <div class="col-auto">
-                                                    <a href="" class="btn btn-warning"><i
-                                                            class="bi bi-pen-fill"></i></a>
+                                                    <a href="{{route('convention.show',$item->id )}}" class="btn btn-info"><i
+                                                            class="bi bi-pen-fill"></i>&nbsp;Edit</a>
                                                 </div>
                                                 <div class="col-auto">
                                                     <form action="" method="POST">

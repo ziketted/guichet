@@ -114,9 +114,11 @@ Route::middleware([
             Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
 
+            
             Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
             Route::get('/valider/{enrolement}', [AdmingeneController::class, 'show'])->name('valider');
             Route::post('/modifier/enrolement/', [AdmingeneController::class, 'valider_enrolement'])->name('validerenrolement');
+
 
             Route::post('/modifier/exoneration/', [AdmingeneController::class, 'valider_exoneration'])->name('validerexoneration');
             Route::get('/exoneration/valider/{exoneration}', [AdmingeneController::class, 'showExoneration'])->name('validerExo');
@@ -128,7 +130,8 @@ Route::middleware([
             Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');
             Route::get('/convention/create', [ConventionController::class, 'create'])->name('create');
             Route::post('/convention/store', [ConventionController::class, 'store'])->name('store');
-            Route::get('/convention/show', [ConventionController::class, 'show'])->name('show');
+            Route::post('/convention/edit', [ConventionController::class, 'edit'])->name('edit');
+            Route::get('/convention/show/{convention}', [ConventionController::class, 'show'])->name('show');
             Route::delete('/convention/{convention}',[RoleController::class, 'destroy'])->name('destroy');
 
         });

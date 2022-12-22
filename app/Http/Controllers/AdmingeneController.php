@@ -245,8 +245,20 @@ class AdmingeneController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function detailrequerant(){
-        return view('admin.requerantdetail');
+     public function detailrequerant($requerant){
+
+        $profiles = DB::table('users')
+        ->join('profiles', 'users.id', '=', 'profiles.user_id')
+        ->select('profiles.*', 'users.email', 'users.name')
+        ->where('users.id','<>',$requerant)
+        ->get();
+        $exonerations= Exoneration::where('user_id', $requerant)->get();
+        $enrolements= Enrolement::where('user_id', $requerant)->get();
+
+        return view('admin.requerantdetail', ['profiles'=>$profiles,
+                                              'exonerations'=>$exonerations,
+                                              'enrolements'=>$enrolements,
+                                             ]);
      }
     public function show($enrolement)
     {
