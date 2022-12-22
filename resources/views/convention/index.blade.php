@@ -52,6 +52,8 @@
                         </article><br><br>
                     </div><!-- End Sales Card -->
 
+                   
+
                     <div class="col-lg-4">
                         <div class="activity-item d-flex">
                             <a href="{{ route('convention.create') }}">
@@ -63,7 +65,37 @@
                         </div>
                     </div><!-- End Right side columns -->
 
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3>
+                                  <br>
+                                  <b>Les documents exigés :</b>
+                                </h3>
+                                <ul style="font-size: 90%;">
+                                  <li>Requête adressée au Ministre des Affaires Sociales, Action Humanitaire et Solidarité 
+                                    Nationale avec copie au Directeur Général du Fonds National de Promotion et de Service Social (FNPSS)</li>
+                                  <li>Copie de l’attestation d’enrôlement au FNPSS </li>
+                                  <li>Copie du Plan d’Action pour l’année en cours</li>
+                                  <li>Copie du rapport annuel d’activités de l’année écoulée</li>
+                                  <li>Copie du projet ou programme social ou humanitaire concerné par le partenariat sollicité</li>
+                                  
+                                </ul>
+                
+                                <h3>
+                                  <br>
+                                  <b>Frais à payer et délai de traitement:</b>
+                                </h3>
+                                <ul style="font-size: 90%">
+                                  <li>Frais dépôt du dossier : l’équivalent en Franc Congolais de 20 $ US</li>
+                                  <li>Frais d’enquête : l’équivalent en Franc Congolais de 300 $ US</li>
+                                  <li>Le délai de traitement par le FNPSS est de 10 jours ouvrables à dater du paiement des frais.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
+ 
                     {{-- <div class="col-xxl-8 col-md-8">
                         <article class="rounded-lg border border-gray-100 bg-white p-6">
                             <div class="flex items-center justify-between">

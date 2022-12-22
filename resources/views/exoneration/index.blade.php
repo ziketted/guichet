@@ -223,6 +223,82 @@
           
         </div><!-- End Right side columns -->
 
+        <div class="col-lg-12">
+          <div class="card">
+              <div class="card-body">
+                  <h3>
+                    <br>
+                    <b>L’Attestation des biens à exonérer , Les documents exigés :</b>
+                  </h3>
+                  <ul style="font-size: 90%;">
+                    <li>Requête adressée au Directeur Général du Fonds National de Promotion et de Service Social 
+                      avec copie au Ministre des Affaires Sociales, Action Humanitaire et Solidarité Nationale</li>
+                    <li>Copie de l’attestation d’enrôlement au FNPSS </li>
+                    <li>Copie de la convention de partenariat avec le Gouvernement de la 
+                      République Démocratique du Congo représenté par le Ministre des Affaires Sociales, 
+                      Action Humanitaire et Solidarité Nationale ou toute autre convention 
+                      signée entre l’Organisme philanthropique requérant 
+                      et le Gouvernement dans le cadre de la mise en oeuvre des projets sociaux 
+                      et d’assistance humanitaire ou toute autre Convention ou Protocole signé 
+                      avec l’État congolais pour la mise en oeuvre des projets sociaux et humanitaires</li>
+                    <li>Copie du rapport d’activités de l’année écoulée</li>
+                    <li>Copie du projet ou programme social ou humanitaire concerné par l’exonération</li>
+                    <li>Copie du rapport d’affectation des biens exonérés précédant la nouvelle demande et approuvé par le FNPSS</li>
+                    
+                  </ul>
+  
+                  <h3>
+                    <br>
+                    <b>Frais à payer et délai de traitement:</b>
+                  </h3>
+                  <ul style="font-size: 90%">
+                    <li>L’équivalent en franc congolais de 55 $ USD</li>
+                    <li>L’équivalent en Franc congolais de 20 $ USD comme frais de dépôt du dossier</li>
+                    <li>Le délai de traitement par le FNPSS est de 10 jours ouvrables à dater du paiement des frais</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <h3>
+                  <br>
+                  <b>Certificat d’exonération</b>
+                </h3>
+                <p>Le Certificat d’exonération est délivré au requérant ayant déjà bénéficié d’un Arrêté interministériel 
+                  d’exonération Finances-Plan pour les biens disponibles à l’importation,</p>
+                
+                <h3>
+                  <br>
+                  <b>L’Attestation des biens à exonérer , Les documents exigés :</b>
+                </h3>
+                <ul style="font-size: 90%;">
+                  <li>Requête adressée au Directeur Général du Fonds National de Promotion et de Service Social 
+                    avec copie au Ministre des Affaires Sociales, Action Humanitaire et Solidarité Nationale</li>
+                  <li>Copie de l’attestation des biens à exonérer délivré par le FNPSS</li>
+                  <li>Copie de l’avis favorable pour exonération du Ministère sectoriel</li>
+                  <li>Copie du Projet d’utilisation du don ou des biens acquis</li>
+                  <li>Liste de colisage</li>
+                  <li>Copie de la lettre de transport maritime (BL) ou aérien (L.T.A) ou terrestre</li>
+                  <li>Copie de l’attestation de don ou la facture d’achat</li>
+                  <li>Copie du rapport d’affectation des biens exonérés précédant la nouvelle demande et approuvé par le FNPSS</li>
+                </ul>
+
+                <h3>
+                  <br>
+                  <b>Frais à payer et délai de traitement:</b>
+                </h3>
+                <ul style="font-size: 90%">
+                  <li>L’équivalent en franc congolais de 55 $ USD</li>
+                  <li>L’équivalent en Franc congolais de 20 $ USD comme frais de dépôt du dossier</li>
+                  <li>Le délai de traitement par le FNPSS est de 8 jours ouvrable à dater du paiement des frais</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
       </div>
     </section>
 

@@ -1,7 +1,7 @@
 @include('header')
 
 <main id="main" class="main">
-<section class="py-4 section align-items justify-content">
+  <section class="py-4 section align-items justify-content">
     <div class="py-4 row align-items justify-content">
       <div class="col-lg-6">
         <div class="card">
@@ -58,7 +58,6 @@
                 </h1>
                 <form action="{{ route('enrolement.create') }}" class="row g-3" method="POST" enctype="multipart/form-data">
                   @csrf
-                  
 
                   <div>
                     <label for="email" class="text-sm font-medium">Lettre</label>
@@ -140,7 +139,7 @@
                   <br>
                   <b>Les documents exigés sont :</b>
                 </h3>
-                <ul>
+                <ul style="font-size: 90%;">
                   <li>Requête adressée au Directeur Général du Fonds National de Promotion et de Service Social 
                     avec copie au Ministre des Affaires Sociales, Action Humanitaire et Solidarité Nationale</li>
                   <li>Copie des statuts notariés</li>
@@ -152,15 +151,20 @@
                   <li>Copie du rapport annuel d’activités</li>
                   <li>Copie du numéro d’impôt ;</li>
                 </ul>
+
+                <h3>
+                  <br>
+                  <b>Frais à payer et délai de traitement:</b>
+                </h3>
+                <ul style="font-size: 90%">
+                  <li>L’équivalent en Franc congolais de 50 $ USD ;</li>
+                  <li>Le délai de traitement par le FNPSS est de 8 jours ouvrables à dater du paiement des frais.</li>
+                </ul>
             </div>
         </div>
       </div>
     </div>
-    
-</section>
-
+  </section>
 </main>
-
-
 
 @include('footer')
