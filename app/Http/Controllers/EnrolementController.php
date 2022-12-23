@@ -23,9 +23,13 @@ class EnrolementController extends Controller
     public function index()
     {
         //
+        $check_active_document= new Enrolement();
+        $actif= count($check_active_document->enrolement_encours());
+        $enrolements= Enrolement::where('user_id',  auth()->user()->id)
+                                   ->orderBy('id', 'DESC')->take(1)->get();
 
-        $enrolements= Enrolement::where('user_id',  auth()->user()->id)->get();
-        return view('enrolement.index', ['enrolements'=>$enrolements]);
+        return view('enrolement.index', ['enrolements'=>$enrolements,
+                                         'actif'=>$actif]);
     }
     /* public function pay(){
         return view ('enrolement.pay');
