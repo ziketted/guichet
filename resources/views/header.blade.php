@@ -517,14 +517,14 @@
                 </nav>
               </details>
 
-              <a
+              {{-- <a
                 href="#"
                 class="flex items-center px-4 py-2 text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-700"
               >
                 <img src="https://img.icons8.com/ios-filled/50/null/user-male-circle.png" width="16" height="16"/>
 
                 <span class="ml-3 text-sm font-medium"> Licences en cours </span>
-              </a>
+              </a> --}}
 
               <a
                 href="{{route('notification.index')}}"

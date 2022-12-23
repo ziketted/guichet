@@ -127,7 +127,7 @@
                   <div class="card-body">
                     <h5 class="card-title">Demandes</h5>
 
-                    <table class="table table-borderless datatable">
+                    <table class="table table-borderless">
                       <thead>
                            <tr>
                              <th scope="col">N°</th>
