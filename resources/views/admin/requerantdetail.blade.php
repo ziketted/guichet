@@ -35,8 +35,14 @@
                                 <h3>Email :{{$profile->email}} </h3><br>
                                 <h3>Location : {{$profile->province}} </h3><br>
                                 <h3>Adresse :{{$profile->numero}} &nbsp;/{{$profile->rue}}  </h3><br>
-                                <h3>Compte bancaire :{{$profile->compte_bancaire}} </h3><br>
+                                <h3>Compte bancaire :{{$profile->compte_bancaire}} </h3><br><br>
 
+                                <h3><b>Responsable de la structure</b></h3><br>
+                                <h3><b>Nom complet : {{$profile->responsable_nom}}</b></h3><br>
+                                <h3><b>Fonction : {{$profile->responsable_fonction}}</b></h3><br>
+                                <h3><b>Email :{{$profile->responsable_email}} </b></h3><br>
+                                <h3><b>Téléphone :{{$profile->responsable_phone}} </b></h3><br>
+                                
                             </div>
                             <div class="col-md-4">
                                 <br>
@@ -72,44 +78,46 @@
                                     @endif
                                     <h3>Autorisation juridique</h3>
                                 </p>
-                                <p>
-                                    @if (is_null($profile->doc_personnalite) || $profile->doc_personnalite=='' )
-                                    <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/null/external-empty-printer-control-ui-elements-flat-icons-inmotus-design.png"/>
-                                    @else
-                                    <a href="{{Storage::url($profile->doc_personnalite)}}" download="Statut juridique">
-                                        <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
-                                    </a>
-                                    @endif
-                                    <h3>Personnalité juridique</h3>
-                                </p>
-                                <p>
-                                    @if (is_null($profile->doc_personnalite) || $profile->doc_personnalite=='' )
-                                        <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/null/external-empty-printer-control-ui-elements-flat-icons-inmotus-design.png"/>
-                                    @else
-                                        <a href="{{Storage::url($profile->doc_convention)}}" download="Statut juridique">
-                                            <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
-                                        </a>
-                                    @endif
-                                    <h3>Convention juridique</h3>
-                                </p>
-                                <p>
-                                    @if (is_null($profile->doc_certificat) || $profile->doc_certificat=='' )
-                                        <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/null/external-empty-printer-control-ui-elements-flat-icons-inmotus-design.png"/>
-                                    @else
-                                    <a href="{{Storage::url($profile->doc_certificat)}}" download="Statut juridique">
-                                        <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
-                                    </a>
-                                    @endif
-                                    <h3>Certificat juridique</h3>
-                                </p>
+                                
                             </div>
                             <div class="col-md-4">
                                 <br>
-                                <h3><b>Responsable de la structure</b></h3><br>
-                                <h3><b>Nom complet : {{$profile->responsable_nom}}</b></h3><br>
-                                <h3><b>Fonction : {{$profile->responsable_fonction}}</b></h3><br>
-                                <h3><b>Email :{{$profile->responsable_email}} </b></h3><br>
-                                <h3><b>Téléphone :{{$profile->responsable_phone}} </b></h3><br>
+                                <p>
+                                  @if (is_null($profile->doc_personnalite) || $profile->doc_personnalite=='' )
+                                  <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/null/external-empty-printer-control-ui-elements-flat-icons-inmotus-design.png"/>
+                                  @else
+                                  <a href="{{Storage::url($profile->doc_personnalite)}}" download="Statut juridique">
+                                      <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
+                                  </a>
+                                  @endif
+                                  <h3>Personnalité juridique</h3>
+                              </p>
+                              <p>
+                                  @if (is_null($profile->doc_personnalite) || $profile->doc_personnalite=='' )
+                                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/null/external-empty-printer-control-ui-elements-flat-icons-inmotus-design.png"/>
+                                  @else
+                                      <a href="{{Storage::url($profile->doc_convention)}}" download="Statut juridique">
+                                          <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
+                                      </a>
+                                  @endif
+                                  <h3>Convention juridique</h3>
+                              </p>
+                              <p>
+                                  @if (is_null($profile->doc_certificat) || $profile->doc_certificat=='' )
+                                      <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/null/external-empty-printer-control-ui-elements-flat-icons-inmotus-design.png"/>
+                                  @else
+                                  <a href="{{Storage::url($profile->doc_certificat)}}" download="Statut juridique">
+                                      <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
+                                  </a>
+                                  @endif
+                                  <h3>Certificat juridique</h3>
+                              </p><br>
+
+                                <button
+                                  type="submit"
+                                  class="block rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                  Notifier le requerant
+                                </button>
 
                             </div>
 
