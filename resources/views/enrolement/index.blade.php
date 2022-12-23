@@ -57,8 +57,8 @@
 
                                     <div class="activity-item d-flex">
 
-                                    <div class="row">
-                                        <div class="col-3">
+                                    <div class="row " >
+                                        <div class="col-2">
                                             <div class="activity-content">
                                                 <a href="{{Storage::url($enrolement->autre_document)}}" download="Avis favorable">
                                                     <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
@@ -66,10 +66,15 @@
                                             </div>
 
                                         </div>
-                                        <div class="col-9">
+                                        <div class="col-10 ">
                                             <a href="{{Storage::url($enrolement->autre_document)}}" class="fw-bold text-dark" download="Avis favorable">Télécharger le document.  </a>
                                             <p><i> Delivré le : <b> {{ $enrolement->updated_at }}</b></i></p>
+
                                         </div>
+                                        <br>
+                                        <hr>
+
+                                        <p class="text-muted p-2 mt-2">{{ $enrolement->notification }}</p>
                                     </div>
 
 

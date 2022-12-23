@@ -40,7 +40,7 @@
                                         <div class="relative mt-1">
                                             <input type="file" id="file" name="autre_document"
                                                 class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
-                                                placeholder="Chercher les fichiers" />
+                                                placeholder="Chercher les fichiers" required />
                                         </div>
                                     </div>
                                     <div>
