@@ -91,7 +91,7 @@ class AdmingeneController extends Controller
     public function adminindex()
     {
         //
-          //
+
           $notification=Notification::where('user_id', auth()->user()->id)
           ->where('statut')
           ->count();
@@ -154,7 +154,6 @@ class AdmingeneController extends Controller
                 Enrolement::where('id', $request->id_enrolement)
                 ->update([
                     'statut' => 'annulé',
-                    'autre_document' => $filename,
                 ]);
                 return redirect()->route('admin.enrolement');
 
