@@ -89,19 +89,17 @@
                       stroke="currentColor"
                       stroke-width="2"
                     >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"
+                    />
                     </svg>
-                    
                   </span>
+
                 </div>
               
                 <div class="mt-1 flex gap-1 text-green-600">
-                  
-                  
                   <p class="flex gap-2 text-xs">
                     <a href="{{ route('profile.document') }}">
                       <button
@@ -109,30 +107,26 @@
                       Voir plus
                     </button>
                     </a> 
-                </p>
-                  
+                  </p>
                 </div>
+
               </article>
 
             </div><!-- End Revenue Card -->
 
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
-
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
-                    
                     <p class="text-sm text-gray-500">
                       <span><i class="bi bi-folder-plus"></i></span>
                       Autres informations
                     </p>
-              
                     <p class="text-2xl font-medium text-gray-900"></p>
                   </div>
-              
+        
                   <span class="rounded-full bg-blue-100 p-3 text-blue-600">
-              
                   </span>
                 </div>
               

@@ -3,11 +3,11 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Enrolement</h1>
+      <h1>Conventions</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
-          <li class="breadcrumb-item active">Enrolement</li>
+          <li class="breadcrumb-item active">Conventions</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -181,34 +181,30 @@
               <div class="overflow-auto card recent-sales">
 
                 <div class="card-body">
-                  <h5 class="card-title">Liste des enrolements</h5>
+                  <h5 class="card-title">Liste des conventions</h5>
 
                   <table class="table table-borderless">
                     <thead>
                       <tr>
                         <th scope="col">Requerant</th>
-                        <th scope="col">Enrolement</th>
+                        <th scope="col">Convention</th>
                         <th scope="col">Etat</th>
                         <th scope="col">Date</th>
                         <th scope="col">Action</th>
                       </tr>
                     </thead>
                     <tbody>
-
-                    @foreach ($enrolements as $enrolement)
-                            <tr>
-                                <td>{{$enrolement->name}}</td>
-                                <td> <a href="{{Storage::url($enrolement->lettre)}}" download="lettre">
-                                    <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
-                                <td><span class="badge {{$enrolement->statut}} p-2">{{$enrolement->statut}}</span></td>
-                                <td>{{$enrolement->created_at}}</td>
-                                <td>
-                                    <a href="{{url("valider/".$enrolement->id)}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
-                                    <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                </td>
-                            </tr>
-                    @endforeach
-
+                        <tr>
+                            <td></td>
+                            <td> <a href="" download="lettre">
+                                <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
+                            <td><span class="badge  p-2"></span></td>
+                            <td></td>
+                            <td>
+                                <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
+                                <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                            </td>
+                        </tr>
                     </tbody>
                   </table>
 

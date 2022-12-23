@@ -50,7 +50,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Liste des requérants</h5>
 
-                  <table class="table table-borderless datatable">
+                  <table class="table table-borderless">
                     <thead>
 
                          <tr>

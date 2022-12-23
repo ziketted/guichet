@@ -179,8 +179,7 @@
 
                 <div class="card-body">
                   <h5 class="card-title">Liste de demandes d'exonération</h5>
-
-                  <table class="table table-borderless datatable">
+                  <table class="table table-borderless">
                     <thead>
                       <tr>
                         <th scope="col">Requérant</th>
@@ -191,9 +190,6 @@
                       </tr>
                     </thead>
                     <tbody>
-
-
-
                      @foreach ($exonerations as $exoneration)
                          <tr>
                            <td>{{$exoneration->name}}</td>
@@ -204,18 +200,14 @@
                                        <a href="{{url('/exoneration/valider/'.$exoneration->id)}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
                                        <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                            </td>
-
-
                          </tr>
                      @endforeach
-
                     </tbody>
                   </table>
-
                 </div>
-
               </div>
             </div><!-- End Recent Sales -->
+            
           </div>
         </div><!-- End Left side columns -->
 
