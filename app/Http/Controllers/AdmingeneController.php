@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Enrolement;
 use App\Models\Exoneration;
 use App\Models\Notification;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -35,6 +36,14 @@ class AdmingeneController extends Controller
             $notification=Notification::where('user_id', auth()->user()->id)
             ->where('statut')
             ->count();
+            //Create a new profile
+            if ( Profile::find(auth()->user()->id ) === null ) {
+                $form_data_2 = array(
+                    'user_id'   => auth()->user()->id,
+                    );
+                    Profile::create($form_data_2);
+
+            }
 
             $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
             $exonerationTotal= Exoneration::where('user_id',  auth()->user()->id)->count();
@@ -71,7 +80,7 @@ class AdmingeneController extends Controller
     {
         //
         $requerant= DB::table('users')
-        ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
+        ->join('profiles', 'users.id', '=', 'profiles.user_id')
         ->select('users.*', 'profiles.responsable_nom', 'profiles.province', 'profiles.domaine','profiles.telephone')
         ->where('users.id','<>',auth()->user()->id)
         ->get();
@@ -246,6 +255,8 @@ class AdmingeneController extends Controller
      */
 
      public function detailrequerant($requerant){
+        //Création d'un profile
+
 
         $profiles = DB::table('users')
         ->join('profiles', 'users.id', '=', 'profiles.user_id')
@@ -253,6 +264,8 @@ class AdmingeneController extends Controller
         ->where('users.id','<>',$requerant)
         ->take(1)
         ->get();
+
+
         $exonerations= Exoneration::where('user_id', $requerant)->get();
         $enrolements= Enrolement::where('user_id', $requerant)->get();
 
