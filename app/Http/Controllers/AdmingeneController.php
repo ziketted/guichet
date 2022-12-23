@@ -261,8 +261,7 @@ class AdmingeneController extends Controller
         $profiles = DB::table('users')
         ->join('profiles', 'users.id', '=', 'profiles.user_id')
         ->select('profiles.*', 'users.email', 'users.name')
-        ->where('users.id','<>',$requerant)
-        ->take(1)
+        ->where('users.id',$requerant)
         ->get();
 
 
