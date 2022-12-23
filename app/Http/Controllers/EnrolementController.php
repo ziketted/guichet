@@ -26,7 +26,7 @@ class EnrolementController extends Controller
         $check_active_document= new Enrolement();
         $actif= count($check_active_document->enrolement_encours());
         $enrolements= Enrolement::where('user_id',  auth()->user()->id)
-                                   ->orderBy('id', 'DESC')->take(1)->get();
+                                  ->orderBy('id', 'DESC')->take(1)->get();
 
         return view('enrolement.index', ['enrolements'=>$enrolements,
                                          'actif'=>$actif]);

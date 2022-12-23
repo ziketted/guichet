@@ -203,6 +203,7 @@
                                 <td><span class="badge {{$enrolement->statut}} p-2">{{$enrolement->statut}}</span></td>
                                 <td>{{$enrolement->created_at}}</td>
                                 <td>
+
                                     <a href="{{url("valider/".$enrolement->id)}}" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
                                     <a href="" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>

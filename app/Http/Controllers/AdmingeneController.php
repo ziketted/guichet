@@ -251,6 +251,7 @@ class AdmingeneController extends Controller
         ->join('profiles', 'users.id', '=', 'profiles.user_id')
         ->select('profiles.*', 'users.email', 'users.name')
         ->where('users.id','<>',$requerant)
+        ->take(1)
         ->get();
         $exonerations= Exoneration::where('user_id', $requerant)->get();
         $enrolements= Enrolement::where('user_id', $requerant)->get();
@@ -263,9 +264,16 @@ class AdmingeneController extends Controller
     public function show($enrolement)
     {
         //
-        $enrolements=Enrolement::findOrFail($enrolement);
+        $enrolements=Enrolement::where('id',$enrolement)->take(1)->get();
+        $statut="";
+        foreach ($enrolements as $value) {
+            # code...
+            $statut=$value['statut'];
+        }
 
-        return view('admin.validation_enrolement', ['enrolements'=>$enrolements, 'id'=>$enrolement]);
+
+        return view('admin.validation_enrolement', ['enrolements'=>$enrolements, 'id'=>$enrolement,
+                                                    'statut'=>$statut]);
     }
     public function showExoneration($exoneration)
     {
