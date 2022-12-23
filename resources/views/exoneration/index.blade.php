@@ -166,7 +166,7 @@
               <div class="overflow-auto card recent-sales">
 
                 <div class="card-body">
-                  <h5 class="card-title">Les demandes d'exonération <span>| Today</span></h5>
+                  <h5 class="card-title">Les demandes d'exonération</h5>
 
                   <table class="table table-borderless">
                     <thead>
