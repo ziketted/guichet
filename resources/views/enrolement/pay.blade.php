@@ -64,7 +64,7 @@
                     ->get();
                 ?>
             @foreach ($users as $user )
-                    
+
             <a
               class="relative block rounded-xl border border-gray-100 p-8 shadow-xl"
               href=""
@@ -76,12 +76,12 @@
               </span>
 
               <div class="mt-4 text-gray-500 sm:pr-8">
-                
+
                 <h7 class="mt-4 text-xl font-bold text-gray-900">Nom : {{ $user->name }}</h7><br>
                 <h7 class="mt-4 text-xl font-bold text-gray-900">Email : {{ $user->email }}</h7><br>
                 <h7 class="mt-4 text-xl font-bold text-gray-900">Montant : 50 USD</h7>
 
-                
+
               </div>
             </a><br>
 
@@ -196,16 +196,16 @@
                         Payer maintenant
                     </button><br>
                     <div class="col-md-5">
-                      <a href="#" class="block rounded bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                      <a href="{{route('enrolement.index')}}" class="block rounded bg-red-600 px-5 py-3 text-sm font-medium text-white">
                         Payer plus tard
                       </a>
                     </div>
 
                   </form>
-                  
+
               </div>
             </div>
-            
+
 
           </div>
         </div>

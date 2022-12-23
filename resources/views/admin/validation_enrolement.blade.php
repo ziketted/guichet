@@ -151,17 +151,30 @@
                                             placeholder="Message" name="notification" rows="8" id="note"></textarea>
                                     </div>
                                     @if ($statut!=="annulé")
+
                                         <div class="row p-2">
-                                            <div class="col-6"><button type="submit" name="action" value="valider"
-                                                    class="block w-full rounded-lg bg-success px-5 py-3 text-sm font-medium text-white">
-                                                    Valider l'enrolement
-                                                </button></div>
+                                            @if ($statut=="validé")
                                             <div class="col-6">
                                                 <button type="submit" value="annuler" name="action"
                                                     class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
                                                     Annuler l'enrolement
                                                 </button>
                                             </div>
+                                            @else
+                                            <div class="col-6">
+                                                <button type="submit" name="action" value="valider"
+                                                    class="block w-full rounded-lg bg-success px-5 py-3 text-sm font-medium text-white">
+                                                    Valider l'enrolement
+                                                </button>
+                                            </div>
+                                            <div class="col-6">
+                                                <button type="submit" value="annuler" name="action"
+                                                    class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                                    Annuler l'enrolement
+                                                </button>
+                                            </div>
+                                            @endif
+
                                         </div>
                                     @endif
 

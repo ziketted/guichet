@@ -179,6 +179,7 @@ class AdmingeneController extends Controller
                 Exoneration::where('id', $request->id)
                 ->update([
                     'statut' => 'validé',
+
                 ]);
                 return redirect()->route('admin.exoneration');
                 break;

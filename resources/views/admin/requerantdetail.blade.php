@@ -118,12 +118,12 @@
                          </div>
                        @empty
                        <div class="card-body ">
-                        <br>
-                        <h3 class="card-title text-danger">Aucun document et/ou renseignement concernant le requerant</h3>
-                        <p>Prière demander au requérant de bien rensiegner ses informations. </p>
-                        <br>
-                        <button class="btn btn-primary"> Notifier le requerant </button>
-                    </div>
+                            <br>
+                            <h3 class="card-title text-danger">Aucun document et/ou renseignement concernant le requerant</h3>
+                            <p>Prière demander au requérant de bien rensiegner ses informations. </p>
+                            <br>
+                            <button class="btn btn-primary"> Notifier le requerant </button>
+                        </div>
 
 
                        @endforelse
