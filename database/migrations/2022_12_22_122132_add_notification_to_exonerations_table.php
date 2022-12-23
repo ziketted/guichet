@@ -15,7 +15,7 @@ class AddNotificationToExonerationsTable extends Migration
     {
         Schema::table('exonerations', function (Blueprint $table) {
             //
-            $table->string('notification')->default('Rien à signaler');
+            $table->string('notification')->default('Rien à signaler')->nullable();
 
         });
     }

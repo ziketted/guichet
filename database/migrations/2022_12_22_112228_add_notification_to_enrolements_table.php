@@ -15,7 +15,7 @@ class AddNotificationToEnrolementsTable extends Migration
     {
         Schema::table('enrolements', function (Blueprint $table) {
             //
-            $table->string('notification')->default('Rien à signaler');
+            $table->string('notification')->default('Rien à signaler')->nullable();
 
 
         });
