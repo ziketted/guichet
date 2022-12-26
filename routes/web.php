@@ -47,7 +47,7 @@ Route::middleware([
 
         //Mise à jour des exonérations
 
-        Route::post('/exoneration/titre', [ExonerationController::class, 'titre'])->name('upd_titre');
+        Route::post('/exoneration/titre', [ExonerationController::class, 'upd_titre'])->name('upd_titre');
         Route::post('/exoneration/lettre', [ExonerationController::class, 'upd_lettre'])->name('upd_lettre');
         Route::post('/exoneration/attestation', [ExonerationController::class, 'upd_attestation'])->name('upd_attestation');
         Route::post('/exoneration/copie_avis', [ExonerationController::class, 'upd_copie_avis'])->name('upd_copie_avis');
@@ -114,7 +114,7 @@ Route::middleware([
             Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
             Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
 
-            
+
             Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
             Route::get('/valider/{enrolement}', [AdmingeneController::class, 'show'])->name('valider');
             Route::post('/modifier/enrolement/', [AdmingeneController::class, 'valider_enrolement'])->name('validerenrolement');

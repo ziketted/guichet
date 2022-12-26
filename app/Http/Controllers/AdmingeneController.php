@@ -178,6 +178,7 @@ class AdmingeneController extends Controller
                 Exoneration::where('id', $request->id)
                 ->update([
                     'statut' => 'validé',
+                    'notification' => $request->notification,
 
                 ]);
                 return redirect()->route('admin.exoneration');
@@ -188,6 +189,7 @@ class AdmingeneController extends Controller
                 Exoneration::where('id', $request->id)
                 ->update([
                     'statut' => 'annulé',
+                    'notification' => $request->notification,
                 ]);
                 return redirect()->route('admin.exoneration');
 
@@ -290,9 +292,17 @@ class AdmingeneController extends Controller
     public function showExoneration($exoneration)
     {
         //
-        $exonerations=Exoneration::findOrFail($exoneration);
+        $exonerations=Exoneration::findOrFail($exoneration)->get();
+        $statut="";
 
-        return view('admin.exoneration_validation', ['exonerations'=>$exonerations, 'id'=>$exoneration]);
+        foreach ($exonerations as $value) {
+            # code...
+            $statut=$value['statut'];
+        }
+        return view('admin.exoneration_validation', ['exonerations'=>$exonerations,
+                                                    'id'=>$exoneration,
+                                                    'statut'=>$statut
+                                                ]);
     }
 
     /**

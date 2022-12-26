@@ -175,47 +175,7 @@
                 </article><br>
               </div>
 
-            <div class="col-12">
-              <div class="overflow-auto card recent-sales">
 
-                <div class="card-body">
-                  <h5 class="card-title">Liste des requérants</h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Titre de dela demande</th>
-                        <th scope="col">Date de soumission</th>
-                        <th scope="col">Statut</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-
-
-
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td><span class="badge bg-success"></span></td>
-                        <td>
-
-                                    <a href="" class="btn btn-warning"><i class="bi bi-pen-fill"></i></a>
-
-                                    <a href="" class="btn btn-danger"><i class="bi bi-pen-fill"></i></a>
-
-                        </td>
-
-
-                      </tr>
-
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Recent Sales -->
           </div>
         </div><!-- End Left side columns -->
 

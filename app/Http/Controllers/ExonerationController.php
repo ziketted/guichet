@@ -413,20 +413,12 @@ class ExonerationController extends Controller
             ]);
             return back();
         }
-
-        if ($request->hasFile('titre')) {
-
-            $file = $request->file('titre');
-            $filename = uniqid() . '_titre_ajour_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-
-            $filePath = public_path() . '/storage';
-            $file->move($filePath, $filename);
-            Exoneration::where('user_id', $user_id)
+        Exoneration::where('user_id', $user_id)
                 ->update([
-                    'titre' => $filename,
+                    'titre' => $request->titre,
                 ]);
                 return back();
-        }
+
     }
     public function upd_lettre(Request $request, Exoneration $exoneration)
     {
