@@ -220,7 +220,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Details de demande</h5>
 
-                  <table class="table table-borderless">
+                  <table class="table table-borderless datatable">
                     <thead>
                       <tr>
                         <th scope="col">Numero du dossier</th>

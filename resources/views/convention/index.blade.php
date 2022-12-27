@@ -164,7 +164,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Les demandes de conventions</h5>
 
-                                <table class="table table-borderless">
+                                <table class="table table-borderless datatable">
                                     <thead>
                                         <tr>
 
