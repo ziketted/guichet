@@ -25,14 +25,10 @@
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="card-body">
-
                                     <div class="activity">
-
                                         <div class="activity-item d-flex">
-
                                             <div class="row ">
                                                 <div class="col-4 p-2 mt-2">
-
                                                     <div class="activity-content">
                                                         <a href="{{Storage::url($exoneration->attestation)}}"
                                                             download="Attestation">
@@ -40,28 +36,19 @@
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
                                                         </a>
                                                     </div>
-
                                                 </div>
                                                 <div class="col-8 p-3">
-
                                                     <a href="{{Storage::url($exoneration->attestation)}}"
                                                         class="fw-bold text-dark" download="Attestation"> l'attestation. </a>
                                                         <hr>
-
-
                                                 </div>
-
-
-
                                             </div>
-
-
                                         </div><!-- End activity i tem-->
-
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-lg-3">
                             <div class="card">
                                 <div class="card-body">
@@ -342,6 +329,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="col-lg-10">
                             <div class="card">
                                 <div class="card-body">
