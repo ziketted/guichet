@@ -125,7 +125,7 @@
                                 <input
                                     class="w-full rounded-lg border-gray-200 p-3 text-sm"
                                     placeholder="Date de creation"
-                                    type="text" value="{{$profile->date}}"
+                                    type="date" value="{{$profile->date}}"
                                     name="date"
                                     id="formFile" required
                                 />
@@ -233,7 +233,7 @@
                                     <label class="sr-only" for="message">Rayon d'intervention</label>
                                     <textarea
                                       class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                      placeholder="Message"
+                                      placeholder="Rayon d'intervention"
                                       rows="8"
                                       id="message"
                                     ></textarea>
@@ -247,7 +247,7 @@
                                     <label class="sr-only" for="message">Justification</label>
                                     <textarea
                                       class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                      placeholder="Message"
+                                      placeholder="Justification"
                                       rows="8"
                                       id="message"
                                     ></textarea>
@@ -261,7 +261,7 @@
                                     <label class="sr-only" for="message">Projet en cours</label>
                                     <textarea
                                       class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                      placeholder="Message"
+                                      placeholder="Projet en cours"
                                       rows="8"
                                       id="message"
                                     ></textarea>
@@ -275,7 +275,7 @@
                                     <label class="sr-only" for="message">Bénéficiaire</label>
                                     <textarea
                                       class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                      placeholder="Message"
+                                      placeholder="Bénéficiaire"
                                       rows="8"
                                       id="message"
                                     ></textarea>
@@ -289,7 +289,7 @@
                                     <label class="sr-only" for="message">Impact</label>
                                     <textarea
                                       class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                      placeholder="Message"
+                                      placeholder="Impact"
                                       rows="8"
                                       id="message"
                                     ></textarea>
