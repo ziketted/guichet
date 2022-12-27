@@ -168,7 +168,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Les demandes d'exonération</h5>
 
-                  <table class="table table-borderless">
+                  <table class="table table-borderless datatable">
                     <thead>
                       <tr>
                         <th scope="col">Titre de dela demande</th>
@@ -186,7 +186,7 @@
                         <td>{{$exoneration->created_at}}</td>
                         <td><span class="badge bg-success">{{$exoneration->statut}}</span></td>
                         <td>
-                            <div class="items-center row x-gap-10 y-gap-10">
+                              <div class="items-center row x-gap-10 y-gap-10">
                                 {{-- <div class="col-auto">
                                     <a href="{{route('exoneration.show', $exoneration->id)}}" class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
                                 </div> --}}
@@ -207,7 +207,6 @@
                               <p class="p-1 text-white bg-secondary">Aucune demande n'a été soumise.</p>
                               <br>
                          @endforelse
-
                       </tr>
 
                     </tbody>

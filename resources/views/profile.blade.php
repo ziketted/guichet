@@ -50,7 +50,7 @@
                 <div class="card-body">
                   <h5 class="card-title">Liste des requérants</h5>
 
-                  <table class="table table-borderless">
+                  <table class="table table-borderless datatable">
                     <thead>
 
                          <tr>
@@ -70,11 +70,17 @@
                             <td>{{$requerant->telephone}}</td>
                             <td>{{$requerant->email}}</td>
                             <td>
-
-                                        <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-info"><i class="bi bi-eye"></i> Détail</a>
-
-
-
+                              {{-- <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-info"><i class="bi bi-eye"></i> Détail</a> --}}
+                                <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-primary">
+                                  <button type="button"><i class="bi bi-eye"></i></button>
+                                </a>
+                                <a href="#" class="btn btn-success">
+                                  <button type="button"><i class="bi bi-pencil"></i></button>
+                                </a>
+                                <a href="#" class="btn btn-danger">
+                                    <button type="button" ><i class="bi bi-trash"></i></button>
+                                </a>
+                                
                             </td>
 
 
