@@ -178,7 +178,13 @@
                         type="submit"
                         class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">
                         Payer votre enrolement maintenant
-                    </button>
+                    </button><br>
+
+
+                    <a href="{{route('convention.index')}}"  class="block w-full rounded-lg  bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                        <center>Payer plus tard</center>
+                        </a>
+
 
                   </form>
 

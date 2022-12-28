@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Convention;
 use DateTime;
 use App\Models\User;
 use App\Models\Enrolement;
@@ -164,6 +165,40 @@ class AdmingeneController extends Controller
 
 
     }
+    public function valider_convention(Request $request ){
+
+
+
+
+        switch ($request->input('action')) {
+
+            case 'valider':
+                // Save model
+                Convention::where('id', $request->id_convention)
+                ->update([
+                    'statut' => 'validé',
+                    'notification' => $request->notification,
+                ]);
+                return redirect()->route('admin.convention');
+
+                break;
+
+            case 'annuler':
+
+                Convention::where('id', $request->id_enrolement)
+                ->update([
+                    'statut' => 'annulé',
+                    'notification' => $request->notification,
+                ]);
+                return redirect()->route('admin.convention');
+
+                break;
+
+
+        }
+
+
+    }
 
 
     public function valider_exoneration(Request $request ){
@@ -200,8 +235,7 @@ class AdmingeneController extends Controller
 
 
     }
-    public function exoneration()
-    {
+     public function exoneration(){
         //
         $exonerationTotal= Exoneration::where('user_id','<>',  auth()->user()->id)  ->count();
         $exonerationAnnuler= Exoneration::where('statut','annulé')->
@@ -227,6 +261,31 @@ class AdmingeneController extends Controller
                                                     ,'requerantNombre'=>$requerantNombre
                                                     ,'exonerationAnnuler'=>$exonerationAnnuler
                                                     ,'exonerationTotal'=>$exonerationTotal]);
+    }
+
+    public function convention()    {
+        //
+        $conventionTotal= Convention::where('user_id','<>',  auth()->user()->id)  ->count();
+        $conventionAnnuler= Convention::where('statut','annulé')->
+                                 where('user_id','<>',  auth()->user()->id) ->count();
+
+        $conventionValider= Convention::where('statut','validé')->
+        where('user_id','<>',  auth()->user()->id) ->count();
+        $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
+
+        $conventions= DB::table('users')
+        ->join('conventions', 'users.id', '=', 'conventions.user_id')
+        ->select('conventions.*', 'users.name', 'users.email')
+        ->where('users.id','<>',auth()->user()->id)
+        ->where('conventions.deleted_at',NULL)
+        ->get();
+
+
+        return view('admin.valid_convention',['conventions'=>$conventions
+                                                    ,'requerantNombre'=>$requerantNombre
+                                                    ,'conventionAnnuler'=>$conventionAnnuler
+                                                    ,'conventionValider'=>$conventionValider
+                                                    ,'conventionTotal'=>$conventionTotal]);
     }
     /**
      * Show the form for creating a new resource.
@@ -291,7 +350,7 @@ class AdmingeneController extends Controller
     }
     public function showExoneration($exoneration)
     {
-        //
+        //test
         $exonerations=Exoneration::findOrFail($exoneration)->get();
         $statut="";
 
@@ -301,6 +360,24 @@ class AdmingeneController extends Controller
         }
         return view('admin.exoneration_validation', ['exonerations'=>$exonerations,
                                                     'id'=>$exoneration,
+                                                    'statut'=>$statut
+                                                ]);
+    }
+
+
+    public function showConvention($convention)
+    {
+        //test
+        $conventions=Convention::where('id',$convention)->get();
+
+        $statut="";
+
+        foreach ($conventions as $value) {
+            # code...
+            $statut=$value['statut'];
+        }
+        return view('admin.convention_validation', ['conventions'=>$conventions,
+                                                    'id'=>$convention,
                                                     'statut'=>$statut
                                                 ]);
     }

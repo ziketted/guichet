@@ -34,8 +34,8 @@ Route::middleware([
         Route::get('/enrolement/store', [EnrolementController::class, 'store'])->name('store');
         Route::post('/enrolement/create', [EnrolementController::class, 'create'])->name('create');
         Route::get('/enrolement/show/{enrolement}', [EnrolementController::class, 'show'])->name('show');
-        Route::delete('/enrolement/{operateur}',[EnrolementController::class, 'destroy'])->name('destroy');
-        });
+        Route::delete('/enrolement/{operateur}', [EnrolementController::class, 'destroy'])->name('destroy');
+    });
 
     Route::name('exoneration.')->group(function () {
         Route::get('/exoneration/index', [ExonerationController::class, 'index'])->name('index');
@@ -43,7 +43,7 @@ Route::middleware([
         Route::get('/exoneration/{exoneration}/edit/', [ExonerationController::class, 'edit'])->name('edit');
         Route::post('/exoneration/create', [ExonerationController::class, 'create'])->name('create');
         Route::get('/exoneration/{exoneration}/show', [ExonerationController::class, 'show'])->name('show');
-        Route::delete('/exoneration/{exoneration}',[ExonerationController::class, 'destroy'])->name('destroy');
+        Route::delete('/exoneration/{exoneration}', [ExonerationController::class, 'destroy'])->name('destroy');
 
         //Mise à jour des exonérations
 
@@ -58,8 +58,7 @@ Route::middleware([
         Route::post('/exoneration/affectation', [ExonerationController::class, 'upd_affectation'])->name('upd_affectation');
         Route::post('/exoneration/commentaire', [ExonerationController::class, 'upd_commentaire'])->name('upd_commentaire');
         Route::post('/exoneration/type', [ExonerationController::class, 'upd_type'])->name('upd_type');
-
-        });
+    });
 
     Route::name('profile.')->group(function () {
         Route::get('/profile/index', [ProfileController::class, 'index'])->name('index');
@@ -70,7 +69,7 @@ Route::middleware([
         Route::post('/profile/create', [ProfileController::class, 'create'])->name('create');
         Route::post('/profile/identiteupdate', [ProfileController::class, 'identiteupdate'])->name('identiteupdate');
         Route::post('/profile/{profile}/show', [ProfileController::class, 'show'])->name('show');
-        Route::delete('/profile/{profile}',[ProfileController::class, 'destroy'])->name('destroy');
+        Route::delete('/profile/{profile}', [ProfileController::class, 'destroy'])->name('destroy');
 
         Route::post('/profile/upd_autres_infos', [ProfileController::class, 'upd_autre_infos'])->name('upd_autres_infos');
         Route::post('/profile/udpstatut', [ProfileController::class, 'upd_statut'])->name('updStatut');
@@ -79,70 +78,69 @@ Route::middleware([
         Route::post('/profile/upd_convention', [ProfileController::class, 'upd_convention'])->name('upd_convention');
         Route::post('/profile/upd_certificat', [ProfileController::class, 'upd_certificat'])->name('upd_certificat');
         Route::post('/profile/upd_accord', [ProfileController::class, 'upd_accord'])->name('upd_accord');
-
-        });
+    });
 
     Route::name('importation.')->group(function () {
         Route::get('/importation/index', [ImportationController::class, 'index'])->name('index');
         Route::post('/importation/store', [ImportationController::class, 'store'])->name('store');
         Route::post('/importation/create', [ImportationController::class, 'create'])->name('create');
         Route::post('/importation/show/{importation}', [ImportationController::class, 'show'])->name('show');
-        Route::delete('/importation/{importation}',[ImportationController::class, 'destroy'])->name('destroy');
-        });
+        Route::delete('/importation/{importation}', [ImportationController::class, 'destroy'])->name('destroy');
+    });
 
     Route::name('notification.')->group(function () {
         Route::get('/notification/index', [NotificationController::class, 'index'])->name('index');
         Route::post('/notification/store', [NotificationController::class, 'store'])->name('store');
         Route::post('/notification/create', [NotificationController::class, 'create'])->name('create');
-        Route::delete('/notification/{notification}',[NotificationController::class, 'destroy'])->name('destroy');
+        Route::delete('/notification/{notification}', [NotificationController::class, 'destroy'])->name('destroy');
         Route::post('/notification/show/{notification}', [NotificationController::class, 'show'])->name('show');
-        });
+    });
 
     Route::name('role.')->group(function () {
         Route::get('/role/index', [RoleController::class, 'index'])->name('index');
         Route::post('/role/store', [RoleController::class, 'store'])->name('store');
         Route::post('/role/create', [RoleController::class, 'create'])->name('create');
-        Route::delete('/role/{role}',[RoleController::class, 'destroy'])->name('destroy');
+        Route::delete('/role/{role}', [RoleController::class, 'destroy'])->name('destroy');
         Route::post('/role/show/{role}', [RoleController::class, 'show'])->name('show');
-        });
+    });
 
-        //Admin profile
-        Route::name('admin.')->group(function () {
+    //Admin profile
+    Route::name('admin.')->group(function () {
 
-            Route::get('/admin/index', [AdmingeneController::class, 'adminindex'])->name('admin');
-            Route::get('/admin/requerant/{requerant}', [AdmingeneController::class, 'detailrequerant'])->name('detailrequerant');
-            Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
-            Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
+        Route::get('/admin/index', [AdmingeneController::class, 'adminindex'])->name('admin');
+        Route::get('/admin/requerant/{requerant}', [AdmingeneController::class, 'detailrequerant'])->name('detailrequerant');
+        Route::get('/profile', [AdmingeneController::class, 'profile'])->name('profile');
+        Route::get('/valid_enrolement', [AdmingeneController::class, 'enrolement'])->name('enrolement');
 
-
-            Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
-            Route::get('/valider/{enrolement}', [AdmingeneController::class, 'show'])->name('valider');
-            Route::post('/modifier/enrolement/', [AdmingeneController::class, 'valider_enrolement'])->name('validerenrolement');
-
-
-            Route::post('/modifier/exoneration/', [AdmingeneController::class, 'valider_exoneration'])->name('validerexoneration');
-            Route::get('/exoneration/valider/{exoneration}', [AdmingeneController::class, 'showExoneration'])->name('validerExo');
-
-        });
-
-        //Convention
-        Route::name('convention.')->group(function () {
-            Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');
-            Route::get('/convention/create', [ConventionController::class, 'create'])->name('create');
-            Route::post('/convention/store', [ConventionController::class, 'store'])->name('store');
-            Route::post('/convention/edit', [ConventionController::class, 'edit'])->name('edit');
-            Route::get('/convention/show/{convention}', [ConventionController::class, 'show'])->name('show');
-            Route::delete('/convention/{convention}',[RoleController::class, 'destroy'])->name('destroy');
-
-        });
+        //Validation convention
+        Route::get('/validation_convention', [AdmingeneController::class, 'convention'])->name('convention');
+        Route::get('/convention/{convention}', [AdmingeneController::class, 'showConvention'])->name('validerconvention');
+        Route::post('/modifier/convention', [AdmingeneController::class, 'valider_convention'])->name('modifierconvention');
 
 
-        //Aide lien
-        Route::get('/aide', function () {
-            return view('aide');
-        });
-        Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
+        Route::get('/validation_exoneration', [AdmingeneController::class, 'exoneration'])->name('exoneration');
+        Route::get('/valider/{enrolement}', [AdmingeneController::class, 'show'])->name('valider');
+        Route::post('/modifier/enrolement/', [AdmingeneController::class, 'valider_enrolement'])->name('validerenrolement');
 
 
+        Route::post('/modifier/exoneration/', [AdmingeneController::class, 'valider_exoneration'])->name('validerexoneration');
+        Route::get('/exoneration/valider/{exoneration}', [AdmingeneController::class, 'showExoneration'])->name('validerExo');
+    });
 
+    //Convention
+    Route::name('convention.')->group(function () {
+        Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');
+        Route::get('/convention/create', [ConventionController::class, 'create'])->name('create');
+        Route::post('/convention/store', [ConventionController::class, 'store'])->name('store');
+        Route::post('/convention/edit', [ConventionController::class, 'edit'])->name('edit');
+        Route::get('/convention/show/{convention}', [ConventionController::class, 'show'])->name('show');
+        Route::delete('/convention/{convention}', [ConventionController::class, 'destroy'])->name('destroy');
+    });
+
+
+    //Aide lien
+    Route::get('/aide', function () {
+        return view('aide');
+    });
+    Route::get('/dashboard', [AdmingeneController::class, 'index'])->name('dashbaord');
 });
