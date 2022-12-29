@@ -19,23 +19,23 @@ class ProfileController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function check_profil(){
-         $profile= new Profile;
+    public function check_profil()
+    {
+        $profile = new Profile;
         $user_id = auth()->user()->id;
         $profile_exist = Profile::where('user_id', $user_id)->get();
         if ($profile_exist->count() == 0) {
-            $profile->user_id =auth()->user()->id;
+            $profile->user_id = auth()->user()->id;
             $profile->save();
         }
-     }
-     public function autre_infos(Profile $profile)
-     {
-         //
-         $this->check_profil();
-         $profile = Profile::where('user_id',auth()->user()->id)->get();
-         return view('profiles.autres_infos', [ 'profiles' => $profile]);
-
-     }
+    }
+    public function autre_infos(Profile $profile)
+    {
+        //
+        $this->check_profil();
+        $profile = Profile::where('user_id', auth()->user()->id)->get();
+        return view('profiles.autres_infos', ['profiles' => $profile]);
+    }
     public function index()
     {
         //
@@ -48,13 +48,12 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         $profile_exist = Profile::where('user_id', $user_id)->get();
         if ($profile_exist->count() == 0) {
-            $profile->user_id =auth()->user()->id;
+            $profile->user_id = auth()->user()->id;
             $profile->save();
         }
         $user = User::where('id', $user_id)->get();
         $profile = Profile::where('user_id', $user_id)->get();
         return view('profiles.documents', ['users' => $user, 'profiles' => $profile]);
-
     }
 
 
@@ -87,7 +86,7 @@ class ProfileController extends Controller
      * @param  \App\Models\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show( $profile)
+    public function show($profile)
     {
         //
         return view('profiles.show');
@@ -101,11 +100,11 @@ class ProfileController extends Controller
      */
     public function edit()
     {
-        $profile= new Profile();
+        $profile = new Profile();
         $user_id = auth()->user()->id;
         $profile_exist = Profile::where('user_id', $user_id)->get();
         if ($profile_exist->count() == 0) {
-            $profile->user_id =auth()->user()->id;
+            $profile->user_id = auth()->user()->id;
             $profile->save();
         }
         $user = User::where('id', $user_id)->get();
@@ -136,6 +135,23 @@ class ProfileController extends Controller
                     'responsable_fonction' => $request->responsable_fonction,
                     'responsable_phone' => $request->responsable_phone,
                     'responsable_email' => $request->responsable_email,
+                    'compte_bancaire' => $request->compte_bancaire,
+                    'telephone' => $request->telephone,
+                    'province' => $request->province,
+                    'quartier' => $request->quartier,
+                    'district' => $request->district,
+                    'lieu' => $request->lieu,
+                    'rue' => $request->rue,
+                    'commune' => $request->commune,
+                    'domaine' => $request->domaine,
+                    'fourniture' => $request->fourniture,
+                    'date_creation' => $request->date_creation,
+                    'numero' => $request->numero,
+                    'rayon_intervention' => $request->rayon_intervention,
+                    'justification' => $request->justification,
+                    'beneficiaire' => $request->beneficiaire,
+                    'projet_encours' => $request->projet_encours,
+                    'impact' => $request->impact,
                 ]);
         } else {
             Profile::where('user_id', $user_id)
@@ -180,22 +196,20 @@ class ProfileController extends Controller
      */
     public function destroy(Profile $document)
     {
-
     }
     //Update profil objetcif
 
 
-    public function upd_autre_infos (Request $request, Profile $profile)
+    public function upd_autre_infos(Request $request, Profile $profile)
     {
         $user_id = auth()->user()->id;
 
-            Profile::where('user_id', $user_id)
-                ->update([
-                    'objectif_global' => $request->objectif_global,
-                    'objectif_specifique' => $request->objectif_specifique,
-                ]);
-                return back();
-
+        Profile::where('user_id', $user_id)
+            ->update([
+                'objectif_global' => $request->objectif_global,
+                'objectif_specifique' => $request->objectif_specifique,
+            ]);
+        return back();
     }
     public function upd_statut(Request $request, Profile $profile)
     {
@@ -203,9 +217,9 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->doc_statut)) {
             Profile::where('user_id', $user_id)
-            ->update([
-                'doc_statut' =>'',
-            ]);
+                ->update([
+                    'doc_statut' => '',
+                ]);
             return back();
         }
 
@@ -220,7 +234,7 @@ class ProfileController extends Controller
                 ->update([
                     'doc_statut' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_autorisation(Request $request, Profile $profile)
@@ -229,9 +243,9 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->doc_autorisation)) {
             Profile::where('user_id', $user_id)
-            ->update([
-                'doc_autorisation' =>'',
-            ]);
+                ->update([
+                    'doc_autorisation' => '',
+                ]);
             return back();
         }
 
@@ -246,7 +260,7 @@ class ProfileController extends Controller
                 ->update([
                     'doc_autorisation' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_personnalite(Request $request, Profile $profile)
@@ -255,9 +269,9 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->doc_personnalite)) {
             Profile::where('user_id', $user_id)
-            ->update([
-                'doc_personnalite' =>'',
-            ]);
+                ->update([
+                    'doc_personnalite' => '',
+                ]);
             return back();
         }
 
@@ -272,7 +286,7 @@ class ProfileController extends Controller
                 ->update([
                     'doc_personnalite' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_certificat(Request $request, Profile $profile)
@@ -281,9 +295,9 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->doc_certificat)) {
             Profile::where('user_id', $user_id)
-            ->update([
-                'doc_certificat' =>'',
-            ]);
+                ->update([
+                    'doc_certificat' => '',
+                ]);
             return back();
         }
 
@@ -298,7 +312,7 @@ class ProfileController extends Controller
                 ->update([
                     'doc_certificat' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_convention(Request $request, Profile $profile)
@@ -307,9 +321,9 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->doc_convention)) {
             Profile::where('user_id', $user_id)
-            ->update([
-                'doc_convention' =>'',
-            ]);
+                ->update([
+                    'doc_convention' => '',
+                ]);
             return back();
         }
 
@@ -324,7 +338,7 @@ class ProfileController extends Controller
                 ->update([
                     'doc_convention' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_accord(Request $request, Profile $profile)
@@ -333,9 +347,9 @@ class ProfileController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->doc_accord)) {
             Profile::where('user_id', $user_id)
-            ->update([
-                'doc_accord' =>'',
-            ]);
+                ->update([
+                    'doc_accord' => '',
+                ]);
             return back();
         }
 
@@ -350,7 +364,7 @@ class ProfileController extends Controller
                 ->update([
                     'doc_accord' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
 }

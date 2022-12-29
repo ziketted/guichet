@@ -18,13 +18,27 @@ class ConventionController extends Controller
      */
     public function index()
     {
-         $conventions= Convention::where('user_id',auth()->user()->id)->get();
-        $conventionNombre= Convention::where('user_id',auth()->user()->id)
-        ->where('statut','soumis')
-        ->count();
-        return view('convention.index', ['conventions'=>$conventions,
-          'conventionNombre'=>$conventionNombre]);
+        $conventions = Convention::where('user_id', auth()->user()->id)->get();
+        $conventionNombre = Convention::where('user_id', auth()->user()->id)
+            ->count();
+        $conventionValider = Convention::where('user_id', auth()->user()->id)
+            ->where('statut', 'validé')
+            ->count();
+        $conventionAnnuler = Convention::where('user_id', auth()->user()->id)
+            ->where('statut', 'annulé')
+            ->count();
+        $conventionSoumis = Convention::where('user_id', auth()->user()->id)
+            ->where('statut', 'annulé')
+            ->count();
 
+
+        return view('convention.index', [
+            'conventions' => $conventions,
+            'conventionNombre' => $conventionNombre,
+            'conventionAnnuler' => $conventionAnnuler,
+            'conventionValider' => $conventionValider,
+            'conventionSoumis' => $conventionSoumis,
+        ]);
     }
 
     /**
@@ -44,21 +58,23 @@ class ConventionController extends Controller
      * @param  \App\Http\Requests\StoreConventionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store( Request $request, Convention $convention)
+    public function store(Request $request, Convention $convention)
     {
-        /*  if ($request->hasFile('programme_social')) {
-
-            $file = $request->file('facture');
+        if ($request->hasFile('programme_social')) {
+            $file = $request->file('programme_social');
             $filename = uniqid() . '_programme_social_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
-
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->programme_social=$filename;
-        } */
-        $convention=auth()->user()->conventionUser()->create($request->all());
+            $request->programme_social = $filename;
+        } /**/
+
+        $convention->programme_social = $request->programme_social;
+        $convention->user_id = auth()->user()->id;
+        $convention->commentaires = $request->commentaires;
+        $convention->programme_social = $request->programme_social;
 
         $convention->save();
-        $user_id =auth()->user()->id;
+        $user_id = auth()->user()->id;
         $last_id = DB::getPDO()->lastInsertId();
 
         $form_data_2 = array(
@@ -66,10 +82,10 @@ class ConventionController extends Controller
             'type_paiement'   =>   'Convention',
             'montant'   =>   '300',
             'statut'   =>   'pending',
-            "id_operation"=>$last_id,
-            );
+            "id_operation" => $last_id,
+        );
 
-            paiements::create($form_data_2);
+        paiements::create($form_data_2);
 
 
         return view('convention.pay')->with('user_id', $user_id);
@@ -81,10 +97,10 @@ class ConventionController extends Controller
      * @param  \App\Models\Convention  $convention
      * @return \Illuminate\Http\Response
      */
-    public function show( $convention)
+    public function show($convention)
     {
         //
-
+        return view('convention.edit');
     }
 
     /**

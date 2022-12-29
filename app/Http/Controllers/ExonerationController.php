@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use DateTime;
+use App\Models\Convention;
+use App\Models\Enrolement;
 use App\Models\Exoneration;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreExonerationRequest;
 use App\Http\Requests\UpdateExonerationRequest;
-use App\Models\Enrolement;
 
 class ExonerationController extends Controller
 {
@@ -18,28 +19,30 @@ class ExonerationController extends Controller
      */
     public function index()
     {
-        $enrolement= new Enrolement();
-        $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
-        $importationCount= Exoneration::where('user_id',  auth()->user()->id)
-                                        ->where('type', 'Importation')
-                                        ->count();
+        $enrolement = new Enrolement();
+        $exoneration = Exoneration::where('user_id',  auth()->user()->id)->get();
+        $importationCount = Exoneration::where('user_id',  auth()->user()->id)
+            ->where('type', 'Importation')
+            ->count();
 
-        $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
-                                      ->where('type', 'Interieur')
-                                      ->count();
+        $interieurCount = Exoneration::where('user_id',  auth()->user()->id)
+            ->where('type', 'Interieur')
+            ->count();
 
-       if( $enrolement->verification_document()== true){
-        return redirect()->route('enrolement.index')->with('Message', 'Veuillez d \n abord vous enroler' );
-       }else{
-        return view('exoneration.index', ['exonerations'=>$exoneration,
-        'nombreDemande'=>$importationCount,
-        'nombreInterieur'=>$interieurCount, ]);
-
-       }
+        if ($enrolement->verification_document() == true) {
+            return redirect()->route('enrolement.index')->with('Message', 'Veuillez d \n abord vous enroler');
+        } else {
+            return view('exoneration.index', [
+                'exonerations' => $exoneration,
+                'nombreDemande' => $importationCount,
+                'nombreInterieur' => $interieurCount,
+            ]);
+        }
 
 
         //
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -54,7 +57,7 @@ class ExonerationController extends Controller
             $filename = uniqid() . '_lettre_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->lettre=$filename;
+            $request->lettre = $filename;
         }
         if ($request->hasFile('attestation')) {
 
@@ -63,7 +66,7 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->attestation=$filename;
+            $request->attestation = $filename;
         }
 
         if ($request->hasFile('copie_avis')) {
@@ -73,7 +76,7 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->copie_avis=$filename;
+            $request->copie_avis = $filename;
         }
 
         if ($request->hasFile('liste_colisage')) {
@@ -83,7 +86,7 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->liste_colisage=$filename;
+            $request->liste_colisage = $filename;
         }
         if ($request->hasFile('projet')) {
 
@@ -92,7 +95,7 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->projet=$filename;
+            $request->projet = $filename;
         }
 
         if ($request->hasFile('transport')) {
@@ -102,7 +105,7 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->transport=$filename;
+            $request->transport = $filename;
         }
 
         if ($request->hasFile('facture')) {
@@ -112,7 +115,7 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->facture=$filename;
+            $request->facture = $filename;
         }
         if ($request->hasFile('affectation')) {
 
@@ -121,27 +124,25 @@ class ExonerationController extends Controller
 
             $filePath = public_path() . '/storage';
             $file->move($filePath, $filename);
-            $request->affectation=$filename;
+            $request->affectation = $filename;
         }
-        $request->statut="soumis";
-        $exoneration->titre=$request->titre;
-        $exoneration->lettre=$request->lettre;
-        $exoneration->attestation=$request->attestation;
-        $exoneration->copie_avis=$request->copie_avis;
-        $exoneration->liste_colisage=$request->liste_colisage;
-        $exoneration->projet=$request->projet;
-        $exoneration->transport=$request->transport;
-        $exoneration->facture=$request->facture;
-        $exoneration->affectation=$request->affectation;
-        $exoneration->commentaire=$request->commentaire;
-        $exoneration->type=$request->type;
-        $exoneration->statut=$request->statut;
-        $exoneration->user_id=auth()->user()->id;
+        $request->statut = "soumis";
+        $exoneration->titre = $request->titre;
+        $exoneration->lettre = $request->lettre;
+        $exoneration->attestation = $request->attestation;
+        $exoneration->copie_avis = $request->copie_avis;
+        $exoneration->liste_colisage = $request->liste_colisage;
+        $exoneration->projet = $request->projet;
+        $exoneration->transport = $request->transport;
+        $exoneration->facture = $request->facture;
+        $exoneration->affectation = $request->affectation;
+        $exoneration->commentaire = $request->commentaire;
+        $exoneration->type = $request->type;
+        $exoneration->statut = $request->statut;
+        $exoneration->user_id = auth()->user()->id;
         $exoneration->save();
 
         return redirect()->route('exoneration.index')->with('save', 'Opération effectuée avec succès.');;
-
-
     }
 
     /**
@@ -175,8 +176,8 @@ class ExonerationController extends Controller
      */
     public function edit($exoneration)
     {
-        $exonerationFind=Exoneration::findOrFail($exoneration)->take(1)->get();
-        return view('exoneration.edit', ['exonerations'=>$exonerationFind]);
+        $exonerationFind = Exoneration::findOrFail($exoneration)->take(1)->get();
+        return view('exoneration.edit', ['exonerations' => $exonerationFind]);
     }
 
     /**
@@ -198,26 +199,22 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
 
 
-            Exoneration::where('user_id', $user_id)
-                ->update([
-                    'type' => $request->type,
-                ]);
-                return back();
-
-
-
+        Exoneration::where('user_id', $user_id)
+            ->update([
+                'type' => $request->type,
+            ]);
+        return back();
     }
     public function upd_commentaire(Request $request, Exoneration $exoneration)
     {
 
         $user_id = auth()->user()->id;
 
-            Exoneration::where('user_id', $user_id)
+        Exoneration::where('user_id', $user_id)
             ->update([
-                'commentaire' =>$request->commentaire,
+                'commentaire' => $request->commentaire,
             ]);
-            return back();
-
+        return back();
     }
     public function upd_affectation(Request $request, Exoneration $exoneration)
     {
@@ -225,9 +222,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->affectation)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'affectation' =>'',
-            ]);
+                ->update([
+                    'affectation' => '',
+                ]);
             return back();
         }
 
@@ -242,7 +239,7 @@ class ExonerationController extends Controller
                 ->update([
                     'affectation' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_facture(Request $request, Exoneration $exoneration)
@@ -251,9 +248,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->facture)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'facture' =>'',
-            ]);
+                ->update([
+                    'facture' => '',
+                ]);
             return back();
         }
 
@@ -268,7 +265,7 @@ class ExonerationController extends Controller
                 ->update([
                     'facture' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_transport(Request $request, Exoneration $exoneration)
@@ -277,9 +274,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->transport)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'transport' =>'',
-            ]);
+                ->update([
+                    'transport' => '',
+                ]);
             return back();
         }
 
@@ -294,7 +291,8 @@ class ExonerationController extends Controller
                 ->update([
                     'transport' => $filename,
                 ]);
-                return back();  return back();
+            return back();
+            return back();
         }
     }
     public function upd_projet(Request $request, Exoneration $exoneration)
@@ -303,10 +301,10 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->projet)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'projet' =>'',
-            ]);
-             return back();
+                ->update([
+                    'projet' => '',
+                ]);
+            return back();
         }
 
         if ($request->hasFile('projet')) {
@@ -320,7 +318,7 @@ class ExonerationController extends Controller
                 ->update([
                     'projet' => $filename,
                 ]);
-             return back();
+            return back();
         }
     }
     public function upd_liste_colisage(Request $request, Exoneration $exoneration)
@@ -329,9 +327,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->liste_colisage)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'liste_colisage' =>'',
-            ]);
+                ->update([
+                    'liste_colisage' => '',
+                ]);
             return back();
         }
 
@@ -346,7 +344,7 @@ class ExonerationController extends Controller
                 ->update([
                     'liste_colisage' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_copie_avis(Request $request, Exoneration $exoneration)
@@ -355,9 +353,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->copie_avis)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'copie_avis' =>'',
-            ]);
+                ->update([
+                    'copie_avis' => '',
+                ]);
             return back();
         }
 
@@ -372,7 +370,7 @@ class ExonerationController extends Controller
                 ->update([
                     'copie_avis' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
     public function upd_attestation(Request $request, Exoneration $exoneration)
@@ -381,9 +379,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->attestation)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'attestation' =>'',
-            ]);
+                ->update([
+                    'attestation' => '',
+                ]);
             return back();
         }
 
@@ -398,7 +396,7 @@ class ExonerationController extends Controller
                 ->update([
                     'attestation' => $filename,
                 ]);
-                return back();
+            return back();
         }
     }
 
@@ -408,17 +406,16 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->titre)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'titre' =>'',
-            ]);
+                ->update([
+                    'titre' => '',
+                ]);
             return back();
         }
         Exoneration::where('user_id', $user_id)
-                ->update([
-                    'titre' => $request->titre,
-                ]);
-                return back();
-
+            ->update([
+                'titre' => $request->titre,
+            ]);
+        return back();
     }
     public function upd_lettre(Request $request, Exoneration $exoneration)
     {
@@ -426,9 +423,9 @@ class ExonerationController extends Controller
         $user_id = auth()->user()->id;
         if (!isset($request->lettre)) {
             Exoneration::where('user_id', $user_id)
-            ->update([
-                'lettre' =>'',
-            ]);
+                ->update([
+                    'lettre' => '',
+                ]);
             return back();
         }
 
@@ -458,7 +455,6 @@ class ExonerationController extends Controller
     {
         //
         $exoneration->delete();
-        return redirect()->route('exoneration.index')->with('deleted','opération a été effectuée avec succès.');
-
+        return redirect()->route('exoneration.index')->with('deleted', 'opération a été effectuée avec succès.');
     }
 }

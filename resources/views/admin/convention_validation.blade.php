@@ -41,26 +41,18 @@
                                                     <a href="public/storage/{{($convention->programme_social)}}"
                                                         class="fw-bold text-dark" download="programme_social">Téléchargez Programme social. </a>
                                                         <hr>
-                                                </div>
-                                            </div>
-                                        </div><!-- End activity i tem-->
-                                    </div>
-                                </div>
+
+
+                    <div class="col-lg-10">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Note du requérant.</h5>
+                                <p class="text-sm">{{ $convention->commentaires }}</p>
+
                             </div>
                         </div>
+                    </div>
 
-
-
-                        <div class="col-lg-10">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Note du requérant.</h5>
-                                    <p class="text-sm">{{ $convention->commentaire }}</p>
-
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
 
                     <!-- Recent Sales -->
                     <div class="col-10">
@@ -84,7 +76,8 @@
                                     <div>
                                         <label class="sr-only" for="message">Note</label>
                                         <textarea class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                            placeholder="Message" rows="4" id="note" name="notification"></textarea>
+                                            placeholder="Message" rows="4" id="note"
+                                            name="notification">{{ $convention->notification }}</textarea>
                                     </div>
 
 
@@ -114,10 +107,10 @@
                                         @endif
 
                                     </div>
-                                @endif
+                                    @endif
 
                                 </form>
-
+                                @endforeach
                             </div>
 
                         </div>

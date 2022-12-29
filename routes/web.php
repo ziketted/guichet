@@ -129,12 +129,12 @@ Route::middleware([
 
     //Convention
     Route::name('convention.')->group(function () {
-        Route::get('/convention/index', [ConventionController::class, 'index'])->name('index');
-        Route::get('/convention/create', [ConventionController::class, 'create'])->name('create');
-        Route::post('/convention/store', [ConventionController::class, 'store'])->name('store');
-        Route::post('/convention/edit', [ConventionController::class, 'edit'])->name('edit');
-        Route::get('/convention/show/{convention}', [ConventionController::class, 'show'])->name('show');
-        Route::delete('/convention/{convention}', [ConventionController::class, 'destroy'])->name('destroy');
+        Route::get('/convetion/index', [ConventionController::class, 'index'])->name('index');
+        Route::get('/convetion/create', [ConventionController::class, 'create'])->name('create');
+        Route::post('/convetion/store', [ConventionController::class, 'store'])->name('store');
+        Route::post('/convetion/edit', [ConventionController::class, 'edit'])->name('edit');
+        Route::get('/convetion/show/{convention}', [ConventionController::class, 'show'])->name('show');
+        Route::delete('/convetion/{convention}', [ConventionController::class, 'destroy'])->name('destroy');
     });
 
 
