@@ -16,45 +16,107 @@
         <div class="row">
 
             <!-- Left side columns -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <div class="col-xxl-4 col-md-6">
+                                <article class="rounded-lg border border-gray-100 bg-white p-6">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Nombre des coventions effectuées</p>
 
-                    <!-- Sales Card -->
-                    <div class="col-xxl-8 col-md-6">
-                        <article class="rounded-lg border border-gray-100 bg-white p-6">
-                            <div class="flex items-center justify-between">
-                                <div>
-                                    <p class="text-sm text-gray-500">Nombre des coventions effectuées</p>
+                                            <p class="text-2xl font-medium text-gray-900"> {{$conventionNombre}}</p>
+                                        </div>
 
-                                    <p class="text-2xl font-medium text-gray-900"> {{$conventionNombre}}</p>
-                                </div>
+                                        <span class="rounded-full bg-blue-100 p-3 text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        </span>
 
-                                <span class="rounded-full bg-blue-100 p-3 text-blue-600">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
-                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-                                    </svg>
-                                </span>
+                                    </div>
 
+                                    <div class="mt-1 flex gap-1 text-green-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        </svg>
+
+                                        <p class="flex gap-2 text-xs">
+                                        </p>
+                                    </div>
+                                </article><br><br>
                             </div>
+                            <div class="col-xxl-4 col-md-6">
+                                <article class="rounded-lg border border-gray-100 bg-white p-6">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Convention validée</p>
 
-                            <div class="mt-1 flex gap-1 text-green-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                                </svg>
+                                            <p class="text-2xl font-medium text-gray-900"> {{$conventionValider}}</p>
+                                        </div>
 
-                                <p class="flex gap-2 text-xs">
-                                </p>
+                                        <span class="rounded-full bg-blue-100 p-3 text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        </span>
+
+                                    </div>
+
+                                    <div class="mt-1 flex gap-1 text-green-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        </svg>
+
+                                        <p class="flex gap-2 text-xs">
+                                        </p>
+                                    </div>
+                                </article><br><br>
                             </div>
-                        </article><br><br>
-                    </div><!-- End Sales Card -->
+                            <div class="col-xxl-4 col-md-6">
+                                <article class="rounded-lg border border-gray-100 bg-white p-6">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <p class="text-sm text-gray-500">Convention annulée</p>
 
+                                            <p class="text-2xl font-medium text-gray-900"> {{$conventionAnnuler}}</p>
+                                        </div>
 
+                                        <span class="rounded-full bg-blue-100 p-3 text-blue-600">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none"
+                                                viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+                                            </svg>
+                                        </span>
 
-                    <div class="col-lg-4">
+                                    </div>
+
+                                    <div class="mt-1 flex gap-1 text-green-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+                                            viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                        </svg>
+
+                                        <p class="flex gap-2 text-xs">
+                                        </p>
+                                    </div>
+                                </article><br><br>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-3">
                         <div class="activity-item d-flex">
                             <a href="{{ route('convention.create') }}">
                                 <button type="submit"
@@ -63,33 +125,44 @@
                                 </button>
                             </a>
                         </div>
-                    </div><!-- End Right side columns -->
+                    </div>
+                    <!-- Sales Card -->
+
+                    <!-- End Sales Card -->
+
+
+
+                    <!-- End Right side columns -->
 
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h3>
-                                  <br>
-                                  <b>Les documents exigés :</b>
+                                    <br>
+                                    <b>Les documents exigés :</b>
                                 </h3>
                                 <ul style="font-size: 90%;">
-                                  <li>Requête adressée au Ministre des Affaires Sociales, Action Humanitaire et Solidarité
-                                    Nationale avec copie au Directeur Général du Fonds National de Promotion et de Service Social (FNPSS)</li>
-                                  <li>Copie de l’attestation d’enrôlement au FNPSS </li>
-                                  <li>Copie du Plan d’Action pour l’année en cours</li>
-                                  <li>Copie du rapport annuel d’activités de l’année écoulée</li>
-                                  <li>Copie du projet ou programme social ou humanitaire concerné par le partenariat sollicité</li>
+                                    <li>Requête adressée au Ministre des Affaires Sociales, Action Humanitaire et
+                                        Solidarité
+                                        Nationale avec copie au Directeur Général du Fonds National de Promotion et de
+                                        Service Social (FNPSS)</li>
+                                    <li>Copie de l’attestation d’enrôlement au FNPSS </li>
+                                    <li>Copie du Plan d’Action pour l’année en cours</li>
+                                    <li>Copie du rapport annuel d’activités de l’année écoulée</li>
+                                    <li>Copie du projet ou programme social ou humanitaire concerné par le partenariat
+                                        sollicité</li>
 
                                 </ul>
 
                                 <h3>
-                                  <br>
-                                  <b>Frais à payer et délai de traitement:</b>
+                                    <br>
+                                    <b>Frais à payer et délai de traitement:</b>
                                 </h3>
                                 <ul style="font-size: 90%">
-                                  <li>Frais dépôt du dossier : l’équivalent en Franc Congolais de 20 $ US</li>
-                                  <li>Frais d’enquête : l’équivalent en Franc Congolais de 300 $ US</li>
-                                  <li>Le délai de traitement par le FNPSS est de 10 jours ouvrables à dater du paiement des frais.</li>
+                                    <li>Frais dépôt du dossier : l’équivalent en Franc Congolais de 20 $ US</li>
+                                    <li>Frais d’enquête : l’équivalent en Franc Congolais de 300 $ US</li>
+                                    <li>Le délai de traitement par le FNPSS est de 10 jours ouvrables à dater du
+                                        paiement des frais.</li>
                                 </ul>
                             </div>
                         </div>
@@ -181,7 +254,7 @@
 
                                         <td>{{$item->created_at}}</td>
                                         <td>{{$item->commentaires}}</td>
-                                        <td><span class="badge bg-success">{{$item->statut}}</span></td>
+                                        <td><span class="badge {{$item->statut}}">{{$item->statut}}</span></td>
                                         <td>
                                             <div class="items-center row x-gap-10 y-gap-10">
                                                 {{-- <div class="col-auto">
@@ -189,7 +262,8 @@
                                                         class="btn btn-primary"><i class="bi bi-eye-fill"></i></a>
                                                 </div> --}}
                                                 <div class="col-auto">
-                                                    <a href="{{route('convention.show',$item->id )}}" class="btn btn-info"><i
+                                                    <a href="{{route('convention.show',$item->id )}}"
+                                                        class="btn btn-info"><i
                                                             class="bi bi-pen-fill"></i>&nbsp;Edit</a>
                                                 </div>
                                                 <div class="col-auto">

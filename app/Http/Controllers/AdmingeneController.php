@@ -24,109 +24,109 @@ class AdmingeneController extends Controller
     public function index()
     {
         //
-        $enrolementDoc=new Enrolement();
+        $enrolementDoc = new Enrolement();
 
-        if (auth()->user()->role_id==2){
+        if (auth()->user()->role_id == 2) {
 
             return redirect()->route('admin.admin');
+        } else {
 
-
-        }
-        else{
-
-            $notification=Notification::where('user_id', auth()->user()->id)
-            ->where('statut')
-            ->count();
+            $notification = Notification::where('user_id', auth()->user()->id)
+                ->where('statut')
+                ->count();
             //Create a new profile
-            if ( Profile::find(auth()->user()->id ) === null ) {
+            if (Profile::find(auth()->user()->id) === null) {
                 $form_data_2 = array(
                     'user_id'   => auth()->user()->id,
-                    );
-                    Profile::create($form_data_2);
-
+                );
+                Profile::create($form_data_2);
             }
 
-            $exoneration= Exoneration::where('user_id',  auth()->user()->id)->get();
-            $exonerationTotal= Exoneration::where('user_id',  auth()->user()->id)->count();
-            $importationCount= Exoneration::where('user_id',  auth()->user()->id)
-                            ->where('type', 'Importation')
-                            ->count();
+            $exoneration = Exoneration::where('user_id',  auth()->user()->id)->get();
+            $exonerationTotal = Exoneration::where('user_id',  auth()->user()->id)->count();
+            $importationCount = Exoneration::where('user_id',  auth()->user()->id)
+                ->where('type', 'Importation')
+                ->count();
 
-            $interieurCount= Exoneration::where('user_id',  auth()->user()->id)
-                            ->where('type', 'Interieur')
-                            ->count();
+            $interieurCount = Exoneration::where('user_id',  auth()->user()->id)
+                ->where('type', 'Interieur')
+                ->count();
 
             $documentEnrolement = $enrolementDoc->enrolement_encours();
-            $valide="";
+            $valide = "";
             foreach ($documentEnrolement as  $value) {
                 # code...
-                    $valide=$value['validite'];
+                $valide = $value['validite'];
             }
 
 
-            return view('dashboard-general', ['exonerations'=>$exoneration,
-                            'importationCount'=>$importationCount,
-                            'exonerationTotal'=>$exonerationTotal,
-                            'interieurCount'=>$interieurCount,
-                            'valide'=>$valide,
-                            'notification'=>$notification, ]);
-
+            return view('dashboard-general', [
+                'exonerations' => $exoneration,
+                'importationCount' => $importationCount,
+                'exonerationTotal' => $exonerationTotal,
+                'interieurCount' => $interieurCount,
+                'valide' => $valide,
+                'notification' => $notification,
+            ]);
         }
-
-
-
-
     }
     public function profile()
     {
         //
-        $requerant= DB::table('users')
-        ->join('profiles', 'users.id', '=', 'profiles.user_id')
-        ->select('users.*', 'profiles.responsable_nom', 'profiles.province', 'profiles.domaine','profiles.telephone')
-        ->where('users.id','<>',auth()->user()->id)
-        ->get();
-        return view('profile', [ 'requerants'=>$requerant]);
-
+        $requerant = DB::table('users')
+            ->join('profiles', 'users.id', '=', 'profiles.user_id')
+            ->select('users.*', 'profiles.responsable_nom', 'profiles.province', 'profiles.domaine', 'profiles.telephone')
+            ->where('users.id', '<>', auth()->user()->id)
+            ->get();
+        return view('profile', ['requerants' => $requerant]);
     }
 
     public function adminindex()
     {
         //
 
-          $notification=Notification::where('user_id', auth()->user()->id)
-          ->where('statut')
-          ->count();
-            $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
-            $exonerationTotal= Exoneration::where('user_id','<>',  auth()->user()->id)
-                                            ->where('statut', 'soumis')->count();
-            $enrolementNombre=Enrolement::where('user_id','<>',  auth()->user()->id)
-                                          ->where('statut', 'soumis')->count();
+        $notification = Notification::where('user_id', auth()->user()->id)
+            ->where('statut')
+            ->count();
+        $requerantNombre = User::where('id', '<>', auth()->user()->id)->count();
+        $exonerationTotal = Exoneration::where('user_id', '<>',  auth()->user()->id)
+            ->where('statut', 'soumis')->count();
+        $enrolementNombre = Enrolement::where('user_id', '<>',  auth()->user()->id)
+            ->where('statut', 'soumis')->count();
 
 
-            return view('admin.index', [
-                            'enrolementNombre'=>$enrolementNombre,
-                            'exonerationNombre'=>$exonerationTotal,
-                            'requerantNombre'=>$requerantNombre,
-                            'notification'=>$notification, ]);
-
+        return view('admin.index', [
+            'enrolementNombre' => $enrolementNombre,
+            'exonerationNombre' => $exonerationTotal,
+            'requerantNombre' => $requerantNombre,
+            'notification' => $notification,
+        ]);
     }
     public function enrolement()
     {
         //
-        $enrolements= DB::table('users')
-        ->join('enrolements', 'users.id', '=', 'enrolements.user_id')
-        ->select('enrolements.*', 'users.name', 'users.email')
-        ->where('users.id','<>',auth()->user()->id)
-        ->where('enrolements.deleted_at',NULL)
-        ->get();
+        $enrolementTotal = Enrolement::where('user_id', '<>',  auth()->user()->id)->count();
+        $enrolementAnnuler = Enrolement::where('statut', 'annulé')->where('user_id', '<>',  auth()->user()->id)->count();
+        $enrolementValider = Enrolement::where('statut', 'validé')->where('user_id', '<>',  auth()->user()->id)->count();
+        $enrolements = DB::table('users')
+            ->join('enrolements', 'users.id', '=', 'enrolements.user_id')
+            ->select('enrolements.*', 'users.name', 'users.email')
+            ->where('users.id', '<>', auth()->user()->id)
+            ->where('enrolements.deleted_at', NULL)
+            ->get();
 
-        return view('admin.valid_enrolement',[ 'enrolements'=>$enrolements]);
-
+        return view('admin.valid_enrolement', [
+            'enrolements' => $enrolements,
+            'enrolementAnnuler' => $enrolementAnnuler,
+            'enrolementValider' => $enrolementValider,
+            'enrolementTotal' => $enrolementTotal
+        ]);
     }
 
-    public function valider_enrolement(Request $request ){
+    public function valider_enrolement(Request $request)
+    {
 
-        $filename ="";
+        $filename = "";
         if ($request->hasFile('autre_document')) {
 
             $file = $request->file('autre_document');
@@ -141,11 +141,11 @@ class AdmingeneController extends Controller
             case 'valider':
                 // Save model
                 Enrolement::where('id', $request->id_enrolement)
-                ->update([
-                    'statut' => 'validé',
-                    'autre_document' => $filename,
-                    'notification' => $request->notification,
-                ]);
+                    ->update([
+                        'statut' => 'validé',
+                        'autre_document' => $filename,
+                        'notification' => $request->notification,
+                    ]);
                 return redirect()->route('admin.enrolement');
 
                 break;
@@ -153,55 +153,45 @@ class AdmingeneController extends Controller
             case 'annuler':
 
                 Enrolement::where('id', $request->id_enrolement)
-                ->update([
-                    'statut' => 'annulé',
-                ]);
+                    ->update([
+                        'statut' => 'annulé',
+                    ]);
                 return redirect()->route('admin.enrolement');
 
                 break;
-
-
         }
-
-
     }
-    public function valider_convention(Request $request ){
-
-
-
+    public function valider_convention(Request $request)
+    {
 
         switch ($request->input('action')) {
 
             case 'valider':
                 // Save model
                 Convention::where('id', $request->id_convention)
-                ->update([
-                    'statut' => 'validé',
-                    'notification' => $request->notification,
-                ]);
+                    ->update([
+                        'statut' => 'validé',
+                        'notification' => $request->notification,
+                    ]);
                 return redirect()->route('admin.convention');
 
                 break;
 
             case 'annuler':
-
-                Convention::where('id', $request->id_enrolement)
-                ->update([
-                    'statut' => 'annulé',
-                    'notification' => $request->notification,
-                ]);
+                Convention::where('id', $request->id_convention)
+                    ->update([
+                        'statut' => 'annulé',
+                        'notification' => $request->notification,
+                    ]);
                 return redirect()->route('admin.convention');
 
                 break;
-
-
         }
-
-
     }
 
 
-    public function valider_exoneration(Request $request ){
+    public function valider_exoneration(Request $request)
+    {
 
 
 
@@ -211,44 +201,39 @@ class AdmingeneController extends Controller
             case 'valider':
                 // Save model
                 Exoneration::where('id', $request->id)
-                ->update([
-                    'statut' => 'validé',
-                    'notification' => $request->notification,
+                    ->update([
+                        'statut' => 'validé',
+                        'notification' => $request->notification,
 
-                ]);
+                    ]);
                 return redirect()->route('admin.exoneration');
                 break;
 
             case 'annuler':
                 //
                 Exoneration::where('id', $request->id)
-                ->update([
-                    'statut' => 'annulé',
-                    'notification' => $request->notification,
-                ]);
+                    ->update([
+                        'statut' => 'annulé',
+                        'notification' => $request->notification,
+                    ]);
                 return redirect()->route('admin.exoneration');
 
                 break;
-
-
         }
-
-
     }
-     public function exoneration(){
+    public function exoneration()
+    {
         //
-        $exonerationTotal= Exoneration::where('user_id','<>',  auth()->user()->id)  ->count();
-        $exonerationAnnuler= Exoneration::where('statut','annulé')->
-                                 where('user_id','<>',  auth()->user()->id) ->count();
-        $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
+        $exonerationTotal = Exoneration::where('user_id', '<>',  auth()->user()->id)->count();
+        $exonerationAnnuler = Exoneration::where('statut', 'annulé')->where('user_id', '<>',  auth()->user()->id)->count();
+        $requerantNombre = User::where('id', '<>', auth()->user()->id)->count();
 
-        $exonerations= DB::table('users')
-        ->join('exonerations', 'users.id', '=', 'exonerations.user_id')
-        ->select('exonerations.*', 'users.name', 'users.email')
-        ->where('users.id','<>',auth()->user()->id)
-        ->where('exonerations.deleted_at',NULL)
-        ->get();
-
+        $exonerations = DB::table('users')
+            ->join('exonerations', 'users.id', '=', 'exonerations.user_id')
+            ->select('exonerations.*', 'users.name', 'users.email')
+            ->where('users.id', '<>', auth()->user()->id)
+            ->where('exonerations.deleted_at', NULL)
+            ->get();
 
 
 
@@ -257,35 +242,32 @@ class AdmingeneController extends Controller
 
 
 
-        return view('admin.validation_exoneration',['exonerations'=>$exonerations
-                                                    ,'requerantNombre'=>$requerantNombre
-                                                    ,'exonerationAnnuler'=>$exonerationAnnuler
-                                                    ,'exonerationTotal'=>$exonerationTotal]);
+
+        return view('admin.validation_exoneration', [
+            'exonerations' => $exonerations, 'requerantNombre' => $requerantNombre, 'exonerationAnnuler' => $exonerationAnnuler, 'exonerationTotal' => $exonerationTotal
+        ]);
     }
 
-    public function convention()    {
+    public function convention()
+    {
         //
-        $conventionTotal= Convention::where('user_id','<>',  auth()->user()->id)  ->count();
-        $conventionAnnuler= Convention::where('statut','annulé')->
-                                 where('user_id','<>',  auth()->user()->id) ->count();
+        $conventionTotal = Convention::where('user_id', '<>',  auth()->user()->id)->count();
+        $conventionAnnuler = Convention::where('statut', 'annulé')->where('user_id', '<>',  auth()->user()->id)->count();
 
-        $conventionValider= Convention::where('statut','validé')->
-        where('user_id','<>',  auth()->user()->id) ->count();
-        $requerantNombre=User::where('id','<>', auth()->user()->id)->count();
+        $conventionValider = Convention::where('statut', 'validé')->where('user_id', '<>',  auth()->user()->id)->count();
+        $requerantNombre = User::where('id', '<>', auth()->user()->id)->count();
 
-        $conventions= DB::table('users')
-        ->join('conventions', 'users.id', '=', 'conventions.user_id')
-        ->select('conventions.*', 'users.name', 'users.email')
-        ->where('users.id','<>',auth()->user()->id)
-        ->where('conventions.deleted_at',NULL)
-        ->get();
+        $conventions = DB::table('users')
+            ->join('conventions', 'users.id', '=', 'conventions.user_id')
+            ->select('conventions.*', 'users.name', 'users.email')
+            ->where('users.id', '<>', auth()->user()->id)
+            ->where('conventions.deleted_at', NULL)
+            ->get();
 
 
-        return view('admin.valid_convention',['conventions'=>$conventions
-                                                    ,'requerantNombre'=>$requerantNombre
-                                                    ,'conventionAnnuler'=>$conventionAnnuler
-                                                    ,'conventionValider'=>$conventionValider
-                                                    ,'conventionTotal'=>$conventionTotal]);
+        return view('admin.valid_convention', [
+            'conventions' => $conventions, 'requerantNombre' => $requerantNombre, 'conventionAnnuler' => $conventionAnnuler, 'conventionValider' => $conventionValider, 'conventionTotal' => $conventionTotal
+        ]);
     }
     /**
      * Show the form for creating a new resource.
@@ -315,71 +297,77 @@ class AdmingeneController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function detailrequerant($requerant){
+    public function detailrequerant($requerant)
+    {
         //Création d'un profile
 
 
         $profiles = DB::table('users')
-        ->join('profiles', 'users.id', '=', 'profiles.user_id')
-        ->select('profiles.*', 'users.email', 'users.name')
-        ->where('users.id',$requerant)
-        ->get();
+            ->join('profiles', 'users.id', '=', 'profiles.user_id')
+            ->select('profiles.*', 'users.email', 'users.name')
+            ->where('users.id', $requerant)
+            ->get();
 
 
-        $exonerations= Exoneration::where('user_id', $requerant)->get();
-        $enrolements= Enrolement::where('user_id', $requerant)->get();
+        $exonerations = Exoneration::where('user_id', $requerant)->get();
+        $enrolements = Enrolement::where('user_id', $requerant)->get();
 
-        return view('admin.requerantdetail', ['profiles'=>$profiles,
-                                              'exonerations'=>$exonerations,
-                                              'enrolements'=>$enrolements,
-                                             ]);
-     }
+        return view('admin.requerantdetail', [
+            'profiles' => $profiles,
+            'exonerations' => $exonerations,
+            'enrolements' => $enrolements,
+        ]);
+    }
     public function show($enrolement)
     {
         //
-        $enrolements=Enrolement::where('id',$enrolement)->take(1)->get();
-        $statut="";
+        $enrolements = Enrolement::where('id', $enrolement)->take(1)->get();
+        $statut = "";
         foreach ($enrolements as $value) {
             # code...
-            $statut=$value['statut'];
+            $statut = $value['statut'];
         }
 
 
-        return view('admin.validation_enrolement', ['enrolements'=>$enrolements, 'id'=>$enrolement,
-                                                    'statut'=>$statut]);
+        return view('admin.validation_enrolement', [
+            'enrolements' => $enrolements, 'id' => $enrolement,
+            'statut' => $statut
+        ]);
     }
     public function showExoneration($exoneration)
     {
         //test
-        $exonerations=Exoneration::findOrFail($exoneration)->get();
-        $statut="";
+        $exonerations = Exoneration::findOrFail($exoneration)->get();
+        $statut = "";
 
         foreach ($exonerations as $value) {
             # code...
-            $statut=$value['statut'];
+            $statut = $value['statut'];
         }
-        return view('admin.exoneration_validation', ['exonerations'=>$exonerations,
-                                                    'id'=>$exoneration,
-                                                    'statut'=>$statut
-                                                ]);
+        return view('admin.exoneration_validation', [
+            'exonerations' => $exonerations,
+            'id' => $exoneration,
+            'statut' => $statut
+        ]);
     }
 
 
     public function showConvention($convention)
     {
         //test
-        $conventions=Convention::where('id',$convention)->get();
+        $conventions = Convention::where('id', $convention)->get();
 
-        $statut="";
+        $statut = "";
 
         foreach ($conventions as $value) {
             # code...
-            $statut=$value['statut'];
+            $statut = $value['statut'];
         }
-        return view('admin.convention_validation', ['conventions'=>$conventions,
-                                                    'id'=>$convention,
-                                                    'statut'=>$statut
-                                                ]);
+        return view('admin.convention_validation', [
+            'conventions' => $conventions,
+            'id' => $convention,
+            'statut' => $statut
+        ]);
     }
 
     /**

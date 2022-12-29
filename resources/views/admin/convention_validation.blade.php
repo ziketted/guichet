@@ -21,46 +21,47 @@
 
                 <div class="row">
                     @foreach ($conventions as $convention )
-                        <h5 class="card-title p-3" > Requérnt : <b> {{$convention->user->name}}</b></h5>
-                        <div class="col-lg-10">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="activity">
-                                        <div class="activity-item d-flex">
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
-                                                    <div class="activity-content">
-                                                        <a href="{{Storage::url($convention->programme_social)}}"
-                                                            download="programme_social">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/60/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-8 p-2"><br>
+                    <h5 class="card-title p-3"> Requérant : <b> {{$convention->user->name}}</b></h5>
+                    <div class="col-lg-10">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="activity">
+                                    <div class="activity-item d-flex">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
+                                                <div class="activity-content">
                                                     <a href="{{Storage::url($convention->programme_social)}}"
-                                                        class="fw-bold text-dark" download="programme_social">Téléchargez Programme social. </a>
-                                                        <hr>
+                                                        download="programme_social">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/60/null/live-folder.png" />
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </div><!-- End activity i tem-->
-                                    </div>
+                                            <div class="col-8 p-2"><br>
+                                                <a href="{{Storage::url($convention->programme_social)}}"
+                                                    class="fw-bold text-dark" download="programme_social">Téléchargez
+                                                    Programme social. </a>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div><!-- End activity i tem-->
                                 </div>
                             </div>
                         </div>
+                    </div>
 
 
 
-                        <div class="col-lg-10">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Note du requérant.</h5>
-                                    <p class="text-sm">{{ $convention->commentaire }}</p>
+                    <div class="col-lg-10">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Note du requérant.</h5>
+                                <p class="text-sm">{{ $convention->commentaires }}</p>
 
-                                </div>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
+
 
                     <!-- Recent Sales -->
                     <div class="col-10">
@@ -84,7 +85,8 @@
                                     <div>
                                         <label class="sr-only" for="message">Note</label>
                                         <textarea class="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                            placeholder="Message" rows="4" id="note" name="notification"></textarea>
+                                            placeholder="Message" rows="4" id="note"
+                                            name="notification">{{ $convention->notification }}</textarea>
                                     </div>
 
 
@@ -114,10 +116,10 @@
                                         @endif
 
                                     </div>
-                                @endif
+                                    @endif
 
                                 </form>
-
+                                @endforeach
                             </div>
 
                         </div>
