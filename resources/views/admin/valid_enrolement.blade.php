@@ -198,7 +198,7 @@
                     @foreach ($enrolements as $enrolement)
                             <tr>
                                 <td>{{$enrolement->name}}</td>
-                                <td> <a href="{{Storage::url($enrolement->lettre)}}" download="lettre">
+                                <td> <a href="public/storage/{{($enrolement->lettre)}}" download="lettre">
                                     <i class="bi bi-download text-gray"> Téléchargez la lettre</i></a></td>
                                 <td><span class="badge {{$enrolement->statut}} p-2">{{$enrolement->statut}}</span></td>
                                 <td>{{$enrolement->created_at}}</td>

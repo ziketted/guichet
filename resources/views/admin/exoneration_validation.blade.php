@@ -30,7 +30,7 @@
                                             <div class="row ">
                                                 <div class="col-4 p-2 mt-2">
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->attestation)}}"
+                                                        <a href="public/storage/{{($exoneration->attestation)}}"
                                                             download="Attestation">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -38,7 +38,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-8 p-3">
-                                                    <a href="{{Storage::url($exoneration->attestation)}}"
+                                                    <a href="public/storage/{{($exoneration->attestation)}}"
                                                         class="fw-bold text-dark" download="Attestation"> l'attestation. </a>
                                                         <hr>
                                                 </div>
@@ -61,7 +61,7 @@
                                                 <div class="col-4 p-2 mt-2">
 
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->lettre)}}"
+                                                        <a href="public/storage/{{($exoneration->lettre)}}"
                                                             download="Lettre ">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -71,7 +71,7 @@
                                                 </div>
                                                 <div class="col-8 p-3">
 
-                                                    <a href="{{Storage::url($exoneration->lettre)}}"
+                                                    <a href="public/storage/{{($exoneration->lettre)}}"
                                                         class="fw-bold text-dark" download="Lettre">Téléchargez &nbsp; la lettre. </a>
                                                         <hr>
 
@@ -101,7 +101,7 @@
                                                 <div class="col-4 p-2 mt-2">
 
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->copie_avis)}}"
+                                                        <a href="public/storage/{{($exoneration->copie_avis)}}"
                                                             download="Copie Avis favorable">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -111,7 +111,7 @@
                                                 </div>
                                                 <div class="col-8 p-3">
 
-                                                    <a href="{{Storage::url($exoneration->copie_avis)}}"
+                                                    <a href="public/storage/{{($exoneration->copie_avis)}}"
                                                         class="fw-bold text-dark" download="Copie Avis favorable">Copie de l'avis favorable. </a>
                                                         <hr>
 
@@ -141,7 +141,7 @@
                                                 <div class="col-4 p-2 mt-2">
 
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->liste_colisage)}}"
+                                                        <a href="public/storage/{{($exoneration->liste_colisage)}}"
                                                             download="Liste de colisage">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -151,7 +151,7 @@
                                                 </div>
                                                 <div class="col-8 p-3">
 
-                                                    <a href="{{Storage::url($exoneration->attestation)}}"
+                                                    <a href="public/storage/{{($exoneration->attestation)}}"
                                                         class="fw-bold text-dark" download="Liste colisage">Liste de colisage. </a>
                                                         <hr>
 
@@ -181,7 +181,7 @@
                                                 <div class="col-4 p-2 mt-2">
 
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->projet)}}"
+                                                        <a href="public/storage/{{($exoneration->projet)}}"
                                                             download="Projet">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -191,7 +191,7 @@
                                                 </div>
                                                 <div class="col-8 p-3">
 
-                                                    <a href="{{Storage::url($exoneration->projet)}}"
+                                                    <a href="public/storage/{{($exoneration->projet)}}"
                                                         class="fw-bold text-dark" download="Projet">Téléchargez le projet. </a>
                                                         <hr>
 
@@ -221,7 +221,7 @@
                                                 <div class="col-4 p-2 mt-2">
 
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->transport)}}"
+                                                        <a href="public/storage/{{($exoneration->transport)}}"
                                                             download="Document Transport">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -231,7 +231,7 @@
                                                 </div>
                                                 <div class="col-8 p-3">
 
-                                                    <a href="{{Storage::url($exoneration->transport)}}"
+                                                    <a href="public/storage/{{($exoneration->transport)}}"
                                                         class="fw-bold text-dark" download="Document de transport">Document de transport. </a>
                                                         <hr>
 
@@ -261,7 +261,7 @@
                                                 <div class="col-4 p-2 mt-2">
 
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->facture)}}"
+                                                        <a href="public/storage/{{($exoneration->facture)}}"
                                                             download="Facture">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -271,7 +271,7 @@
                                                 </div>
                                                 <div class="col-8 p-3">
 
-                                                    <a href="{{Storage::url($exoneration->facture)}}"
+                                                    <a href="public/storage/{{($exoneration->facture)}}"
                                                         class="fw-bold text-dark" download="Facture">Facture des paiements. </a>
                                                         <hr>
 

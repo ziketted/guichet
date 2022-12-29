@@ -60,14 +60,14 @@
                                     <div class="row " >
                                         <div class="col-2">
                                             <div class="activity-content">
-                                                <a href="{{Storage::url($enrolement->autre_document)}}" download="Avis favorable">
+                                                <a href="public/storage/{{($enrolement->autre_document)}}" download="Avis favorable">
                                                     <img src="https://img.icons8.com/stickers/50/null/live-folder.png"/>
                                                 </a>
                                             </div>
 
                                         </div>
                                         <div class="col-10 ">
-                                            <a href="{{Storage::url($enrolement->autre_document)}}" class="fw-bold text-dark" download="Avis favorable">Télécharger le document.  </a>
+                                            <a href="public/storage/{{($enrolement->autre_document)}}" class="fw-bold text-dark" download="Avis favorable">Télécharger le document.  </a>
                                             <p><i> Delivré le : <b> {{ $enrolement->updated_at }}</b></i></p>
 
                                         </div>

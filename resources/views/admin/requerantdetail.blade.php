@@ -36,7 +36,7 @@
                                               @else
                                               <div class="col-4 p-2 mt-2">
                                                   <div class="activity-content">
-                                                      <a href="{{Storage::url($profile->doc_statut)}}" download="Statut juridique"
+                                                      <a href="public/storage/{{($profile->doc_statut)}}" download="Statut juridique"
                                                           >
                                                           <img
                                                               src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -45,7 +45,7 @@
                                               </div>
                                               
                                               <div class="col-8 p-3">
-                                                  <a href="{{Storage::url($profile->doc_statut)}}" download="Statut juridique"
+                                                  <a href="public/storage/{{($profile->doc_statut)}}" download="Statut juridique"
                                                       class="fw-bold text-dark" > Statut juridique </a>
                                                       <hr>
                                               </div>
@@ -72,7 +72,7 @@
                                             @else
                                             <div class="col-4 p-2 mt-2">
                                                 <div class="activity-content">
-                                                    <a href="{{Storage::url($profile->doc_accord)}}" download="Accord juridique"
+                                                    <a href="public/storage/{{($profile->doc_accord)}}" download="Accord juridique"
                                                         >
                                                         <img
                                                             src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -81,7 +81,7 @@
                                             </div>
                                             
                                             <div class="col-8 p-3">
-                                                <a href="{{Storage::url($profile->doc_accord)}}" download="Statut juridique"
+                                                <a href="public/storage/{{($profile->doc_accord)}}" download="Statut juridique"
                                                     class="fw-bold text-dark" > Accord juridique </a>
                                                     <hr>
                                             </div>
@@ -108,7 +108,7 @@
                                           @else
                                           <div class="col-4 p-2 mt-2">
                                               <div class="activity-content">
-                                                  <a href="{{Storage::url($profile->doc_autorisation)}}" download="Autorisation juridique"
+                                                  <a href="public/storage/{{($profile->doc_autorisation)}}" download="Autorisation juridique"
                                                       >
                                                       <img
                                                           src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -117,7 +117,7 @@
                                           </div>
                                           
                                           <div class="col-8 p-3">
-                                              <a href="{{Storage::url($profile->doc_autorisation)}}" download="Autorisation juridique"
+                                              <a href="public/storage/{{($profile->doc_autorisation)}}" download="Autorisation juridique"
                                                   class="fw-bold text-dark" > Autorisation juridique </a>
                                                   <hr>
                                           </div>
@@ -144,7 +144,7 @@
                                           @else
                                           <div class="col-4 p-2 mt-2">
                                               <div class="activity-content">
-                                                  <a href="{{Storage::url($profile->doc_autorisation)}}" download="Personnalité juridique"
+                                                  <a href="public/storage/{{($profile->doc_autorisation)}}" download="Personnalité juridique"
                                                       >
                                                       <img
                                                           src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -153,7 +153,7 @@
                                           </div>
                                           
                                           <div class="col-8 p-3">
-                                              <a href="{{Storage::url($profile->doc_personnalite)}}" download="Personnalité juridique"
+                                              <a href="public/storage/{{($profile->doc_personnalite)}}" download="Personnalité juridique"
                                                   class="fw-bold text-dark" > Personnalité juridique </a>
                                                   <hr>
                                           </div>
@@ -180,7 +180,7 @@
                                           @else
                                           <div class="col-4 p-2 mt-2">
                                               <div class="activity-content">
-                                                  <a href="{{Storage::url($profile->doc_convention)}}" download="Statut juridique"
+                                                  <a href="public/storage/{{($profile->doc_convention)}}" download="Statut juridique"
                                                       >
                                                       <img
                                                           src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -188,7 +188,7 @@
                                               </div>
                                           </div>
                                           <div class="col-8 p-3">
-                                              <a href="{{Storage::url($profile->doc_personnalite)}}" download="Personnalité juridique"
+                                              <a href="public/storage/{{($profile->doc_personnalite)}}" download="Personnalité juridique"
                                                   class="fw-bold text-dark" > Convention juridique </a>
                                                   <hr>
                                           </div>
@@ -215,7 +215,7 @@
                                           @else
                                           <div class="col-4 p-2 mt-2">
                                               <div class="activity-content">
-                                                  <a href="{{Storage::url($profile->doc_convention)}}" download="Statut juridique"
+                                                  <a href="public/storage/{{($profile->doc_convention)}}" download="Statut juridique"
                                                       >
                                                       <img
                                                           src="https://img.icons8.com/stickers/50/null/live-folder.png" />
@@ -223,7 +223,7 @@
                                               </div>
                                           </div>
                                           <div class="col-8 p-3">
-                                              <a href="{{Storage::url($profile->doc_certificat)}}" download="Certificat juridique"
+                                              <a href="public/storage/{{($profile->doc_certificat)}}" download="Certificat juridique"
                                                   class="fw-bold text-dark" > Certificat juridique </a>
                                                   <hr>
                                           </div>

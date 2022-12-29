@@ -74,9 +74,9 @@
                                 <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-primary">
                                   <button type="button"><i class="bi bi-eye"></i></button>
                                 </a>
-                                <a href="#" class="btn btn-success">
+                                {{-- <a href="#" class="btn btn-success">
                                   <button type="button"><i class="bi bi-pencil"></i></button>
-                                </a>
+                                </a> --}}
                                 <a href="#" class="btn btn-danger">
                                     <button type="button" ><i class="bi bi-trash"></i></button>
                                 </a>

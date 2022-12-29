@@ -45,7 +45,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->lettre)}}" download="lettre">
+                                            <a href="public/storage/{{($exoneration->lettre)}}" download="lettre">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger la lettre &nbsp;</h5>
                                             </a>
@@ -80,7 +80,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->attestation)}}" download="attestation">
+                                            <a href="public/storage/{{($exoneration->attestation)}}" download="attestation">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger l'attestation &nbsp;</h5>
                                             </a>
@@ -114,7 +114,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->copie_avis)}}" download="copie_avis">
+                                            <a href="public/storage/{{($exoneration->copie_avis)}}" download="copie_avis">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger la copie d'avis &nbsp; </h5>
                                             </a>
@@ -147,7 +147,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->liste_colisage)}}"
+                                            <a href="public/storage/{{($exoneration->liste_colisage)}}"
                                                 download="liste_colisage">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger la liste de colisage &nbsp;</h5>
@@ -184,7 +184,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->projet)}}" download="projet">
+                                            <a href="public/storage/{{($exoneration->projet)}}" download="projet">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger le projet &nbsp; </h5>
                                             </a>
@@ -221,7 +221,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->transport)}}" download="transport">
+                                            <a href="public/storage/{{($exoneration->transport)}}" download="transport">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger le transport &nbsp;</h5>
                                             </a>
@@ -256,7 +256,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->facture)}}" download="lettre">
+                                            <a href="public/storage/{{($exoneration->facture)}}" download="lettre">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger la facture &nbsp; </h5>
                                             </a>
@@ -292,7 +292,7 @@
                                 <div class="col-md-8 p-3">
                                     <div class="mb-3 row">
                                         <div class="form-floating">
-                                            <a href="{{Storage::url($exoneration->affectation)}}" download="affectation">
+                                            <a href="public/storage/{{($exoneration->affectation)}}" download="affectation">
                                                 <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                     Télécharger l'affectation &nbsp; </h5>
                                             </a>

@@ -30,7 +30,7 @@
                                             <div class="row ">
                                                 <div class="col-4 p-2 mt-2">
                                                     <div class="activity-content">
-                                                        <a href="{{Storage::url($convention->programme_social)}}"
+                                                        <a href="public/storage/{{($convention->programme_social)}}"
                                                             download="programme_social">
                                                             <img
                                                                 src="https://img.icons8.com/stickers/60/null/live-folder.png" />
@@ -38,7 +38,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-8 p-2"><br>
-                                                    <a href="{{Storage::url($convention->programme_social)}}"
+                                                    <a href="public/storage/{{($convention->programme_social)}}"
                                                         class="fw-bold text-dark" download="programme_social">Téléchargez Programme social. </a>
                                                         <hr>
                                                 </div>

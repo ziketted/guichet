@@ -42,7 +42,7 @@
                             <div class="col-md-4 p-3">
                                 <div class="mb-3 row">
                                     <div class="form-floating">
-                                        <a href="{{Storage::url($profile->doc_statut)}}" download="lettre">
+                                        <a href="public/storage/{{($profile->doc_statut)}}" download="lettre">
                                             <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                                 Télécharger le statut &nbsp;</h5></a>
                                     </div>
@@ -95,7 +95,7 @@
                         <div class="col-md-4 p-3">
                                 <div class="mb-3 row">
                                 <div class="form-floating">
-                                    <a href="{{Storage::url($profile->doc_autorisation)}}" download="lettre">
+                                    <a href="public/storage/{{($profile->doc_autorisation)}}" download="lettre">
                                         <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                             Télécharger le statut &nbsp;</h5></a>
                                 </div>
@@ -146,7 +146,7 @@
                     <div class="col-md-4 p-3">
                             <div class="mb-3 row">
                             <div class="form-floating">
-                                <a href="{{Storage::url($profile->doc_personnalite)}}" download="lettre">
+                                <a href="public/storage/{{($profile->doc_personnalite)}}" download="lettre">
                                     <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                         Télécharger le statut &nbsp;</h5></a>
                             </div>
@@ -200,7 +200,7 @@
                     <div class="col-md-4 p-3">
                             <div class="mb-3 row">
                             <div class="form-floating">
-                                <a href="{{Storage::url($profile->doc_certificat)}}" download="lettre">
+                                <a href="public/storage/{{($profile->doc_certificat)}}" download="lettre">
                                     <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                         Télécharger le statut &nbsp;</h5></a>
                             </div>
@@ -254,7 +254,7 @@
                         <div class="col-md-4 p-3">
                                 <div class="mb-3 row">
                                 <div class="form-floating">
-                                    <a href="{{Storage::url($profile->doc_convention)}}" download="lettre">
+                                    <a href="public/storage/{{($profile->doc_convention)}}" download="lettre">
                                         <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                             Télécharger la convention.  &nbsp;</h5></a>
                                 </div>
@@ -306,7 +306,7 @@
                     <div class="col-md-4 p-3">
                             <div class="mb-3 row">
                             <div class="form-floating">
-                                <a href="{{Storage::url($profile->doc_accord)}}" download="lettre">
+                                <a href="public/storage/{{($profile->doc_accord)}}" download="lettre">
                                     <h5>&nbsp;<i class="bi bi-download text-danger"></i>
                                         Télécharger le statut &nbsp;</h5></a>
                             </div>
