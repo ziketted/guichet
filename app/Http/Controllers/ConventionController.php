@@ -100,7 +100,9 @@ class ConventionController extends Controller
     public function show($convention)
     {
         //
-        return view('convention.edit');
+        $conventions = Convention::where('user_id',  auth()->user()->id)
+            ->where('id', $convention)->get();
+        return view('convention.edit', ['conventions' => $conventions]);
     }
 
     /**
@@ -121,9 +123,25 @@ class ConventionController extends Controller
      * @param  \App\Models\Convention  $convention
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateConventionRequest $request, Convention $convention)
+    public function update(Request $request, $convention)
     {
         //
+        if ($request->input('ajour') == "valider") {
+            # code...
+            dd($request->programme_social);
+
+            Convention::where('id', $convention)
+                ->update([
+                    'programme_social' => $request->programme_social,
+                ]);
+        } else {
+            Convention::where('id', $convention)
+                ->update([
+                    'programme_social' => "",
+                ]);
+        }
+
+        return redirect()->route('convention.index');
     }
 
     /**
@@ -135,5 +153,7 @@ class ConventionController extends Controller
     public function destroy(Convention $convention)
     {
         //
+        $convention->delete();
+        return redirect()->route('convention.index')->with('deleted', 'opération a été effectuée avec succès.');
     }
 }

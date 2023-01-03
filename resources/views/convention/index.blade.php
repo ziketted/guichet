@@ -267,10 +267,12 @@
                                                             class="bi bi-pen-fill"></i>&nbsp;Edit</a>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <form action="" method="POST">
+                                                    <form action="{{route('convention.destroy',$item->id )  }}"
+                                                        method="POST">
                                                         @method('DELETE')
                                                         @csrf
-                                                        <button href="" class="btn btn-danger"><i
+                                                        <button href="" class="btn btn-danger"
+                                                            onclick="if (!confirm('Voulez-vous vraiment supprimer cet élément ?')) { return false }"><i
                                                                 class="bi bi-trash-fill"></i></button>
                                                     </form>
                                                 </div>

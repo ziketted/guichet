@@ -134,6 +134,7 @@ Route::middleware([
         Route::post('/convetion/store', [ConventionController::class, 'store'])->name('store');
         Route::post('/convetion/edit', [ConventionController::class, 'edit'])->name('edit');
         Route::get('/convetion/show/{convention}', [ConventionController::class, 'show'])->name('show');
+        Route::post('/convetion/update/{convention}', [ConventionController::class, 'update'])->name('update');
         Route::delete('/convetion/{convention}', [ConventionController::class, 'destroy'])->name('destroy');
     });
 
