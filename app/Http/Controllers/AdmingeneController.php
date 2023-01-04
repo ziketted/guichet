@@ -93,12 +93,26 @@ class AdmingeneController extends Controller
             ->where('statut', 'soumis')->count();
         $enrolementNombre = Enrolement::where('user_id', '<>',  auth()->user()->id)
             ->where('statut', 'soumis')->count();
+        $conventionNombre = Convention::where('user_id', '<>',  auth()->user()->id)
+            ->where('statut', 'soumis')->count();
+
+        //
+        $exonerationValider = Exoneration::where('user_id', '<>',  auth()->user()->id)
+            ->where('statut', 'validé')->count();
+        $enrolementValider = Enrolement::where('user_id', '<>',  auth()->user()->id)
+            ->where('statut', 'validé')->count();
+        $conventionValider = Convention::where('user_id', '<>',  auth()->user()->id)
+            ->where('statut', 'validé')->count();
 
 
         return view('admin.index', [
             'enrolementNombre' => $enrolementNombre,
             'exonerationNombre' => $exonerationTotal,
             'requerantNombre' => $requerantNombre,
+            'conventionNombre' => $conventionNombre,
+            'exonerationValider' => $exonerationValider,
+            'enrolementValider' => $enrolementValider,
+            'conventionValider' => $conventionValider,
             'notification' => $notification,
         ]);
     }
@@ -311,11 +325,13 @@ class AdmingeneController extends Controller
 
         $exonerations = Exoneration::where('user_id', $requerant)->get();
         $enrolements = Enrolement::where('user_id', $requerant)->get();
+        $conventions = Convention::where('user_id', $requerant)->get();
 
         return view('admin.requerantdetail', [
             'profiles' => $profiles,
             'exonerations' => $exonerations,
             'enrolements' => $enrolements,
+            'conventions' => $conventions,
         ]);
     }
     public function show($enrolement)

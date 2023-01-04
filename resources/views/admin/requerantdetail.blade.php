@@ -374,7 +374,73 @@
                             </div>
 
                         </div>
-                    </div><!-- End Recent Sales -->
+                    </div>
+                    <div class="col-12">
+                        <div class="overflow-auto card recent-sales">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Les conventions</h5>
+
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">N°</th>
+                                            <th scope="col">Titre</th>
+                                            <th scope="col">Date</th>
+                                            <th scope="col">Etat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($conventions as $item)
+                                        <tr>
+                                            <td>#{{$item->id}}</td>
+                                            <td>{{$item->commentaires}}</td>
+                                            <td>{{$item->created_at}}</td>
+                                            <td><span class="badge {{$item->statut}}">{{$item->statut}}</span></td>
+
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="overflow-auto card recent-sales">
+
+                            <div class="card-body">
+                                <h5 class="card-title">Les enrolements</h5>
+
+                                <table class="table table-borderless">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">N°</th>
+                                            <th scope="col">Date d'octroi</th>
+                                            <th scope="col">Expiration</th>
+                                            <th scope="col">Etat</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($enrolements as $item)
+                                        <tr>
+                                            <td>#{{$item->id}}</td>
+                                            <td>{{$item->created_at}}</td>
+                                            <td>{{$item->validite}}</td>
+                                            <td><span class="badge {{$item->statut}}">{{$item->statut}}</span></td>
+
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Recent Sales -->
 
 
 

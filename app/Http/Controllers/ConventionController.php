@@ -128,20 +128,26 @@ class ConventionController extends Controller
         //
         if ($request->input('ajour') == "valider") {
             # code...
-            dd($request->programme_social);
-
+            if ($request->hasFile('programme_social')) {
+                $file = $request->file('programme_social');
+                $filename = uniqid() . '_programme_social_' . auth()->user()->name . time() . '.' . $file->getClientOriginalExtension();
+                $filePath = public_path() . '/storage';
+                $file->move($filePath, $filename);
+                $request->programme_social = $filename;
+            }
             Convention::where('id', $convention)
                 ->update([
                     'programme_social' => $request->programme_social,
+                    'commentaires' => $request->commentaires,
                 ]);
+            return redirect()->route('convention.index');
         } else {
             Convention::where('id', $convention)
                 ->update([
                     'programme_social' => "",
                 ]);
+            return back();
         }
-
-        return redirect()->route('convention.index');
     }
 
     /**
