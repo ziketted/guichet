@@ -113,19 +113,20 @@
                                     </div>
                                 </article><br><br>
                             </div>
+                            <div class="col-lg-3">
+                                <div class="activity-item d-flex">
+                                    <a href="{{ route('convention.create') }}">
+                                        <button type="submit"
+                                            class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
+                                            Nouvelle convention
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
-                    <div class="col-lg-3">
-                        <div class="activity-item d-flex">
-                            <a href="{{ route('convention.create') }}">
-                                <button type="submit"
-                                    class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
-                                    Nouvelle convention
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+                    
                     <!-- Sales Card -->
 
                     <!-- End Sales Card -->
@@ -134,7 +135,7 @@
 
                     <!-- End Right side columns -->
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-10">
                         <div class="card">
                             <div class="card-body">
                                 <h3>
@@ -231,7 +232,7 @@
                     </div><!-- End Customers Card --> --}}
 
                     <!-- Recent Sales -->
-                    <div class="col-12">
+                    <div class="col-10">
                         <div class="overflow-auto card recent-sales">
 
                             <div class="card-body">

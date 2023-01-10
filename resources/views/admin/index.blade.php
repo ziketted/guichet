@@ -144,6 +144,7 @@
                                 </p>
                             </div>
                         </article>
+                        <br>
                     </div><!-- End Sales Card -->
 
                     <!-- Revenue Card -->

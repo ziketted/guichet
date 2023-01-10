@@ -25,7 +25,6 @@
                             <div class="flex items-center justify-between">
                                 <div>
                                     <p class="text-sm text-gray-500">Exonération à l'importation</p>
-
                                     <p class="text-2xl font-medium text-gray-900">{{$nombreDemande}}</p>
                                 </div>
 
@@ -53,7 +52,7 @@
                     </div><!-- End Sales Card -->
 
                     <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-8">
+                    <div class="col-xxl-4 col-md-6 p-2">
                         <article class="rounded-lg border border-gray-100 bg-white p-6">
                             <div class="flex items-center justify-between">
                                 <div>
@@ -201,7 +200,7 @@
             <!-- Right side columns -->
 
 
-            <div class="col-lg-12">
+            <div class="col-lg-10">
                 <div class="card">
                     <div class="card-body">
                         <h3>
@@ -242,7 +241,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-12">
+            <div class="col-lg-10">
                 <div class="card">
                     <div class="card-body">
                         <h3>

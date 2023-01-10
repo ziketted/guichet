@@ -16,11 +16,11 @@
       <div class="row">
 
         <!-- Left side columns -->
-        <div class="col-lg-8">
+        <div class="col-lg-12">
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-4">
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
                   <div>
@@ -71,7 +71,7 @@
             </div><!-- End Sales Card -->
 
             <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-4">
 
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">
@@ -121,7 +121,7 @@
                 </div>
               </article><br>
             </div>
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-4">
 
               <article class="rounded-lg border border-gray-100 bg-white p-6">
                 <div class="flex items-center justify-between">

@@ -148,6 +148,7 @@
                                         <option value="Développement Communautaire">Développement Communautaire</option>
                                         <option value="Agriculture">Agriculture</option>
                                         <option value="Environnement">Environnement</option>
+                                        <option value="Autre">Autre</option>
                                     </select>
                                 </div>
                             </div>
@@ -181,6 +182,8 @@
                                         <option value="Electricité">Electricité</option>
                                         <option value="Logements sociaux">Logements sociaux</option>
                                         <option value="Assainessement">Assainessement</option>
+                                        <option value="Autre">Autre</option>
+                                        
                                     </select>
                                 </div>
                             </div>

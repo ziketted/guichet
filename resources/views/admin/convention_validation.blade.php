@@ -17,12 +17,13 @@
         <div class="row">
 
             <!-- Left side columns -->
-            <div class="col-lg-8">
+            <div class="col-lg-12">
 
                 <div class="row">
                     @foreach ($conventions as $convention )
-                        <h5 class="card-title p-3" > Requérnt : <b> {{$convention->user->name}}</b></h5>
-                        <div class="col-lg-10">
+                        <h5 class="card-title p-3" > Requérant : <b> {{$convention->user->name}}</b></h5>
+                        
+                        <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
                                     <div class="activity">
@@ -40,10 +41,12 @@
                                                 <div class="col-8 p-2"><br>
                                                     <a href="public/storage/{{($convention->programme_social)}}"
                                                         class="fw-bold text-dark" download="programme_social">Téléchargez Programme social. </a>
+                                                        <br><br>
                                                         <hr>
+                                                        <br><br>
 
 
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Note du requérant.</h5>
@@ -55,7 +58,7 @@
 
 
                     <!-- Recent Sales -->
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="overflow-auto card recent-sales">
 
                             <div class="card-body">

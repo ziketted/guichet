@@ -111,9 +111,10 @@
                 </div>
 
               </article>
+              <br>
 
             </div><!-- End Revenue Card -->
-
+            
             <!-- Customers Card -->
             <div class="col-xxl-4 col-xl-12">
               <article class="rounded-lg border border-gray-100 bg-white p-6">

@@ -3,7 +3,7 @@
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Enrolement</h1>
+        <h1>Exoneration</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Acceuil</a></li>
@@ -16,7 +16,7 @@
         <div class="row">
 
             <!-- Left side columns -->
-            <div class="col-lg-10">
+            <div class="col-lg-12">
 
                 <div class="row">
                     @foreach ($exonerations as $exoneration )
@@ -330,7 +330,7 @@
                             </div>
                         </div>
                         
-                        <div class="col-lg-10">
+                        <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-body">
                                     <h5 class="card-title">Note du requérant.</h5>
@@ -342,7 +342,7 @@
                     @endforeach
 
                     <!-- Recent Sales -->
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="overflow-auto card recent-sales">
 
                             <div class="card-body">
