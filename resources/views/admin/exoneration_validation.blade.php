@@ -20,325 +20,335 @@
 
                 <div class="row">
                     @foreach ($exonerations as $exoneration )
-                    <h5 class="card-title p-3 mb-4">Titre de l'exonération : &nbsp;<b>{{$exoneration->titre}}.</b> <span></span></h5>
+                    <h5 class="card-title p-3 mb-4">Titre de l'exonération : &nbsp;<b>{{$exoneration->titre}}.</b>
+                        <span></span>
+                    </h5>
 
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="activity">
-                                        <div class="activity-item d-flex">
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->attestation)}}"
-                                                            download="Attestation">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="col-8 p-3">
-                                                    <a href="public/storage/{{($exoneration->attestation)}}"
-                                                        class="fw-bold text-dark" download="Attestation"> l'attestation. </a>
-                                                        <hr>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="activity">
+                                    <div class="activity-item d-flex">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->attestation)}}"
+                                                        download="Attestation">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
                                             </div>
-                                        </div><!-- End activity i tem-->
-                                    </div>
+                                            <div class="col-8 p-3">
+                                                <a href="../../public/storage/{{($exoneration->attestation)}}"
+                                                    class="fw-bold text-dark" download="Attestation"> l'attestation.
+                                                </a>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div><!-- End activity i tem-->
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
 
-                                    <div class="activity">
+                                <div class="activity">
 
-                                        <div class="activity-item d-flex">
+                                    <div class="activity-item d-flex">
 
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
 
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->lettre)}}"
-                                                            download="Lettre ">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->lettre)}}"
+                                                        download="Lettre ">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="public/storage/{{($exoneration->lettre)}}"
-                                                        class="fw-bold text-dark" download="Lettre">Téléchargez &nbsp; la lettre. </a>
-                                                        <hr>
-
-
-                                                </div>
-
-
 
                                             </div>
+                                            <div class="col-8 p-3">
 
-
-                                        </div><!-- End activity i tem-->
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
-
-                                    <div class="activity">
-
-                                        <div class="activity-item d-flex">
-
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
-
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->copie_avis)}}"
-                                                            download="Copie Avis favorable">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="public/storage/{{($exoneration->copie_avis)}}"
-                                                        class="fw-bold text-dark" download="Copie Avis favorable">Copie de l'avis favorable. </a>
-                                                        <hr>
-
-
-                                                </div>
-
+                                                <a href="../../public/storage/{{($exoneration->lettre)}}"
+                                                    class="fw-bold text-dark" download="Lettre">Téléchargez &nbsp; la
+                                                    lettre. </a>
+                                                <hr>
 
 
                                             </div>
 
 
-                                        </div><!-- End activity i tem-->
 
-                                    </div>
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
 
-                                    <div class="activity">
+                                <div class="activity">
 
-                                        <div class="activity-item d-flex">
+                                    <div class="activity-item d-flex">
 
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
 
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->liste_colisage)}}"
-                                                            download="Liste de colisage">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="public/storage/{{($exoneration->attestation)}}"
-                                                        class="fw-bold text-dark" download="Liste colisage">Liste de colisage. </a>
-                                                        <hr>
-
-
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->copie_avis)}}"
+                                                        download="Copie Avis favorable">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-8 p-3">
+
+                                                <a href="../../public/storage/{{($exoneration->copie_avis)}}"
+                                                    class="fw-bold text-dark" download="Copie Avis favorable">Copie de
+                                                    l'avis favorable. </a>
+                                                <hr>
 
 
                                             </div>
 
 
-                                        </div><!-- End activity i tem-->
 
-                                    </div>
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
 
-                                    <div class="activity">
+                                <div class="activity">
 
-                                        <div class="activity-item d-flex">
+                                    <div class="activity-item d-flex">
 
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
 
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->projet)}}"
-                                                            download="Projet">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="public/storage/{{($exoneration->projet)}}"
-                                                        class="fw-bold text-dark" download="Projet">Téléchargez le projet. </a>
-                                                        <hr>
-
-
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->liste_colisage)}}"
+                                                        download="Liste de colisage">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-8 p-3">
+
+                                                <a href="../../public/storage/{{($exoneration->attestation)}}"
+                                                    class="fw-bold text-dark" download="Liste colisage">Liste de
+                                                    colisage. </a>
+                                                <hr>
 
 
                                             </div>
 
 
-                                        </div><!-- End activity i tem-->
 
-                                    </div>
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
 
-                                    <div class="activity">
+                                <div class="activity">
 
-                                        <div class="activity-item d-flex">
+                                    <div class="activity-item d-flex">
 
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
 
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->transport)}}"
-                                                            download="Document Transport">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="public/storage/{{($exoneration->transport)}}"
-                                                        class="fw-bold text-dark" download="Document de transport">Document de transport. </a>
-                                                        <hr>
-
-
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->projet)}}"
+                                                        download="Projet">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-8 p-3">
+
+                                                <a href="../../public/storage/{{($exoneration->projet)}}"
+                                                    class="fw-bold text-dark" download="Projet">Téléchargez le projet.
+                                                </a>
+                                                <hr>
 
 
                                             </div>
 
 
-                                        </div><!-- End activity i tem-->
 
-                                    </div>
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
 
-                                    <div class="activity">
+                                <div class="activity">
 
-                                        <div class="activity-item d-flex">
+                                    <div class="activity-item d-flex">
 
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
 
-                                                    <div class="activity-content">
-                                                        <a href="public/storage/{{($exoneration->facture)}}"
-                                                            download="Facture">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="public/storage/{{($exoneration->facture)}}"
-                                                        class="fw-bold text-dark" download="Facture">Facture des paiements. </a>
-                                                        <hr>
-
-
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->transport)}}"
+                                                        download="Document Transport">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-8 p-3">
+
+                                                <a href="../../public/storage/{{($exoneration->transport)}}"
+                                                    class="fw-bold text-dark" download="Document de transport">Document
+                                                    de transport. </a>
+                                                <hr>
 
 
                                             </div>
 
 
-                                        </div><!-- End activity i tem-->
 
-                                    </div>
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
+
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="card-body">
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
 
-                                    <div class="activity">
+                                <div class="activity">
 
-                                        <div class="activity-item d-flex">
+                                    <div class="activity-item d-flex">
 
-                                            <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
 
-                                                    <div class="activity-content">
-                                                        <a href="{{Storage::url($exoneration->affectation)}}"
-                                                            download="Affectation">
-                                                            <img
-                                                                src="https://img.icons8.com/stickers/50/null/live-folder.png" />
-                                                        </a>
-                                                    </div>
-
-                                                </div>
-                                                <div class="col-8 p-3">
-
-                                                    <a href="{{Storage::url($exoneration->affectation)}}"
-                                                        class="fw-bold text-dark" download="Affectation">Document d'affectation </a>
-                                                        <hr>
-
-
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->facture)}}"
+                                                        download="Facture">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
                                                 </div>
 
+                                            </div>
+                                            <div class="col-8 p-3">
+
+                                                <a href="../../public/storage/{{($exoneration->facture)}}"
+                                                    class="fw-bold text-dark" download="Facture">Facture des paiements.
+                                                </a>
+                                                <hr>
 
 
                                             </div>
 
 
-                                        </div><!-- End activity i tem-->
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title">Note du requérant.</h5>
-                                    <p class="text-sm">{{ $exoneration->commentaire }}</p>
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
 
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+
+                                <div class="activity">
+
+                                    <div class="activity-item d-flex">
+
+                                        <div class="row ">
+                                            <div class="col-4 p-2 mt-2">
+
+                                                <div class="activity-content">
+                                                    <a href="../../public/storage/{{($exoneration->affectation)}}"
+                                                        download="Affectation">
+                                                        <img
+                                                            src="https://img.icons8.com/stickers/50/null/live-folder.png" />
+                                                    </a>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-8 p-3">
+
+                                                <a href="../../public/storage/{{($exoneration->affectation)}}"
+                                                    class="fw-bold text-dark" download="Affectation">Document
+                                                    d'affectation </a>
+                                                <hr>
+
+
+                                            </div>
+
+
+
+                                        </div>
+
+
+                                    </div><!-- End activity i tem-->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Note du requérant.</h5>
+                                <p class="text-sm">{{ $exoneration->commentaire }}</p>
+
+                            </div>
+                        </div>
+                    </div>
                     @endforeach
 
                     <!-- Recent Sales -->
@@ -393,7 +403,7 @@
                                         @endif
 
                                     </div>
-                                @endif
+                                    @endif
 
                                 </form>
 
