@@ -50,8 +50,31 @@
                                     focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                         aria-label="Default select example" name="province">
                                         <option selected>Selectionner la province</option>
+                                        <option value="	Bas-Uele"> Bas-Uele</option>
+                                        <option value="Équateur">Équateur</option>
+                                        <option value="Haut-Katanga">Haut-Katanga</option>
+                                        <option value="Haut-Lomami">Haut-Lomami</option>
+                                        <option value="Haut-Uele">Haut-Uele</option>
+                                        <option value="Ituri">Ituri</option>
+                                        <option value="Kasaï">Kasaï</option>
+                                        <option value="Kasaï central">Kasaï central</option>
+                                        <option value="Kasaï oriental">Kasaï oriental</option>
                                         <option value="Kinshasa">Kinshasa</option>
-                                        <option value="Lemba">Lemba</option>
+                                        <option value="Kongo-Central">Kongo-Central</option>
+                                        <option value="Kwango">Kwango</option>
+                                        <option value="Kwilu">Kwilu</option>
+                                        <option value="Lomami">Lomami</option>
+                                        <option value="Lualaba">Lualaba</option>
+                                        <option value="Mai-Ndombe">Mai-Ndombe</option>
+                                        <option value="Mongala">Mongala</option>
+                                        <option value="Nord-Kivu">Nord-Kivu</option>
+                                        <option value="Nord-Ubangi">Nord-Ubangi</option>
+                                        <option value="Sankuru">Sankuru</option>
+                                        <option value="Sud-Kivu">Sud-Kivu</option>
+                                        <option value="Sud-Ubangi">Sud-Ubangi</option>
+                                        <option value="Tanganyika">Tanganyika</option>
+                                        <option value="Tshopo">Tshopo</option>
+                                        <option value="Tshuapa">Tshuapa</option>
                                     </select>
                                 </div>
                             </div>
@@ -183,7 +206,7 @@
                                         <option value="Logements sociaux">Logements sociaux</option>
                                         <option value="Assainessement">Assainessement</option>
                                         <option value="Autre">Autre</option>
-                                        
+
                                     </select>
                                 </div>
                             </div>

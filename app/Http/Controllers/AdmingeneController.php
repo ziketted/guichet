@@ -248,15 +248,6 @@ class AdmingeneController extends Controller
             ->where('users.id', '<>', auth()->user()->id)
             ->where('exonerations.deleted_at', NULL)
             ->get();
-
-
-
-
-
-
-
-
-
         return view('admin.validation_exoneration', [
             'exonerations' => $exonerations, 'requerantNombre' => $requerantNombre, 'exonerationAnnuler' => $exonerationAnnuler, 'exonerationTotal' => $exonerationTotal
         ]);
@@ -353,7 +344,7 @@ class AdmingeneController extends Controller
     public function showExoneration($exoneration)
     {
         //test
-        $exonerations = Exoneration::findOrFail($exoneration)->get();
+        $exonerations = Exoneration::where('id', $exoneration)->get();
         $statut = "";
 
         foreach ($exonerations as $value) {
@@ -366,8 +357,6 @@ class AdmingeneController extends Controller
             'statut' => $statut
         ]);
     }
-
-
     public function showConvention($convention)
     {
         //test
