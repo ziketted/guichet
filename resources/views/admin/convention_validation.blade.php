@@ -29,7 +29,7 @@
                                     <div class="activity">
                                         <div class="activity-item d-flex">
                                             <div class="row ">
-                                                <div class="col-4 p-2 mt-2">
+                                                {{-- <div class="col-4 p-2 mt-2">
                                                     <div class="activity-content">
                                                         <a href="public/storage/{{($convention->programme_social)}}"
                                                             download="programme_social">
@@ -37,13 +37,14 @@
                                                                 src="https://img.icons8.com/stickers/60/null/live-folder.png" />
                                                         </a>
                                                     </div>
-                                                </div>
-                                                <div class="col-8 p-2"><br>
+                                                </div> --}}
+                                                <div class="col-10 p-2"><br>
                                                     <a href="public/storage/{{($convention->programme_social)}}"
                                                         class="fw-bold text-dark" download="programme_social">Téléchargez Programme social. </a>
                                                         <br><br>
                                                         <hr>
                                                         <br><br>
+                                                </div>
 
 
                     <div class="col-lg-12">
@@ -62,7 +63,7 @@
                         <div class="overflow-auto card recent-sales">
 
                             <div class="card-body">
-                                <h5 class="card-title">Valider la convention. </h5>
+                                <h5 class="card-title">Valider la convention </h5>
 
                                 <form action="{{route('admin.modifierconvention')}}" class="row g-3" method="POST"
                                     enctype="multipart/form-data">
@@ -98,13 +99,13 @@
                                         <div class="col-6">
                                             <button type="submit" name="action" value="valider"
                                                 class="block w-full rounded-lg bg-success px-5 py-3 text-sm font-medium text-white">
-                                                Valider l'exonération
+                                                Valider
                                             </button>
                                         </div>
                                         <div class="col-6">
                                             <button type="submit" value="annuler" name="action"
                                                 class="block w-full rounded-lg bg-info px-5 py-3 text-sm font-medium text-white">
-                                                Annuler l'exonération
+                                                Annuler
                                             </button>
                                         </div>
                                         @endif

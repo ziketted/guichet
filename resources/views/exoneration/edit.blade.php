@@ -2,7 +2,7 @@
 <main id="main" class="main">
     <section class="py-4 section align-items-center justify-content-center">
         <div class="py-4 row align-items-center justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Modification de la demande de certificat d'exoneration au FNPSS</h5>
@@ -11,14 +11,20 @@
                             <form action="{{ route('exoneration.upd_titre') }} " class="row g-3" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
-                                <div class="col-md-8">
+                                
 
+                                <div class="col-md-8">
                                     <div class="form-floating">
-                                        <input class="form-control" name="titre" type="text" id="formFile"
-                                            value="{{$exoneration->titre}}" required>
-                                        <label for="floatingEmail">Description de la demande d'exonération</label>
+                                        <input
+                                              class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                              placeholder="Description de la demande  d'exonération"
+                                              type="text"
+                                              name="titre"
+                                              id="formFile" value="{{$exoneration->titre}}" required
+                                        />
                                     </div>
                                 </div>
+
                                 <div class="col-md-4 p-1">
                                     <button class="btn btn-danger">
                                         Modifier</button> </h5>
@@ -330,9 +336,17 @@
                                 @csrf
                                 <div class="col-md-8">
                                     <div class="form-floating">
-                                        <Textarea type="text" rows="50" cols="30" class="form-control" id="floatingEmail"
-                                            name="commentaire">{{$exoneration->commentaire}}</Textarea>
-                                        <label for="floatingEmail">Commentaires</label>
+                                        <div>
+                                          <label class="sr-only" for="message">Message</label>
+                                          <textarea
+                                            class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                            placeholder="Commentaires"
+                                            rows="8"
+                                            type="text"
+                                            name="commentaire"
+                                            id="message"
+                                          >{{$exoneration->commentaire}}</textarea>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-4">

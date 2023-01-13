@@ -18,9 +18,9 @@
             <!-- Left side columns -->
             <div class="col-lg-12">
                 <div class="row">
-                    <div class="col-lg-9">
+                    <div class="col-lg-12">
                         <div class="row">
-                            <div class="col-xxl-4 col-md-6">
+                            <div class="col-xxl-4 col-md-4">
                                 <article class="rounded-lg border border-gray-100 bg-white p-6">
                                     <div class="flex items-center justify-between">
                                         <div>
@@ -51,7 +51,7 @@
                                     </div>
                                 </article><br><br>
                             </div>
-                            <div class="col-xxl-4 col-md-6">
+                            <div class="col-xxl-4 col-md-4">
                                 <article class="rounded-lg border border-gray-100 bg-white p-6">
                                     <div class="flex items-center justify-between">
                                         <div>
@@ -82,7 +82,7 @@
                                     </div>
                                 </article><br><br>
                             </div>
-                            <div class="col-xxl-4 col-md-6">
+                            <div class="col-xxl-4 col-md-4">
                                 <article class="rounded-lg border border-gray-100 bg-white p-6">
                                     <div class="flex items-center justify-between">
                                         <div>
@@ -111,18 +111,19 @@
                                         <p class="flex gap-2 text-xs">
                                         </p>
                                     </div>
-                                </article><br><br>
+                                </article><br>
                             </div>
-                            <div class="col-lg-3">
+                            <div class="col-xxl-4 col-md-4">
                                 <div class="activity-item d-flex">
                                     <a href="{{ route('convention.create') }}">
                                         <button type="submit"
                                             class="block w-full rounded-lg bg-red-600 px-5 py-3 text-sm font-medium text-white">
                                             Nouvelle convention
-                                        </button>
+                                        </button><br>
                                     </a>
                                 </div>
                             </div>
+                            
                         </div>
 
                     </div>
@@ -135,7 +136,7 @@
 
                     <!-- End Right side columns -->
 
-                    <div class="col-lg-10">
+                    <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
                                 <h3>
@@ -232,7 +233,7 @@
                     </div><!-- End Customers Card --> --}}
 
                     <!-- Recent Sales -->
-                    <div class="col-10">
+                    <div class="col-12">
                         <div class="overflow-auto card recent-sales">
 
                             <div class="card-body">
@@ -264,8 +265,8 @@
                                                 </div> --}}
                                                 <div class="col-auto">
                                                     <a href="{{route('convention.show',$item->id )}}"
-                                                        class="btn btn-info"><i
-                                                            class="bi bi-pen-fill"></i>&nbsp;Edit</a>
+                                                        class="btn btn-warning"><i
+                                                            class="bi bi-pen-fill"></i>t</a>
                                                 </div>
                                                 <div class="col-auto">
                                                     <form action="{{route('convention.destroy',$item->id )  }}"

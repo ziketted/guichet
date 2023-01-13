@@ -128,7 +128,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">Liste des conventions</h5>
 
-                                <table class="table table-borderless">
+                                <table class="table table-borderless datatable">
                                     <thead>
                                         <tr>
                                             <th scope="col">Requerant</th>

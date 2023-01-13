@@ -71,7 +71,7 @@
                             <td>{{$requerant->email}}</td>
                             <td>
                               {{-- <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-info"><i class="bi bi-eye"></i> Détail</a> --}}
-                                <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-primary">
+                                <a href="{{route('admin.detailrequerant',$requerant->id )}}" class="btn btn-warning">
                                   <button type="button"><i class="bi bi-eye"></i></button>
                                 </a>
                                 {{-- <a href="#" class="btn btn-success">

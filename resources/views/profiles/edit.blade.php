@@ -3,7 +3,7 @@
 <main id="main" class="main">
     <section class="py-4 section align-items-center justify-content-center">
         <div class="py-4 row align-items-center justify-content-center">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <!-- General Form Elements -->

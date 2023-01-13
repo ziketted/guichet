@@ -2,7 +2,7 @@
 <main id="main" class="main">
     <section class="py-4 section align-items-center justify-content-center">
         <div class="py-4 row align-items-center justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Demande de convention au FNPSS</h5>

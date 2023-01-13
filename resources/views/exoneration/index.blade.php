@@ -16,11 +16,11 @@
         <div class="row">
 
             <!-- Left side columns -->
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="row">
 
                     <!-- Sales Card -->
-                    <div class="col-xxl-4 col-md-6 p-2">
+                    <div class="col-xxl-4 col-md-4 p-2">
                         <article class="rounded-lg border border-gray-100 bg-white p-6">
                             <div class="flex items-center justify-between">
                                 <div>
@@ -52,7 +52,7 @@
                     </div><!-- End Sales Card -->
 
                     <!-- Revenue Card -->
-                    <div class="col-xxl-4 col-md-6 p-2">
+                    <div class="col-xxl-4 col-md-4 p-2">
                         <article class="rounded-lg border border-gray-100 bg-white p-6">
                             <div class="flex items-center justify-between">
                                 <div>
@@ -88,7 +88,7 @@
                     </div><!-- End Revenue Card -->
 
 
-                    <div class="col-lg-4">
+                    <div class="col-xxl-4 col-md-4 p-2">
                         <div class="activity-item d-flex">
                             <a href="{{ route('exoneration.store') }}">
                                 <button type="submit"
@@ -200,7 +200,7 @@
             <!-- Right side columns -->
 
 
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <h3>
@@ -241,7 +241,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
                         <h3>
